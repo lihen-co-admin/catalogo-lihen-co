@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pantalla pública de la inauguración LIHEN.CO">
+  <title>Pantalla del evento | LIHEN.CO</title>
+  <link rel="stylesheet" href="../css/main.css"><link rel="stylesheet" href="../css/pages/event-screen.css">
+</head>
+<body class="screen-page">
+  <main class="screen-shell">
+    <header class="screen-header"><img src="../assets/images/lihen_logo_transparente.webp" alt="LIHEN.CO"><div><span>Inauguración híbrida</span><strong id="screen-clock">--:--</strong></div></header>
+    <section class="screen-stage" aria-live="polite">
+      <div class="screen-status"><span class="status-dot"></span><span id="screen-room-status">Preparando sala</span></div>
+      <p class="eyebrow">Actividad actual</p><h1 id="screen-activity">Esperando indicaciones</h1>
+      <p id="screen-announcement">Pronto comenzaremos la experiencia LIHEN.CO.</p><section class="screen-turn"><span>Participante activo</span><strong id="screen-turn-name">Esperando siguiente participante</strong><small id="screen-turn-mode"></small><output id="screen-turn-clock">01:00</output></section>
+      <div class="screen-orbit" aria-hidden="true"><div class="screen-logo-orb">LIHEN</div><span class="orbit orbit--one"></span><span class="orbit orbit--two"></span></div>
+    </section>
+    <section class="screen-trivia" id="screen-trivia" hidden aria-live="polite"><div class="screen-trivia__header"><span id="screen-trivia-state">En espera</span><output id="screen-trivia-clock">00:00</output></div><p class="eyebrow">Trivia LIHEN</p><h2 id="screen-trivia-question">Esperando la primera pregunta</h2><ol id="screen-trivia-options"></ol><strong id="screen-trivia-result"></strong></section>
+    <section class="screen-word" id="screen-word" hidden aria-live="polite"><div class="screen-trivia__header"><span id="screen-word-state">En espera</span><output id="screen-word-clock">00:00</output></div><p class="eyebrow">Encuentra la palabra</p><h2 id="screen-word-hint">Esperando una pista</h2><div id="screen-word-mask" class="screen-word-mask">_ _ _ _ _</div><strong id="screen-word-result"></strong></section>
+
+    <section class="screen-vote" id="screen-vote" hidden aria-live="polite"><div class="screen-trivia__header"><span id="screen-vote-state">En espera</span><output id="screen-vote-clock">00:00</output></div><p class="eyebrow">Vota tu favorito</p><h2 id="screen-vote-question">Esperando una votación</h2><strong id="screen-vote-total">0 votos</strong><ol id="screen-vote-ranking" class="screen-vote-ranking"></ol></section>
+    <section class="screen-winners" aria-live="polite"><p class="eyebrow">Ranking de ganadores</p><h2>Ganadores LIHEN</h2><ol id="screen-winner-ranking"><li>Esperando ganadores…</li></ol></section>
+<aside class="screen-presence">
+      <div><strong id="screen-total">0</strong><span>conectados</span></div><div><strong id="screen-presencial">0</strong><span>presenciales</span></div><div><strong id="screen-virtual">0</strong><span>virtuales</span></div>
+      <ul id="screen-people"></ul>
+    </aside>
+    <footer><span id="screen-connection">Conectando…</span><a href="./index.html">Vista participante</a></footer>
+  
+    <section class="screen-word" id="screen-flash" hidden aria-live="polite"><div class="screen-trivia__header"><span id="screen-flash-state">En espera</span><output id="screen-flash-clock">00:00</output></div><p class="eyebrow">Reto relámpago</p><h2 id="screen-flash-title">Esperando un reto</h2><p id="screen-flash-instruction">La instrucción aparecerá aquí.</p><strong id="screen-flash-participant"></strong><strong id="screen-flash-result"></strong></section>
+
+    <section class="screen-roulette" id="screen-roulette" hidden aria-live="polite"><div class="screen-trivia__header"><span id="screen-roulette-state">En espera</span><strong id="screen-roulette-participant">Esperando participante</strong></div><p class="eyebrow">Ruleta LIHEN</p><div class="roulette-stage roulette-stage--screen"><span class="roulette-pointer"></span><div id="screen-roulette-wheel" class="roulette-wheel"></div></div><strong id="screen-roulette-result">Lista para comenzar</strong></section>
+</main>
+  <script type="module" src="../js/pages/inauguration/screen.js"></script>
+</body>
+</html>

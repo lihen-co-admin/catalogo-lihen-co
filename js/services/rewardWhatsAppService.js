@@ -1,0 +1,4 @@
+const WHATSAPP_NUMBER="";
+const GAME_LABELS={trivia:"Trivia LIHEN",word:"Encuentra la palabra",flash:"Reto relámpago",roulette:"Ruleta LIHEN"};
+export function buildRewardClaimMessage(reward,participant){return [`Hola LIHEN.CO, soy ${participant.displayName}.`,`Fui ganador/a de ${GAME_LABELS[reward.game_key]||reward.game_key}.`,`Recompensa: ${reward.reward_label}.`,`Código de reclamación: ${reward.claim_code}.`,"Quiero coordinar la entrega de mi recompensa."].join("\n");}
+export async function openRewardClaimWhatsApp(message){if(!WHATSAPP_NUMBER){await navigator.clipboard?.writeText(message);window.alert("El número oficial de WhatsApp está pendiente. El mensaje y el código fueron copiados.");return;}window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,"_blank","noopener,noreferrer");}

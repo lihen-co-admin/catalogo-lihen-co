@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo informativo de LIHEN.CO: Beauty Care, Style y creatividad con propósito."
+    />
+    <title>LIHEN.CO | Belleza, estilo y creatividad con propósito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido-principal"
+      >Saltar al contenido principal</a
+    >
+
+    <div class="intro" data-intro hidden aria-label="Introducción de LIHEN.CO">
+      <video
+        class="intro__video"
+        data-intro-video
+        muted
+        playsinline
+        preload="auto"
+      >
+        <source src="./assets/videos/intro_lihen.mp4" type="video/mp4" />
+      </video>
+      <div class="intro__shade" aria-hidden="true"></div>
+      <button class="intro__skip" type="button" data-intro-skip>
+        Saltar intro ↗
+      </button>
+    </div>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio de LIHEN.CO">
+          <img
+            src="./assets/images/lihen_logo_transparente.webp"
+            alt="LIHEN.CO"
+            width="180"
+            height="80"
+          />
+        </a>
+        <button
+          class="menu-button"
+          type="button"
+          data-menu-button
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <span class="sr-only">Abrir menú principal</span
+          ><span class="menu-button__lines" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
+        <nav
+          id="main-navigation"
+          class="main-navigation"
+          data-navigation
+          aria-label="Navegación principal"
+        >
+          <a href="#inicio">Inicio</a>
+          <a href="#proposito">Propósito</a>
+          <button
+            class="nav-trigger"
+            type="button"
+            data-mega-trigger="Beauty Care"
+            aria-expanded="false"
+          >
+            Beauty Care
+          </button>
+          <button
+            class="nav-trigger"
+            type="button"
+            data-mega-trigger="Style"
+            aria-expanded="false"
+          >
+            Style
+          </button>
+          <a class="navigation-highlight" href="./inauguracion/"
+            >Inauguración</a
+          >
+          <a href="#experiencias">Así se vive</a>
+          <a href="#studio">Studio</a>
+          <a href="#aliados">Aliados</a>
+          <a href="#como-consultar">Cómo consultar</a>
+          <a href="#legal">Condiciones</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+      <div class="mega-menu" data-mega-menu hidden>
+        <div class="container mega-menu__inner">
+          <div class="mega-menu__links" data-mega-links></div>
+          <div
+            class="mega-menu__products"
+            data-mega-products
+            aria-label="Productos destacados"
+          ></div>
+        </div>
+      </div>
+      <div class="header-accent" aria-hidden="true"></div>
+      <div class="scroll-progress" aria-hidden="true">
+        <span data-scroll-progress></span>
+      </div>
+    </header>
+
+    <main id="contenido-principal">
+      <section id="inicio" class="hero section ambient-section">
+        <div class="ambient-orbs" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+        </div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow icon-label">
+              <span class="line-icon">✦</span> Beauty Care · Style · Studio
+            </p>
+            <h1>
+              Belleza, estilo y creatividad
+              <span class="text-gold">con propósito.</span>
+            </h1>
+            <p class="hero-text">
+              Catálogo visual en etapa de validación legal, tributaria y
+              operativa. Disponibilidad, precio final, facturación, entrega y
+              condiciones se confirman por WhatsApp antes de cualquier pago.
+            </p>
+            <div class="status-note">
+              <strong>Etapa actual:</strong> LIHEN.CO S.A.S. está estructurando
+              sus procesos comerciales, tributarios, operativos y de
+              facturación. Esta página no es una tienda final ni tiene pago
+              directo.
+            </div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#beauty-care"
+                >Ver Beauty Care</a
+              >
+              <a class="button button-secondary" href="#style">Ver Style</a>
+              <button
+                class="button button-whatsapp"
+                type="button"
+                data-whatsapp-button
+              >
+                Consultar por WhatsApp
+              </button>
+            </div>
+            <div class="stats" aria-label="Resumen del catálogo">
+              <article>
+                <strong data-count-to="47">0</strong><span>Beauty Care</span>
+              </article>
+              <article>
+                <strong data-count-to="17">0</strong><span>Style</span>
+              </article>
+              <article><strong>1</strong><span>WhatsApp</span></article>
+            </div>
+          </div>
+          <div class="hero-card reveal reveal-scale">
+            <span class="hero-card__badge">Catálogo informativo</span>
+            <img
+              src="./assets/images/lihen_logo_transparente.webp"
+              alt="Logo de LIHEN.CO"
+            />
+            <div class="hero-mini-grid">
+              <a href="#beauty-care"
+                ><span class="svg-icon" data-icon="palette"></span
+                ><strong>Beauty Care</strong
+                ><small
+                  >Maquillaje, cuidado corporal, capilar, skincare y
+                  accesorios.</small
+                ></a
+              >
+              <a href="#style"
+                ><span class="svg-icon" data-icon="shirt"></span
+                ><strong>Style</strong
+                ><small>Ropa deportiva, tops, enterizos y conjuntos.</small></a
+              >
+              <a href="#studio"
+                ><span class="svg-icon" data-icon="sparkles"></span
+                ><strong>Studio</strong
+                ><small
+                  >Diseño, publicidad, contenido y soluciones creativas.</small
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proposito" class="section section-soft ambient-section">
+        <div class="ambient-orbs ambient-orbs--purpose" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="container purpose-layout">
+          <article class="purpose-main reveal">
+            <p class="eyebrow icon-label">
+              <span class="svg-icon" data-icon="heart"></span> LIHEN.CO con
+              propósito
+            </p>
+            <h2>
+              Una marca construida sobre integridad, servicio y buena
+              administración.
+            </h2>
+            <p>
+              Creemos en una marca que une belleza, estilo y creatividad con
+              atención clara, respeto por cada persona y procesos responsables.
+            </p>
+            <button
+              class="button button-primary"
+              type="button"
+              data-purpose-toggle
+              aria-expanded="false"
+              aria-controls="purpose-details"
+            >
+              Conocer nuestro propósito⌄
+            </button>
+            <div
+              id="purpose-details"
+              class="purpose-details"
+              data-purpose-details
+              hidden
+            >
+              <p>
+                LIHEN.CO camina en Luz, actúa con Integridad, sirve con Honra,
+                trabaja con Excelencia, crece con Nobleza, discierne antes de
+                avanzar, asume Compromiso y mantiene Orden.
+              </p>
+            </div>
+          </article>
+          <div class="value-grid">
+            <article class="value-card reveal">
+              <span class="svg-icon" data-icon="badge"></span>
+              <h3>Integridad</h3>
+              <p>
+                Información clara, precios confirmados y comunicación honesta
+                antes de cada consulta o confirmación.
+              </p>
+            </article>
+            <article class="value-card reveal">
+              <span class="svg-icon" data-icon="hand"></span>
+              <h3>Servicio</h3>
+              <p>
+                Atención con respeto, paciencia y buena disposición para
+                acompañar al cliente.
+              </p>
+            </article>
+            <article class="value-card reveal">
+              <span class="svg-icon" data-icon="sparkles"></span>
+              <h3>Excelencia</h3>
+              <p>
+                Cuidamos la presentación, los detalles y la experiencia visual
+                de la marca.
+              </p>
+            </article>
+            <article class="value-card reveal">
+              <span class="svg-icon" data-icon="scale"></span>
+              <h3>Orden</h3>
+              <p>
+                Procesos responsables para vender, comprar, administrar y crecer
+                con claridad.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="catalogo" class="section catalog-search-section ambient-section">
+        <div class="ambient-orbs ambient-orbs--toolbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="container">
+          <div class="catalog-toolbar reveal" aria-label="Filtros del catálogo">
+            <label class="search-field"
+              ><span class="icon-label"><span class="svg-icon" data-icon="search"></span>Buscar producto</span
+              ><input
+                type="search"
+                data-product-search
+                placeholder="Ejemplo: labial, Atenea, conjunto…"
+                autocomplete="off"
+            /></label>
+            <label class="select-field"
+              ><span class="icon-label"><span class="svg-icon" data-icon="grid"></span>Categoría</span
+              ><select data-category-filter>
+                <option value="Todas">Todas las categorías</option>
+              </select></label
+            >
+            <div class="line-filters" aria-label="Filtrar por línea">
+              <button
+                type="button"
+                class="filter-chip is-active"
+                data-line-filter="Todos"
+              >
+                Todos</button
+              ><button
+                type="button"
+                class="filter-chip"
+                data-line-filter="Beauty Care"
+              >
+                Beauty Care</button
+              ><button
+                type="button"
+                class="filter-chip"
+                data-line-filter="Style"
+              >
+                Style
+              </button>
+            </div>
+          </div>
+          <p
+            class="catalog-search-status"
+            data-result-count
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+
+      <section
+        id="beauty-care"
+        class="section editorial-catalog ambient-section"
+        data-catalog-line="Beauty Care"
+      >
+        <div class="ambient-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="container">
+          <div class="catalog-editorial-heading reveal">
+            <div>
+              <p class="eyebrow icon-label">
+                <span class="svg-icon" data-icon="sparkles"></span> Catálogo
+                Beauty Care
+              </p>
+              <h2>Belleza, cuidado y rutina personal</h2>
+              <p>
+                Catálogo visual de referencias. Los productos se presentan sin
+                promesas médicas ni resultados garantizados; disponibilidad,
+                precio final, condiciones y facturación se confirman por
+                WhatsApp.
+              </p>
+            </div>
+            <button
+              class="button button-primary"
+              type="button"
+              data-whatsapp-button
+            >
+              Consultar disponibilidad Beauty Care
+            </button>
+          </div>
+          <div class="category-pills" data-category-pills="Beauty Care"></div>
+          <div class="carousel-tools">
+            <span>Desliza para ver más productos</span
+            ><button
+              type="button"
+              data-carousel-prev="Beauty Care"
+              aria-label="Anterior"
+            >
+              ‹</button
+            ><button
+              type="button"
+              data-carousel-next="Beauty Care"
+              aria-label="Siguiente"
+            >
+              ›
+            </button>
+          </div>
+          <div
+            class="product-carousel"
+            data-product-carousel="Beauty Care"
+            tabindex="0"
+          ></div>
+          <div class="carousel-progress">
+            <span data-carousel-progress="Beauty Care"></span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="style"
+        class="section editorial-catalog editorial-catalog--style ambient-section"
+        data-catalog-line="Style"
+      >
+        <div class="ambient-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="container">
+          <div class="catalog-editorial-heading reveal">
+            <div>
+              <p class="eyebrow icon-label">
+                <span class="svg-icon" data-icon="shirt"></span> Catálogo Style
+              </p>
+              <h2>Ropa deportiva y estilo activo</h2>
+              <p>
+                Referencias visuales en validación. Origen, autenticidad,
+                tallas, colores y disponibilidad deben confirmarse antes de
+                cualquier venta final.
+              </p>
+            </div>
+            <button
+              class="button button-primary"
+              type="button"
+              data-whatsapp-button
+            >
+              Validar referencia Style
+            </button>
+          </div>
+          <div class="category-pills" data-category-pills="Style"></div>
+          <div class="carousel-tools">
+            <span>Desliza para ver más productos</span
+            ><button
+              type="button"
+              data-carousel-prev="Style"
+              aria-label="Anterior"
+            >
+              ‹</button
+            ><button
+              type="button"
+              data-carousel-next="Style"
+              aria-label="Siguiente"
+            >
+              ›
+            </button>
+          </div>
+          <div
+            class="product-carousel"
+            data-product-carousel="Style"
+            tabindex="0"
+          ></div>
+          <div class="carousel-progress">
+            <span data-carousel-progress="Style"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencias" class="section section-dark">
+        <div class="container experience-card reveal">
+          <div>
+            <p class="eyebrow icon-label">
+              <span class="svg-icon" data-icon="camera"></span> Así se vive
+              LIHEN.CO
+            </p>
+            <h2>Experiencias reales autorizadas, muy pronto.</h2>
+            <p>
+              Esta sección queda preparada para compartir testimonios, fotos o
+              videos únicamente cuando exista autorización expresa, voluntaria y
+              verificable.
+            </p>
+          </div>
+          <button class="button button-primary" type="button">
+            Quiero autorizar mi testimonio
+          </button>
+          <div class="experience-values">
+            <article>
+              <span class="svg-icon" data-icon="file"></span>
+              <h3>Autorización clara</h3>
+              <p>
+                Solo publicaremos contenido con autorización verificable y
+                finalidad definida.
+              </p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="heart"></span>
+              <h3>Respeto por la persona</h3>
+              <p>
+                El cliente es una persona, no una estadística ni una herramienta
+                de publicidad.
+              </p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="shield"></span>
+              <h3>Uso responsable</h3>
+              <p>
+                La imagen y el testimonio se manejarán con cuidado, finalidad y
+                trazabilidad.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="studio" class="section section-dark">
+        <div class="container studio-layout reveal">
+          <div>
+            <p class="eyebrow icon-label">
+              <span class="svg-icon" data-icon="wand"></span> LIHEN.CO Studio ·
+              Próximamente
+            </p>
+            <h2>Línea creativa en estructuración.</h2>
+            <p>
+              Esta línea se encuentra en preparación. Aún no está habilitada
+              para contratación formal hasta definir tarifas, alcance,
+              condiciones, facturación y acuerdos básicos de servicio.
+            </p>
+            <button class="button button-secondary" type="button">
+              Avisarme cuando esté disponible
+            </button>
+          </div>
+          <div class="studio-services">
+            <article>
+              <span class="svg-icon" data-icon="pen"></span>
+              <h3>Diseño gráfico</h3>
+              <p>
+                Servicio futuro sujeto a alcance, tarifa y condiciones por
+                definir.
+              </p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="megaphone"></span>
+              <h3>Publicidad</h3>
+              <p>
+                Servicio futuro sujeto a revisión ética y claridad de mensajes.
+              </p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="instagram"></span>
+              <h3>Redes sociales</h3>
+              <p>
+                Servicio futuro para contenido visual cuando el proceso esté
+                habilitado.
+              </p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="printer"></span>
+              <h3>Impresiones</h3>
+              <p>Línea futura aún no habilitada para contratación formal.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="como-consultar" class="section process-section">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <div>
+              <p class="eyebrow icon-label">
+                <span class="svg-icon" data-icon="link"></span> Cómo consultar
+                en esta etapa
+              </p>
+              <h2>Consulta asistida, sin carrito ni pago directo.</h2>
+            </div>
+            <p>
+              Por responsabilidad legal, tributaria y operativa, esta versión
+              funciona como catálogo visual. Toda venta se valida manualmente
+              antes de confirmar pago, entrega o facturación.
+            </p>
+          </div>
+          <div class="steps-grid steps-grid--five">
+            <article class="step-card reveal">
+              <span>1</span>
+              <h3>Explora</h3>
+              <p>Revisa las referencias disponibles en el catálogo visual.</p>
+            </article>
+            <article class="step-card reveal">
+              <span>2</span>
+              <h3>Consulta</h3>
+              <p>Escríbenos por WhatsApp para validar la referencia.</p>
+            </article>
+            <article class="step-card reveal">
+              <span>3</span>
+              <h3>Validamos</h3>
+              <p>
+                Confirmamos disponibilidad, precio final, talla, color, origen y
+                condiciones.
+              </p>
+            </article>
+            <article class="step-card reveal">
+              <span>4</span>
+              <h3>Confirmación</h3>
+              <p>
+                Antes de cualquier pago se confirman facturación, entrega,
+                cambios y garantías.
+              </p>
+            </article>
+            <article class="step-card reveal">
+              <span>5</span>
+              <h3>Pago y entrega</h3>
+              <p>
+                Solo se coordina cuando la información está validada y el
+                proceso está habilitado.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="aliados" class="section allies-section section-dark">
+        <div class="container allies-layout reveal">
+          <div>
+            <p class="eyebrow icon-label">
+              <span class="svg-icon" data-icon="users"></span> Aliados LIHEN.CO
+              · En preparación
+            </p>
+            <h2>Programa de aliados en estructuración.</h2>
+            <p>
+              Estamos diseñando un programa comercial con reglas claras, respeto
+              por la marca, control de precios, disponibilidad, facturación y
+              acuerdos transparentes.
+            </p>
+            <button class="button button-whatsapp" type="button">
+              Conocer cuando esté disponible
+            </button>
+          </div>
+          <div class="allies-grid">
+            <article>
+              <span class="svg-icon" data-icon="badge"></span>
+              <h3>Reglas claras</h3>
+              <p>
+                Uso de marca, precios, condiciones y responsabilidades por
+                definir.
+              </p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="file"></span>
+              <h3>Acuerdo previo</h3>
+              <p>No habrá aliados activos sin reglas y autorización interna.</p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="wallet"></span>
+              <h3>Facturación y pagos</h3>
+              <p>Debe definirse con contadora antes de operar comisiones.</p>
+            </article>
+            <article>
+              <span class="svg-icon" data-icon="shield"></span>
+              <h3>Cuidado de marca</h3>
+              <p>Crecimiento ordenado, sin presión ni promesas exageradas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="legal" class="section legal-card-wrap section-dark">
+        <div class="container legal-card reveal">
+          <p class="eyebrow icon-label"><span class="svg-icon" data-icon="shield"></span> Condiciones</p>
+          <h2>Catálogo informativo en validación operativa.</h2>
+          <p>
+            Los productos, precios, colores, tallas, disponibilidad,
+            facturación, entrega y condiciones se confirman directamente antes
+            de cualquier pago. Esta versión no realiza compras automáticas.
+          </p>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section section-dark">
+        <div class="container faq-container">
+          <div class="section-heading centered reveal">
+            <div>
+              <p class="eyebrow icon-label">
+                <span class="svg-icon" data-icon="help"></span> FAQ
+              </p>
+              <h2>Preguntas frecuentes</h2>
+            </div>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>¿La página ya tiene carrito?</span><span>⌄</span>
+              </button>
+              <div hidden>
+                <p>
+                  No. La selección sirve para preparar una consulta conjunta por
+                  WhatsApp; no es compra, reserva ni pago directo.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>¿Puedo comprar de una vez?</span><span>⌄</span>
+              </button>
+              <div hidden>
+                <p>
+                  Primero confirmamos disponibilidad, precio final, talla,
+                  color, facturación, entrega y condiciones.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>¿Las marcas de Style son oficiales?</span><span>⌄</span>
+              </button>
+              <div hidden>
+                <p>
+                  Las referencias se muestran en validación. El origen,
+                  autenticidad y condiciones deben confirmarse antes de
+                  cualquier venta.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="section contact-showcase ambient-section">
+        <div class="ambient-orbs ambient-orbs--contact" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="container">
+          <div class="contact-card reveal">
+            <p class="eyebrow icon-label">
+              <span class="svg-icon" data-icon="send"></span> Contacto
+            </p>
+            <h2>Escríbenos para consultar disponibilidad y condiciones.</h2>
+            <p>
+              El canal principal de esta etapa es WhatsApp. Así validamos
+              disponibilidad, precio final, facturación, entrega, atención clara
+              y servicio responsable antes de cualquier pago.
+            </p>
+            <div class="contact-actions">
+              <button
+                class="button button-whatsapp"
+                type="button"
+                data-whatsapp-button
+              >
+                WhatsApp LIHEN.CO</button
+              ><a class="button button-secondary" href="#beauty-care"
+                >Ver Beauty Care</a
+              ><a class="button button-secondary" href="#style">Ver Style</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img
+            src="./assets/images/lihen_logo_transparente.webp"
+            alt="LIHEN.CO"
+            width="150"
+          />
+          <p>
+            Catálogo informativo · Belleza, estilo y creatividad con propósito.
+          </p>
+        </div>
+        <div>
+          <h3>Explorar</h3>
+          <a href="#proposito">Propósito</a
+          ><a href="#beauty-care">Beauty Care</a><a href="#style">Style</a>
+        </div>
+        <div>
+          <h3>Soporte</h3>
+          <a href="#como-consultar">Cómo consultar</a
+          ><a href="#legal">Condiciones</a><a href="#faq">Preguntas</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span data-current-year></span> LIHEN.CO S.A.S.</p>
+        <p>Versión Renacer · Actualización visual integral</p>
+      </div>
+    </footer>
+
+    <button
+      class="selection-fab"
+      type="button"
+      data-selection-open
+      hidden
+      aria-label="Abrir productos seleccionados"
+    >
+      <span>Mi selección</span><strong data-selection-count>0</strong>
+    </button>
+    <div class="selection-bar" data-selection-bar hidden>
+      <div>
+        <span class="selection-bar__thumbs" data-selection-thumbs></span
+        ><strong data-selection-bar-summary>Mi selección</strong>
+      </div>
+      <button class="button button-secondary" type="button" data-selection-open>
+        Ver selección</button
+      ><button
+        class="button button-primary"
+        type="button"
+        data-selection-consult
+      >
+        Consultar por WhatsApp
+      </button>
+    </div>
+
+    <div class="product-modal" data-product-modal hidden>
+      <button
+        class="product-modal__backdrop"
+        type="button"
+        data-modal-close
+        aria-label="Cerrar ventana"
+      ></button>
+      <section
+        class="product-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="product-modal-title"
+        tabindex="-1"
+      >
+        <button
+          class="product-modal__close"
+          type="button"
+          data-modal-close
+          aria-label="Cerrar"
+        >
+          ×
+        </button>
+        <div class="product-modal__topbar">
+          <button class="product-modal__back" type="button" data-modal-close>
+            ← Volver</button
+          ><img
+            src="./assets/images/lihen_logo_transparente.webp"
+            alt="LIHEN.CO"
+          />
+        </div>
+        <div class="product-modal__layout">
+          <div class="product-modal__gallery">
+            <div class="product-modal__main-image-wrap">
+              <span class="product-modal__zoom-label">Ver grande</span
+              ><button
+                class="product-modal__arrow product-modal__arrow--previous"
+                type="button"
+                data-modal-previous
+                aria-label="Ver imagen anterior"
+              >
+                ‹</button
+              ><img
+                class="product-modal__main-image"
+                data-modal-main-image
+                src="./assets/images/lihen_logo_transparente.webp"
+                alt=""
+              /><button
+                class="product-modal__arrow product-modal__arrow--next"
+                type="button"
+                data-modal-next
+                aria-label="Ver imagen siguiente"
+              >
+                ›</button
+              ><span class="product-modal__counter" data-modal-image-counter
+                >1 de 1</span
+              >
+            </div>
+            <div
+              class="product-modal__thumbnails"
+              data-modal-thumbnails
+              aria-label="Miniaturas del producto"
+            ></div>
+          </div>
+          <div class="product-modal__content">
+            <p class="product-modal__breadcrumb" data-modal-breadcrumb></p>
+            <p class="eyebrow" data-modal-category></p>
+            <h2 id="product-modal-title" data-modal-title></h2>
+            <p class="product-modal__brand" data-modal-brand></p>
+            <p data-modal-description></p>
+            <strong class="product-modal__price" data-modal-price
+              >Por confirmar</strong
+            >
+            <div class="product-modal__actions">
+              <div class="quantity-control">
+                <button
+                  type="button"
+                  data-modal-qty-minus
+                  aria-label="Restar cantidad"
+                >
+                  −</button
+                ><span data-modal-qty>1</span
+                ><button
+                  type="button"
+                  data-modal-qty-plus
+                  aria-label="Sumar cantidad"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                class="button button-primary"
+                type="button"
+                data-modal-select
+              >
+                Agregar a mi selección</button
+              ><button
+                class="button button-whatsapp"
+                type="button"
+                data-modal-whatsapp
+              >
+                Consultar por WhatsApp
+              </button>
+            </div>
+            <div class="product-info-accordion">
+              <details>
+                <summary>Información</summary>
+                <ul class="product-modal__details" data-modal-details></ul>
+              </details>
+              <details>
+                <summary>Entrega y disponibilidad</summary>
+                <p>
+                  La disponibilidad, precio final, entrega y facturación se
+                  confirman antes de cualquier pago.
+                </p>
+              </details>
+              <details>
+                <summary>Guía de cuidado</summary>
+                <p>
+                  Las recomendaciones dependen del tipo de producto y se
+                  comparten durante la consulta.
+                </p>
+              </details>
+            </div>
+            <ul class="product-trust">
+              <li>Consulta asistida por WhatsApp</li>
+              <li>Selección pensada para belleza, estilo y propósito</li>
+              <li>
+                Precio final y disponibilidad se confirman antes de cualquier
+                pago
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-benefits">
+          <article>
+            <span class="svg-icon" data-icon="message"></span
+            ><strong>Consulta asistida</strong
+            ><small>Te orientamos por WhatsApp antes de confirmar.</small>
+          </article>
+          <article>
+            <span class="svg-icon" data-icon="sparkles"></span
+            ><strong>Belleza y calidad</strong
+            ><small>Referencias visuales seleccionadas con estilo LIHEN.</small>
+          </article>
+          <article>
+            <span class="svg-icon" data-icon="heart"></span
+            ><strong>Todo en un solo lugar</strong
+            ><small>Arma tu selección y consúltala en un mensaje.</small>
+          </article>
+        </div>
+        <section class="related-products">
+          <h3>Productos que te pueden interesar</h3>
+          <div class="related-products__track" data-related-products></div>
+        </section>
+      </section>
+    </div>
+
+    <div class="selection-drawer" data-selection-drawer hidden>
+      <button
+        class="selection-drawer__backdrop"
+        type="button"
+        data-selection-close
+        aria-label="Cerrar selección"
+      ></button>
+      <aside
+        class="selection-drawer__panel"
+        tabindex="-1"
+        aria-labelledby="selection-title"
+      >
+        <div class="selection-drawer__header">
+          <div>
+            <p class="eyebrow">LIHEN.CO</p>
+            <h2 id="selection-title">Mi selección</h2>
+            <p data-selection-summary>0 productos seleccionados</p>
+          </div>
+          <button
+            class="selection-drawer__close"
+            type="button"
+            data-selection-close
+            aria-label="Cerrar"
+          >
+            ×
+          </button>
+        </div>
+        <div class="selection-drawer__list" data-selection-list></div>
+        <div class="selection-drawer__footer">
+          <p>
+            Esta selección no es compra ni reserva. LIHEN.CO confirmará
+            disponibilidad, precio final, entrega y condiciones por WhatsApp.
+          </p>
+          <button
+            class="button button-primary"
+            type="button"
+            data-selection-consult
+          >
+            Consultar selección por WhatsApp</button
+          ><button
+            class="button button-secondary"
+            type="button"
+            data-selection-close
+          >
+            Seguir mirando</button
+          ><button
+            class="selection-clear-link"
+            type="button"
+            data-selection-clear
+          >
+            Vaciar selección
+          </button>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

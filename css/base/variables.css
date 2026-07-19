@@ -1,0 +1,23 @@
+:root {
+  --color-ivory: #fbf8f2;
+  --color-cream: #f4eadf;
+  --color-gold: #b88935;
+  --color-gold-dark: #8b6914;
+  --color-brown: #3d3428;
+  --color-text: #4a4237;
+  --color-muted: #7a6a58;
+  --color-rose: #bf6f65;
+  --color-nude: #d99b8f;
+  --color-blush: #f5ddd8;
+  --color-white: #ffffff;
+
+  --font-body: "DM Sans", Arial, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  --shadow-soft: 0 18px 45px rgba(61, 52, 40, 0.12);
+  --radius-small: 12px;
+  --radius-medium: 24px;
+  --radius-large: 38px;
+  --container-width: 1180px;
+  --transition-fast: 180ms ease;
+}

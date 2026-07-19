@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode/
+dist/
+coverage/
+*.log
+
+# Configuración local del navegador
+js/config/env.js
+!js/config/env.example.js

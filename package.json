@@ -1,0 +1,10 @@
+{
+  "name": "lihen-web-renacer",
+  "version": "30.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "check": "node scripts/validate-project.mjs",
+    "check:js": "find js -type f -name \"*.js\" -print0 | xargs -0 -n1 node --check"
+  }
+}

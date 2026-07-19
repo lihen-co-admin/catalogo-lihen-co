@@ -1,0 +1,19 @@
+
+.connection-badge {
+  width: fit-content;
+  margin: 0 0 1rem;
+  padding: .45rem .75rem;
+  border: 1px solid rgba(99, 74, 53, .22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .7);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.connection-badge[data-state="online"]::before { content: "● "; }
+.connection-badge[data-state="local"]::before { content: "○ "; }
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: .65;
+}

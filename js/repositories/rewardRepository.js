@@ -1,0 +1,6 @@
+import { getSupabaseClient } from "../services/supabaseClient.js";
+const ROOM_SLUG="inauguracion-lihen";
+export async function getWinnerRanking(){const c=await getSupabaseClient();if(!c)return[];const{data,error}=await c.from("event_winner_ranking").select("*").eq("room_slug",ROOM_SLUG).order("created_at",{ascending:false});if(error)throw error;return data||[];}
+export async function getMyRewards(publicId,accessCode){const c=await getSupabaseClient();if(!c)return[];const{data,error}=await c.rpc("get_my_event_rewards",{p_public_id:publicId,p_access_code:accessCode});if(error)throw error;return data||[];}
+export async function claimReward({publicId,accessCode,rewardId}){const c=await getSupabaseClient();if(!c)throw new Error("Supabase debe estar configurado.");const{data,error}=await c.rpc("claim_event_reward",{p_public_id:publicId,p_access_code:accessCode,p_reward_id:rewardId});if(error)throw error;return data;}
+export async function subscribeToRewards(onChange){const c=await getSupabaseClient();if(!c)return()=>{};const ch=c.channel("lihen-event-rewards").on("postgres_changes",{event:"*",schema:"public",table:"event_rewards"},()=>onChange()).subscribe();return()=>c.removeChannel(ch);}

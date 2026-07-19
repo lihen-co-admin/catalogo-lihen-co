@@ -1,0 +1,6 @@
+import { getSupabaseClient } from "../services/supabaseClient.js";
+const ROOM_SLUG = "inauguracion-lihen";
+export async function getCurrentFlashRound(){const c=await getSupabaseClient();if(!c)return null;const{data,error}=await c.from("event_flash_rounds_public").select("*").eq("room_slug",ROOM_SLUG).order("created_at",{ascending:false}).limit(1).maybeSingle();if(error)throw error;return data;}
+export async function submitFlashCompletion({participantId,accessCode,roundId}){const c=await getSupabaseClient();if(!c)throw new Error("Supabase debe estar configurado para registrar el reto.");const{data,error}=await c.rpc("submit_event_flash_completion",{p_public_id:participantId,p_access_code:accessCode,p_round_id:roundId});if(error)throw error;return data;}
+export async function subscribeToFlashRounds(onChange){const c=await getSupabaseClient();if(!c)return()=>{};const ch=c.channel("lihen-flash-rounds").on("postgres_changes",{event:"*",schema:"public",table:"event_flash_rounds"},p=>onChange(p.new||p.old)).subscribe();return()=>c.removeChannel(ch);}
+export async function subscribeToFlashSubmissions(onChange){const c=await getSupabaseClient();if(!c)return()=>{};const ch=c.channel("lihen-flash-submissions").on("postgres_changes",{event:"*",schema:"public",table:"event_flash_submissions"},p=>onChange(p.new||p.old)).subscribe();return()=>c.removeChannel(ch);}

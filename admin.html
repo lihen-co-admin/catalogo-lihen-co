@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel administrativo privado de LIHEN.CO">
+  <title>Administración | LIHEN.CO</title>
+  <link rel="icon" href="./assets/images/lihen_logo_transparente.webp">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/pages/admin.css">
+  <script type="module" src="./js/pages/admin.js"></script>
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <div class="container admin-header__inner">
+      <a href="./index.html" aria-label="Volver a LIHEN.CO"><img src="./assets/images/lihen_logo_transparente.webp" alt="LIHEN.CO"></a>
+      <a class="button button-secondary" href="./index.html">Volver al sitio público</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="container" data-login-view hidden>
+      <div class="admin-login">
+        <p class="eyebrow">Acceso restringido</p>
+        <h1>Panel administrativo</h1>
+        <p>Ingresa únicamente con una cuenta autorizada en Supabase.</p>
+        <form data-admin-login novalidate>
+          <label for="admin-email">Correo administrativo<input id="admin-email" name="email" type="email" autocomplete="username" required></label>
+          <label for="admin-password">Contraseña<input id="admin-password" name="password" type="password" autocomplete="current-password" minlength="8" required></label>
+          <button class="button button-primary" type="submit">Iniciar sesión</button>
+        </form>
+        <p class="admin-message" data-login-message role="status" hidden></p>
+      </div>
+    </section>
+
+    <section class="container" data-dashboard-view hidden>
+      <div class="admin-dashboard__heading">
+        <div><p class="eyebrow">Gestión privada</p><h1 data-admin-name>Administración LIHEN.CO</h1><p data-admin-count>0 solicitudes</p></div>
+        <div><button class="button button-secondary" type="button" data-admin-refresh>Actualizar</button> <button class="button button-primary" type="button" data-admin-logout>Cerrar sesión</button></div>
+      </div>
+
+      <div class="admin-toolbar">
+        <label>Filtrar por estado<select data-admin-filter><option value="all">Todas</option><option value="new">Nuevas</option><option value="in_review">En revisión</option><option value="answered">Respondidas</option><option value="closed">Cerradas</option></select></label>
+        <form data-admin-search-form role="search"><label>Buscar por nombre, correo o asunto<input name="search" type="search" placeholder="Ejemplo: producto o lina@correo.com"></label><button class="button button-secondary" type="submit">Buscar</button></form>
+        <span></span>
+      </div>
+
+      <p class="admin-message" data-admin-status role="status" hidden></p>
+      <p class="admin-loading" data-admin-loading hidden>Cargando solicitudes…</p>
+      <div class="admin-list" data-admin-list></div>
+      <div class="admin-empty" data-admin-empty hidden><h2>No hay solicitudes para mostrar</h2><p>Cambia el filtro o realiza otra búsqueda.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-bottom"><p>© <span data-current-year></span> LIHEN.CO S.A.S.</p><p>Panel administrativo · Etapa 8</p></div></footer>
+</body>
+</html>

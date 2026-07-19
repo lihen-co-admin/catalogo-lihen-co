@@ -1,0 +1,5 @@
+import { getSupabaseClient } from "../services/supabaseClient.js";
+const ROOM_SLUG="inauguracion-lihen";
+export async function getCurrentWordRound(){const c=await getSupabaseClient();if(!c)return null;const{data,error}=await c.from("event_word_rounds_public").select("*").eq("room_slug",ROOM_SLUG).order("created_at",{ascending:false}).limit(1).maybeSingle();if(error)throw error;return data;}
+export async function submitWordAnswer({participantId,accessCode,roundId,answer}){const c=await getSupabaseClient();if(!c)throw new Error("Supabase debe estar configurado para enviar respuestas.");const{data,error}=await c.rpc("submit_event_word_answer",{p_public_id:participantId,p_access_code:accessCode,p_round_id:roundId,p_answer:String(answer||"")});if(error)throw error;return data;}
+export async function subscribeToWordRounds(onChange){const c=await getSupabaseClient();if(!c)return()=>{};const ch=c.channel("lihen-word-rounds").on("postgres_changes",{event:"*",schema:"public",table:"event_word_rounds"},p=>onChange(p.new||p.old)).subscribe();return()=>c.removeChannel(ch);}

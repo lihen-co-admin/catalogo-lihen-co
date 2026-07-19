@@ -1,0 +1,221 @@
+/* =====================================================
+   ENCABEZADO PRINCIPAL DE LIHEN.CO
+   Estilo compacto, elegante y alineado con la referencia.
+   ===================================================== */
+
+.site-header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  border-bottom: 0;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 0 rgba(159, 116, 42, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.header-inner {
+  display: grid;
+  min-height: 92px;
+  grid-template-columns: 118px minmax(0, 1fr) 46px;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.brand {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.brand img {
+  display: block;
+  width: 84px;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu-button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  justify-self: end;
+  padding: 0.65rem;
+  border: 1px solid rgba(184, 137, 53, 0.28);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--color-brown);
+  cursor: pointer;
+}
+
+.menu-button__lines {
+  display: grid;
+  width: 19px;
+  gap: 4px;
+}
+
+.menu-button__lines i {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+}
+
+.main-navigation {
+  position: absolute;
+  top: 92px;
+  right: 1rem;
+  left: 1rem;
+  display: none;
+  padding: 0.75rem 1rem 1rem;
+  border: 1px solid rgba(184, 137, 53, 0.18);
+  border-radius: 0 0 var(--radius-medium) var(--radius-medium);
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: var(--shadow-soft);
+}
+
+.main-navigation.is-open {
+  display: grid;
+}
+
+.main-navigation a {
+  position: relative;
+  padding: 0.85rem 0.35rem;
+  border-radius: var(--radius-small);
+  color: #2d241e;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus-visible {
+  background: rgba(248, 239, 224, 0.72);
+  color: var(--color-gold-dark);
+}
+
+.main-navigation .navigation-highlight {
+  color: #b5645f;
+}
+
+.header-accent {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(248, 224, 221, 0.78) 0%,
+    rgba(252, 245, 236, 0.9) 48%,
+    rgba(246, 216, 171, 0.78) 100%
+  );
+}
+
+.scroll-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: 2px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scroll-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--color-gold-dark);
+}
+
+@media (min-width: 1120px) {
+  .header-inner {
+    min-height: 92px;
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+
+  .brand img {
+    width: 82px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .main-navigation {
+    position: static;
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(0.7rem, 1.15vw, 1.35rem);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .main-navigation a {
+    padding: 2.35rem 0 2.25rem;
+    border-radius: 0;
+    font-size: clamp(0.53rem, 0.52vw, 0.64rem);
+    letter-spacing: clamp(0.12em, 0.15vw, 0.2em);
+  }
+
+  .main-navigation a::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 1.65rem;
+    left: 50%;
+    height: 1px;
+    background: currentColor;
+    transition: right 180ms ease, left 180ms ease;
+  }
+
+  .main-navigation a:hover,
+  .main-navigation a:focus-visible {
+    background: transparent;
+  }
+
+  .main-navigation a:hover::after,
+  .main-navigation a:focus-visible::after {
+    right: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 1500px) {
+  .header-inner {
+    grid-template-columns: 135px minmax(0, 1fr);
+  }
+
+  .brand img {
+    width: 92px;
+  }
+}
+
+@media (max-width: 620px) {
+  .header-inner {
+    min-height: 74px;
+    grid-template-columns: 1fr 44px;
+  }
+
+  .brand img {
+    width: 72px;
+  }
+
+  .main-navigation {
+    top: 74px;
+  }
+
+  .header-accent {
+    height: 4px;
+  }
+}
