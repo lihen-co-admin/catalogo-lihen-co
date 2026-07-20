@@ -3,73 +3,130 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Invitación oficial a la inauguración presencial y virtual de LIHEN.CO el 2 de agosto de 2026.">
-  <title>Inauguración LIHEN.CO · 2 de agosto</title>
+  <meta name="description" content="Sala de inauguración híbrida de LIHEN.CO">
+  <title>Inauguración | LIHEN.CO</title>
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/pages/launch-landing.css">
+  <link rel="stylesheet" href="../css/pages/inauguration.css">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="launch-header">
-    <a href="../index.html" aria-label="Volver al catálogo LIHEN.CO"><img src="../assets/images/lihen_logo_transparente.webp" alt="LIHEN.CO"></a>
+  <header class="event-header">
+    <a class="event-brand" href="../index.html" aria-label="Volver al catálogo LIHEN.CO">
+      <img src="../assets/images/lihen_logo_transparente.webp" alt="LIHEN.CO">
+    </a>
     <nav aria-label="Navegación de inauguración">
-      <a href="#invitacion">Invitación</a><a href="#experiencia">Experiencia</a><a href="#registro">Registro</a><a href="#comunidad">Comunidad</a>
+      <a href="#bienvenida">Inicio</a><a href="#registro">Registro</a><a href="#reglas">Reglas</a><a href="#sala">Sala</a><a href="#trivia">Trivia</a><a href="#palabra">Palabra</a><a href="#reto-relampago">Reto</a>
     </nav>
-    <a class="launch-header__catalog" href="../index.html">Ver catálogo</a>
+    <div class="event-header__actions"><a class="text-button" href="./pantalla.html">Vista televisor</a><a class="button button--secondary" href="../index.html">Ver catálogo</a></div>
   </header>
 
   <main id="contenido">
-    <section class="launch-hero" id="invitacion">
-      <div class="launch-hero__copy">
-        <p class="launch-eyebrow">Invitación oficial · presencial y virtual</p>
-        <h1>Muy pronto viviremos el comienzo de <span>LIHEN.CO</span></h1>
-        <p class="launch-lead">Estamos preparando una inauguración cercana, alegre y llena de propósito. Acompáñanos este <strong>2 de agosto de 2026</strong> y sé parte de nuestra primera experiencia como comunidad.</p>
-        <div class="launch-actions"><a class="launch-btn launch-btn--primary" href="#registro">Confirmar mi interés</a><a class="launch-btn launch-btn--soft" href="https://chat.whatsapp.com/FUaa4tGIDOTBeqJOMmbrJT" target="_blank" rel="noopener">Unirme al grupo oficial</a></div>
-        <p class="launch-helper">Los detalles de acceso presencial y virtual se compartirán por nuestros canales oficiales.</p>
+    <section id="bienvenida" class="event-hero">
+      <div>
+        <p class="eyebrow">Experiencia híbrida LIHEN.CO</p>
+        <h1>Una sala compartida para vivir la inauguración desde cualquier lugar</h1>
+        <p>Regístrate como participante presencial o virtual. Esta etapa prepara el acceso, las reglas y la sala antes de activar los juegos en tiempo real.</p>
+        <div class="event-actions"><a class="button" href="#registro">Confirmar participación</a><button class="button button--ghost" id="open-rules" type="button">Leer reglas</button></div>
       </div>
-      <aside class="launch-date-card" aria-label="Fecha de inauguración">
-        <span>Agosto</span><strong>02</strong><small>2026</small>
-        <div class="launch-countdown" data-launch-countdown aria-live="polite"><div><b data-days>00</b><span>Días</span></div><div><b data-hours>00</b><span>Horas</span></div><div><b data-minutes>00</b><span>Min.</span></div></div>
+      <aside class="event-summary" aria-label="Resumen del evento">
+        <span class="status-pill" id="room-status">Registro de práctica abierto</span>
+        <dl><div><dt>Modalidades</dt><dd>Presencial y virtual</dd></div><div><dt>Acceso</dt><dd>Un registro por dispositivo</dd></div><div><dt>Sala</dt><dd>Preparada para Realtime</dd></div></dl>
       </aside>
     </section>
 
-    <section class="launch-section launch-section--soft" id="experiencia">
-      <header class="launch-heading"><p class="launch-eyebrow">Lo que estamos preparando</p><h2>Una experiencia para conocernos, compartir y celebrar</h2><p>La programación combina presentación de la marca, productos, interacción con la comunidad y actividades para participantes presenciales y virtuales.</p></header>
-      <div class="launch-steps">
-        <article><span>01</span><h3>Bienvenida</h3><p>Conocerás el propósito, la identidad y la historia que dieron origen a LIHEN.CO.</p></article>
-        <article><span>02</span><h3>Beauty Care & Style</h3><p>Presentaremos las líneas, referencias y la manera en que podrás consultar los productos.</p></article>
-        <article><span>03</span><h3>Participación híbrida</h3><p>Las personas podrán acompañarnos presencialmente o conectarse desde otro lugar.</p></article>
-        <article><span>04</span><h3>Dinámicas y sorpresas</h3><p>Tendremos momentos participativos, juegos y beneficios sujetos a las reglas del evento.</p></article>
-      </div>
-      <div class="launch-experience-link"><a class="launch-btn launch-btn--outline" href="./experiencia.html">Conocer la sala interactiva</a></div>
-    </section>
-
-    <section class="launch-section" id="registro">
-      <div class="launch-register-grid">
-        <div><p class="launch-eyebrow">Registro de interés</p><h2>Déjanos saber que quieres participar</h2><p>Al enviar el registro abrirás WhatsApp con un mensaje preparado. Nada se envía sin que tú lo revises y confirmes.</p><ul><li>Recibirás información relacionada con la inauguración.</li><li>Podrás elegir participación presencial, virtual o ambas.</li><li>Entrar al grupo de WhatsApp es voluntario y se realiza mediante un botón independiente.</li></ul></div>
-        <form class="launch-form" data-launch-form>
-          <label>Nombre completo<input name="name" autocomplete="name" maxlength="70" required></label>
-          <label>Número de WhatsApp<input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required></label>
-          <fieldset><legend>¿Cómo te gustaría participar?</legend><label><input type="radio" name="mode" value="presencial" required><span>Presencial</span></label><label><input type="radio" name="mode" value="virtual" required><span>Virtual</span></label><label><input type="radio" name="mode" value="presencial o virtual"><span>Cualquiera de las dos</span></label></fieldset>
-          <label class="launch-consent"><input name="consent" type="checkbox" required><span>Autorizo a LIHEN.CO para contactarme por WhatsApp con información relacionada con la inauguración y sus novedades. Puedo solicitar dejar de recibir mensajes.</span></label>
-          <button class="launch-btn launch-btn--primary" type="submit">Enviar mi registro por WhatsApp</button>
-          <p class="launch-form__message" data-launch-form-message aria-live="polite"></p>
+    <section id="registro" class="event-section">
+      <header class="section-heading"><p class="eyebrow">Paso 1</p><h2>Confirma tu participación</h2><p>Los datos se validan antes de crear tu acceso. Mientras Supabase no esté activado, el registro queda solamente en este navegador.</p></header>
+      <div class="event-grid">
+        <form id="participant-form" class="event-form" novalidate>
+          <label>Nombre completo<input id="participant-name" name="name" autocomplete="name" maxlength="70" required><small class="field-error" data-error-for="name"></small></label>
+          <label>Correo electrónico<input id="participant-email" name="email" type="email" autocomplete="email" maxlength="120" required><small class="field-error" data-error-for="email"></small></label>
+          <fieldset><legend>¿Cómo participarás?</legend><label class="mode-option"><input type="radio" name="mode" value="presencial" required><span><strong>Presencial</strong><small>Estaré en el lugar principal.</small></span></label><label class="mode-option"><input type="radio" name="mode" value="virtual" required><span><strong>Virtual</strong><small>Me conectaré desde otro lugar.</small></span></label><small class="field-error" data-error-for="mode"></small></fieldset>
+          <label>Nombre que aparecerá en la sala<input id="display-name" name="displayName" maxlength="30" aria-describedby="display-help"><small id="display-help">Puede ser tu primer nombre o un nombre corto respetuoso.</small><small class="field-error" data-error-for="displayName"></small></label>
+          <label class="check-row"><input name="acceptedRules" type="checkbox" required><span>Confirmo que leí y acepto las reglas de participación.</span></label><small class="field-error" data-error-for="acceptedRules"></small>
+          <button class="button" type="submit">Crear mi acceso</button>
+          <p id="registration-message" class="form-message" aria-live="polite"></p>
         </form>
+        <aside class="access-card" id="access-card" hidden>
+          <p class="eyebrow">Acceso preparado</p><h3 id="access-name"></h3><p>Modalidad: <strong id="access-mode"></strong></p><p>Tu código local:</p><output id="access-code" class="access-code"></output><p class="helper">Guarda este código. En la integración remota será reemplazado por una sesión segura.</p><button class="button" id="enter-room" type="button">Entrar a la sala</button><button class="text-button" id="reset-registration" type="button">Cambiar registro</button>
+        </aside>
       </div>
     </section>
 
-    <section class="launch-section launch-community" id="comunidad">
-      <header class="launch-heading"><p class="launch-eyebrow">Comunidad LIHEN.CO</p><h2>Acompaña la cuenta regresiva</h2><p>Únete voluntariamente al grupo oficial o síguenos en redes para conocer el detrás de cámaras y las novedades antes del evento.</p></header>
-      <div class="launch-socials">
-        <a href="https://chat.whatsapp.com/FUaa4tGIDOTBeqJOMmbrJT" target="_blank" rel="noopener"><strong>Grupo de WhatsApp</strong><span>Información de la inauguración</span></a>
-        <a href="https://www.instagram.com/lihen.co/" target="_blank" rel="noopener"><strong>Instagram</strong><span>@lihen.co</span></a>
-        <a href="https://www.tiktok.com/@lihen.co" target="_blank" rel="noopener"><strong>TikTok</strong><span>@lihen.co</span></a>
-        <a href="https://www.facebook.com/lihen.co.oficial" target="_blank" rel="noopener"><strong>Facebook</strong><span>LIHEN.CO Oficial</span></a>
+    <section id="reglas" class="event-section event-section--soft">
+      <header class="section-heading"><p class="eyebrow">Paso 2</p><h2>Reglas de acceso y participación</h2></header>
+      <div class="rules-grid">
+        <article><span>01</span><h3>Registro previo</h3><p>El acceso a los juegos se habilitará únicamente para participantes registrados dentro del horario permitido.</p></article>
+        <article><span>02</span><h3>Una identidad</h3><p>Cada persona participa con un solo registro y debe usar un nombre respetuoso y reconocible.</p></article>
+        <article><span>03</span><h3>Orden equitativo</h3><p>La futura cola alternará participantes presenciales y virtuales cuando ambas modalidades tengan personas disponibles.</p></article>
+        <article><span>04</span><h3>Ganadores</h3><p>Quien gane una actividad con premio quedará identificado y no repetirá en otra ronda premiada.</p></article>
       </div>
     </section>
-  </main>
 
-  <footer class="launch-footer"><img src="../assets/images/lihen_logo_transparente.webp" alt="LIHEN.CO"><p>Beauty Care, Style y creatividad con propósito.</p><a href="../politica-de-privacidad.html">Política de privacidad</a></footer>
-  <script type="module" src="../js/pages/launchLanding.js"></script>
+    <section id="sala" class="event-section">
+      <header class="section-heading"><p class="eyebrow">Paso 3</p><h2>Sala compartida</h2><p id="room-intro">Regístrate para activar tu vista de participante.</p></header>
+      <div class="room-shell" id="room-shell" aria-live="polite">
+        <div class="room-stage"><span class="status-pill" id="live-room-state">Preparando</span><h3 id="room-title">Todavía no has ingresado</h3><p id="room-copy">Aquí aparecerán el estado del evento, tu modalidad y los juegos disponibles.</p><div class="participant-orb" aria-hidden="true"><span id="orb-initials">LI</span></div><section class="participant-turn-card" id="participant-turn-card"><p class="eyebrow">Turno actual</p><strong id="participant-turn-name">Aún no hay un turno activo</strong><span id="participant-turn-mode">La administradora activará el siguiente participante.</span><output id="participant-turn-clock">01:00</output><p id="my-turn-alert" hidden>¡Es tu turno! Sigue las instrucciones en pantalla.</p></section><div class="room-live-copy"><span>Actividad actual</span><strong id="live-activity">Esperando indicaciones</strong><p id="live-announcement">La administradora publicará aquí los avisos del evento.</p></div></div>
+        <aside class="room-panel"><h3>Estado de la sala</h3><ul><li><span>Registro</span><strong id="registration-state">Abierto en modo local</strong></li><li><span>Conexión</span><strong id="connection-state">Sin Supabase</strong></li><li><span>Juegos</span><strong>Próxima etapa</strong></li></ul><section id="presence-panel" class="presence-panel" hidden><h4>Conectados ahora</h4><div class="presence-counters"><span><strong id="connected-total">0</strong>Total</span><span><strong id="connected-presencial">0</strong>Presencial</span><span><strong id="connected-virtual">0</strong>Virtual</span></div><ul id="connected-list" class="connected-list"><li class="empty-presence">Aún no hay participantes conectados.</li></ul></section><button class="button button--secondary" id="leave-room" type="button" disabled>Salir de la sala</button></aside>
+      </div>
+    </section>
+    <section id="trivia" class="event-section event-section--soft">
+      <header class="section-heading"><p class="eyebrow">Juego 1</p><h2>Trivia LIHEN</h2><p>La pregunta se sincroniza para todos, pero únicamente la persona con el turno activo puede responder.</p></header>
+      <article class="trivia-card" id="trivia-participant" data-status="waiting">
+        <div class="trivia-card__header"><span class="status-pill" id="trivia-round-status">En espera</span><output id="trivia-clock">00:00</output></div>
+        <p id="trivia-waiting">La administradora abrirá la primera pregunta.</p>
+        <h3 id="trivia-question">La administradora todavía no ha abierto una pregunta.</h3>
+        <div id="trivia-options" class="trivia-options" role="group" aria-label="Opciones de respuesta"></div>
+        <p id="trivia-message" class="trivia-message" aria-live="polite">Espera las indicaciones de la administradora.</p>
+      </article>
+    </section>
+
+    <section id="palabra" class="event-section">
+      <header class="section-heading"><p class="eyebrow">Juego 2</p><h2>Encuentra la palabra</h2><p>Lee la pista y escribe la palabra correcta. Solo la persona con el turno activo puede enviar una respuesta.</p></header>
+      <article class="word-card" id="word-participant" hidden>
+        <div class="trivia-card__header"><span class="status-pill" id="word-round-status">En espera</span><output id="word-clock">00:00</output></div>
+        <p class="eyebrow">Pista</p><h3 id="word-hint">La administradora publicará una pista.</h3><div id="word-mask" class="word-mask">_ _ _ _ _</div>
+        <form id="word-form" class="word-form"><label for="word-answer">Tu respuesta</label><div><input id="word-answer" maxlength="40" autocomplete="off" disabled><button id="word-submit" class="button" type="submit" disabled>Responder</button></div></form>
+        <p id="word-message" class="trivia-message" aria-live="polite">Espera las indicaciones.</p>
+      </article>
+    </section>
+
+    <section id="votacion" class="event-section event-section--soft">
+      <header class="section-heading"><p class="eyebrow">Juego 3</p><h2>Vota tu favorito</h2><p>En este juego todas las personas registradas pueden votar al mismo tiempo y observar el ranking en vivo.</p></header>
+      <article class="vote-card" id="vote-participant" hidden>
+        <div class="trivia-card__header"><span class="status-pill" id="vote-round-status">En espera</span><output id="vote-clock">00:00</output></div>
+        <h3 id="vote-question">La administradora abrirá una votación.</h3>
+        <div id="vote-options" class="vote-options" role="group" aria-label="Opciones de votación"></div>
+        <p id="vote-message" class="trivia-message" aria-live="polite">Espera las indicaciones.</p>
+        <section class="vote-ranking-panel"><h4>Ranking en vivo</h4><ol id="vote-ranking" class="vote-ranking"><li class="vote-empty">Aún no hay votos.</li></ol></section>
+      </article>
+    </section>
+
+  
+    <section id="reto-relampago" class="event-section">
+      <header class="section-heading"><p class="eyebrow">Juego 4</p><h2>Reto relámpago</h2><p>Realiza una instrucción breve antes de que termine el tiempo. Solo la persona con el turno activo puede reportar que completó el reto.</p></header>
+      <article class="trivia-card" id="flash-participant" data-status="waiting" hidden>
+        <div class="trivia-card__header"><span class="status-pill" id="flash-round-status">En espera</span><output id="flash-clock">00:00</output></div>
+        <h3 id="flash-title">La administradora abrirá el reto.</h3>
+        <p id="flash-instruction">Espera las indicaciones.</p>
+        <button class="button button-primary" type="button" data-flash-complete disabled>Marcar como completado</button>
+        <p id="flash-message" class="trivia-message" aria-live="polite">Espera las indicaciones de la administradora.</p>
+      </article>
+    </section>
+
+    <section id="ruleta" class="event-section event-section--soft">
+      <header class="section-heading"><p class="eyebrow">Juego 5</p><h2>Ruleta LIHEN</h2><p>El resultado se asigna de forma segura en Supabase y el inventario evita entregar premios agotados.</p></header>
+      <article class="roulette-card" id="roulette-participant" hidden>
+        <div class="trivia-card__header"><span class="status-pill" id="roulette-round-status">En espera</span><strong id="roulette-active-name">Esperando participante activo</strong></div>
+        <div class="roulette-stage"><span class="roulette-pointer" aria-hidden="true"></span><div id="roulette-wheel" class="roulette-wheel" aria-label="Ruleta de premios"></div></div>
+        <button class="button button-primary roulette-spin-button" type="button" data-roulette-spin disabled>Girar ruleta</button>
+        <p id="roulette-message" class="trivia-message" aria-live="polite">La administradora abrirá la ruleta.</p>
+      </article>
+    </section>
+
+    <section id="ganadores" class="event-section"><header class="section-heading"><p class="eyebrow">Recompensas</p><h2>Ganadores LIHEN</h2><p>Consulta el ranking y reclama tu recompensa con un código único por WhatsApp.</p></header><div class="rewards-grid"><article class="reward-panel"><h3>Mis recompensas</h3><div id="my-rewards-list"><p>Aún no tienes recompensas registradas.</p></div></article><article class="reward-panel"><h3>Ranking de ganadores</h3><ol id="winner-ranking" class="winner-ranking"><li>El ranking aparecerá cuando haya ganadores.</li></ol></article></div></section>
+</main>
+
+  <dialog id="rules-dialog" class="rules-dialog"><button class="dialog-close" id="close-rules" type="button" aria-label="Cerrar">×</button><h2>Antes de registrarte</h2><ol><li>Usa información real para que podamos validar tu participación.</li><li>Selecciona correctamente si estarás presencial o virtual.</li><li>No compartas tu acceso con otra persona.</li><li>Respeta los turnos y las instrucciones de la administradora.</li><li>Los premios estarán sujetos a disponibilidad y validación.</li></ol><button class="button" id="accept-rules-dialog" type="button">Entendido</button></dialog>
+  <script type="module" src="../js/pages/inauguration/main.js"></script>
 </body>
 </html>
