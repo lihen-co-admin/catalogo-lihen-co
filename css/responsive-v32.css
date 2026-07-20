@@ -1,0 +1,982 @@
+/*
+ * ETAPA 32 · ADAPTACIÓN RESPONSIVE MULTIDISPOSITIVO
+ *
+ * Aquí concentro las correcciones que necesito aplicar después de todos los estilos
+ * anteriores. Mantengo este archivo al final para corregir inconsistencias sin borrar
+ * la identidad visual ya construida en LIHEN.CO.
+ */
+
+/* Aquí evito que imágenes, videos, SVG y controles amplíen accidentalmente la página. */
+img,
+picture,
+video,
+canvas,
+svg,
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+/* Aquí permito que los textos largos se ajusten dentro del ancho disponible. */
+p,
+a,
+span,
+small,
+h1,
+h2,
+h3,
+h4,
+dt,
+dd,
+li {
+  overflow-wrap: anywhere;
+}
+
+/* Aquí elimino el desplazamiento horizontal accidental sin bloquear carruseles internos. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Aquí conservo una medida táctil mínima en los controles esenciales. */
+.icon-btn,
+.menu-toggle,
+.hero-arrow,
+.carousel-arrow,
+.modal-close,
+.modal-arrow,
+.to-top,
+.whatsapp-float,
+.selection-trigger,
+.search-trigger {
+  min-width: 44px;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+/* Aquí hago visible el foco para navegación con teclado y tecnologías de apoyo. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(180, 138, 72, 0.55);
+  outline-offset: 3px;
+}
+
+/* Aquí adapto el encabezado antes de llegar al tamaño de celular. */
+@media (max-width: 950px) {
+  /* Aquí mantengo el encabezado por encima del menú móvil y de los contenidos. */
+  .site-header {
+    z-index: 300;
+  }
+
+  /* Aquí distribuyo lupa, logo y acciones sin que se monten unas sobre otras. */
+  .header-main {
+    grid-template-columns: minmax(48px, 1fr) auto minmax(110px, 1fr);
+    gap: 8px;
+  }
+
+  /* Aquí mantengo la lupa alineada al inicio del encabezado. */
+  .search-trigger {
+    justify-self: start;
+    display: inline-grid;
+    place-items: center;
+  }
+
+  /* Aquí limito el logo para que conserve aire alrededor. */
+  .brand img {
+    width: clamp(112px, 19vw, 140px);
+    height: auto;
+  }
+
+  /* Aquí evito que el grupo derecho supere el ancho disponible. */
+  .header-actions {
+    min-width: 0;
+    gap: 2px;
+    align-items: center;
+  }
+
+  /* Aquí muestro el menú móvil como un panel real debajo del encabezado. */
+  .main-nav {
+    position: fixed;
+    top: var(--mobile-header-offset, 112px);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 290;
+    width: 100%;
+    max-height: calc(100dvh - var(--mobile-header-offset, 112px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 18px 20px 28px;
+    background: rgba(255, 253, 249, 0.99);
+    border-top: 1px solid var(--line, #e8e1da);
+    box-shadow: 0 18px 40px rgba(33, 23, 23, 0.16);
+  }
+
+  /* Aquí organizo cada opción como un área táctil completa. */
+  .main-nav a {
+    width: min(100%, 520px);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(180, 138, 72, 0.16);
+    text-align: center;
+    line-height: 1.35;
+  }
+
+  /* Aquí oculto el megamenú de escritorio porque no es fiable mediante toque. */
+  .mega-menu,
+  [data-mega-panel] {
+    display: none !important;
+  }
+
+  /* Aquí mantengo la portada dentro del ancho real del dispositivo. */
+  .hero-carousel,
+  .hero-carousel .hero,
+  .hero-slide {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Aquí reduzco la portada para evitar una primera pantalla excesivamente larga. */
+  .hero-carousel,
+  .hero-carousel .hero {
+    min-height: clamp(560px, 78dvh, 720px);
+  }
+
+  /* Aquí permito que las campañas se adapten sin alturas rígidas. */
+  .campaign-collage,
+  .campaign-collage .main-photo,
+  .campaign-collage .detail-photo {
+    max-width: 100%;
+  }
+
+  /* Aquí convierto las tarjetas principales en una cuadrícula flexible. */
+  .restock-grid,
+  .social-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Aquí permito que el footer se lea sin columnas demasiado estrechas. */
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Aquí aplico la estructura principal para celulares y tabletas angostas. */
+@media (max-width: 700px) {
+  /* Aquí reduzco el anuncio sin volverlo ilegible. */
+  .announcement {
+    min-height: 34px;
+    display: grid;
+    place-items: center;
+    padding: 7px 12px;
+    font-size: 0.61rem;
+    line-height: 1.35;
+  }
+
+  /* Aquí mantengo un margen lateral uniforme y seguro. */
+  .shell {
+    width: min(100% - 28px, 1180px);
+  }
+
+  /* Aquí compacto el encabezado para dejar más espacio al contenido. */
+  .header-main {
+    height: 70px;
+    grid-template-columns: 48px 1fr auto;
+  }
+
+  /* Aquí centro el logo visualmente dentro de su columna. */
+  .brand {
+    justify-self: center;
+  }
+
+  /* Aquí hago el logo legible sin exceder el encabezado. */
+  .brand img {
+    width: clamp(104px, 31vw, 126px);
+  }
+
+  /* Aquí compacto los iconos derechos y conservo áreas táctiles suficientes. */
+  .header-actions .icon-btn,
+  .header-actions .menu-toggle {
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+    display: inline-grid;
+    place-items: center;
+  }
+
+  /* Aquí retiro la etiqueta de texto del contador para conservar espacio. */
+  .selection-trigger small {
+    position: absolute;
+    top: 2px;
+    right: -1px;
+    min-width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: #823047;
+    color: #fff;
+    font-size: 0.6rem;
+  }
+
+  /* Aquí convierto el botón de selección en referencia para su contador. */
+  .selection-trigger {
+    position: relative;
+  }
+
+  /* Aquí oculto el acceso legal cuando el ancho es crítico y lo conservo en el footer. */
+  .legal-access {
+    display: none !important;
+  }
+
+  /* Aquí coloco el panel móvil justo debajo del anuncio y encabezado. */
+  .main-nav {
+    --mobile-header-offset: 104px;
+    top: 104px;
+    max-height: calc(100dvh - 104px);
+  }
+
+  /* Aquí reduzco espacios verticales generales sin perder jerarquía. */
+  .section {
+    padding: 56px 0;
+  }
+
+  /* Aquí ajusto títulos grandes a anchos pequeños. */
+  .section-heading h2,
+  .campaign-copy h2,
+  .virtual-card h2,
+  .page-hero h1,
+  .search-hero h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.08;
+  }
+
+  /* Aquí limito los párrafos para mejorar su lectura. */
+  .section-heading,
+  .campaign-copy,
+  .virtual-card,
+  .page-hero,
+  .search-hero {
+    max-width: 100%;
+  }
+
+  /* Aquí organizo la primera diapositiva en una sola columna equilibrada. */
+  .hero-carousel .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  /* Aquí controlo el área visual de la primera diapositiva. */
+  .hero-carousel .hero-media {
+    height: clamp(280px, 64vw, 390px);
+  }
+
+  /* Aquí mantengo el producto visible sin deformarlo. */
+  .hero-carousel .hero-media img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Aquí compacto el texto de la portada y dejo visibles sus botones. */
+  .hero-carousel .hero-copy {
+    min-height: 320px;
+    padding: 42px 24px 64px;
+  }
+
+  /* Aquí ajusto el titular principal para evitar cortes incómodos. */
+  .hero-carousel .hero-copy h1 {
+    font-size: clamp(2.45rem, 12vw, 3.8rem);
+  }
+
+  /* Aquí adapto las diapositivas que son imágenes completas. */
+  .hero-image-slide {
+    min-height: clamp(460px, 72dvh, 640px);
+    background: #f8f2ef;
+  }
+
+  /* Aquí muestro la imagen completa sin estirarla. */
+  .hero-image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
+  /* Aquí hago visibles y tocables las flechas del carrusel principal. */
+  .hero-arrow {
+    top: 50%;
+    width: 46px;
+    height: 46px;
+    background: rgba(29, 23, 23, 0.88);
+    color: #fff;
+  }
+
+  /* Aquí separo las flechas de los bordes del teléfono. */
+  .hero-prev {
+    left: 10px;
+  }
+
+  /* Aquí separo la flecha derecha del borde del teléfono. */
+  .hero-next {
+    right: 10px;
+  }
+
+  /* Aquí mantengo los indicadores por encima de los botones flotantes. */
+  .hero-carousel-dots {
+    bottom: 14px;
+    z-index: 8;
+  }
+
+  /* Aquí convierto las categorías en un carrusel táctil natural. */
+  .category-row {
+    justify-content: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 2px 14px 16px;
+    margin-inline: -14px;
+  }
+
+  /* Aquí oculto la barra visual sin quitar el desplazamiento táctil. */
+  .category-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aquí fijo una medida cómoda por categoría. */
+  .category {
+    flex: 0 0 116px;
+    min-width: 116px;
+    scroll-snap-align: start;
+    font-size: 0.88rem;
+  }
+
+  /* Aquí reduzco el círculo para mostrar más categorías. */
+  .category img {
+    width: 104px;
+    height: 104px;
+  }
+
+  /* Aquí convierto las campañas a una columna. */
+  .campaign {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Aquí creo un collage más compacto y controlado. */
+  .campaign-collage {
+    min-height: 360px;
+  }
+
+  /* Aquí hago que la fotografía principal use el ancho disponible. */
+  .campaign-collage .main-photo {
+    width: 88%;
+    height: 360px;
+    margin-left: 12%;
+  }
+
+  /* Aquí reduzco la imagen secundaria para no tapar la principal. */
+  .campaign-collage .detail-photo {
+    width: 48%;
+    height: 156px;
+    top: 102px;
+    border-width: 7px;
+  }
+
+  /* Aquí muestro una tarjeta completa por vez y una parte de la siguiente como guía. */
+  .carousel {
+    padding: 0 24px;
+  }
+
+  /* Aquí mantengo el desplazamiento oculto dentro del carrusel. */
+  .carousel-viewport {
+    overflow: hidden;
+  }
+
+  /* Aquí ajusto las tarjetas para evitar productos gigantes. */
+  .carousel .product-card {
+    flex-basis: min(84vw, 340px) !important;
+    max-width: 340px;
+  }
+
+  /* Aquí controlo la altura de todas las imágenes de producto. */
+  .carousel .product-image,
+  .product-image,
+  .search-product-card .product-image {
+    height: clamp(280px, 85vw, 350px) !important;
+  }
+
+  /* Aquí evito que la descripción haga cada tarjeta demasiado larga. */
+  .product-info p {
+    min-height: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Aquí hago siempre visibles las acciones porque en celular no existe hover. */
+  .product-hover-actions {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: #fffaf5;
+  }
+
+  /* Aquí convierto cada acción de producto en un botón táctil completo. */
+  .product-hover-actions button {
+    min-height: 44px;
+    white-space: normal;
+  }
+
+  /* Aquí apilo las tarjetas complementarias en celular. */
+  .restock-grid,
+  .social-grid,
+  .reviews-wrap,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Aquí controlo las tarjetas de productos nuevamente disponibles. */
+  .restock-grid article {
+    height: min(116vw, 430px);
+  }
+
+  /* Aquí mantengo proporción visual en contenido social. */
+  .swap-media,
+  .social-grid img {
+    height: min(105vw, 390px);
+  }
+
+  /* Aquí hago que el bloque virtual no exceda el dispositivo. */
+  .virtual-store {
+    min-height: 420px;
+    padding: 42px 14px;
+  }
+
+  /* Aquí reduzco el espacio interno de la tarjeta virtual. */
+  .virtual-card {
+    padding: 30px 20px;
+  }
+
+  /* Aquí compacto el footer y dejo cada enlace con área táctil. */
+  footer {
+    padding: 52px 0 96px;
+  }
+
+  /* Aquí convierto enlaces del footer en filas fáciles de tocar. */
+  footer a {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+  }
+
+  /* Aquí apilo la franja inferior del footer. */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Aquí separo WhatsApp y volver arriba para que no tapen contenido. */
+  .whatsapp-float {
+    left: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Aquí ubico volver arriba en el extremo opuesto. */
+  .to-top {
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Aquí muevo la pestaña de bienvenida para no cubrir el contenido central. */
+  .welcome-tab-wrap {
+    left: 0;
+    bottom: 78px !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  /* Aquí reduzco la pestaña vertical manteniendo su función. */
+  .welcome-tab {
+    width: 42px;
+    min-height: 102px !important;
+    padding: 8px 6px;
+  }
+
+  /* Aquí mantengo la ventana promocional dentro de la pantalla real del teléfono. */
+  .welcome-modal-backdrop {
+    padding: 10px;
+    align-items: center;
+  }
+
+  /* Aquí evito un modal de pantalla completa innecesario. */
+  .welcome-modal {
+    width: min(100%, 520px) !important;
+    height: auto !important;
+    max-height: calc(100dvh - 20px) !important;
+    overflow-y: auto !important;
+    grid-template-columns: 1fr !important;
+    border-radius: 18px !important;
+  }
+
+  /* Aquí conservo una imagen promocional compacta. */
+  .welcome-modal-art {
+    display: block !important;
+    order: -1;
+    height: clamp(120px, 31vw, 170px) !important;
+  }
+
+  /* Aquí muestro la imagen sin cortarla. */
+  .welcome-modal-art img {
+    object-fit: cover;
+  }
+
+  /* Aquí compacto el formulario para mostrar también sus condiciones. */
+  .welcome-modal-copy {
+    padding: 22px 18px 24px !important;
+  }
+
+  /* Aquí reduzco el titular del beneficio. */
+  .welcome-modal-copy h2 {
+    font-size: clamp(1.75rem, 8vw, 2.3rem) !important;
+  }
+
+  /* Aquí mantengo los tres campos de fecha sin provocar desbordamiento. */
+  .birthday-fields {
+    grid-template-columns: 0.72fr 0.72fr 1.2fr;
+  }
+
+  /* Aquí preparo el panel Mi selección para ocupar el ancho del teléfono. */
+  .selection-drawer {
+    width: min(100%, 430px) !important;
+    max-width: 100%;
+  }
+
+  /* Aquí dejo espacio inferior para los botones y zonas seguras. */
+  .selection-drawer-inner,
+  .drawer-content {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+
+  /* Aquí organizo las recomendaciones en una fila desplazable. */
+  .mini-suggestions {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    scrollbar-width: none;
+  }
+
+  /* Aquí oculto la barra de las recomendaciones sin quitar el gesto. */
+  .mini-suggestions::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aquí controlo el ancho de cada recomendación. */
+  .mini-suggestions article {
+    flex: 0 0 min(76vw, 260px) !important;
+    max-width: 260px;
+    scroll-snap-align: start;
+  }
+
+  /* Aquí adapto la vista previa a una sola columna. */
+  .product-modal {
+    width: calc(100% - 16px) !important;
+    max-width: 540px;
+    max-height: calc(100dvh - 16px) !important;
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+    border-radius: 18px !important;
+  }
+
+  /* Aquí reduzco el espacio exterior del modal. */
+  .modal-backdrop {
+    padding: 8px !important;
+  }
+
+  /* Aquí controlo el alto de la galería sin cambiar toda la pantalla. */
+  .modal-gallery {
+    padding: 54px 12px 12px !important;
+  }
+
+  /* Aquí dejo una ventana estable para que solo cambie la fotografía. */
+  .modal-image-wrap {
+    height: min(92vw, 430px) !important;
+    min-height: 260px;
+  }
+
+  /* Aquí muestro la fotografía completa dentro del mismo recuadro. */
+  .modal-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+  }
+
+  /* Aquí mantengo las flechas dentro del área de la imagen. */
+  .modal-arrow {
+    top: 50%;
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  /* Aquí compacto la información del producto. */
+  .modal-details {
+    padding: 24px 18px 32px !important;
+  }
+
+  /* Aquí apilo la cantidad y el botón principal. */
+  .modal-add-row {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 12px;
+  }
+
+  /* Aquí hago que el botón principal use todo el ancho. */
+  .modal-add-row .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  /* Aquí apilo los controles del buscador. */
+  .search-controls {
+    align-items: stretch !important;
+    flex-direction: column !important;
+  }
+
+  /* Aquí dejo los filtros como controles completos. */
+  .search-filter-group,
+  .search-sort,
+  .search-controls select {
+    width: 100%;
+  }
+
+  /* Aquí uso una sola columna para resultados de búsqueda en celulares pequeños. */
+  .search-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Aquí adapto la página completa de Mi selección. */
+  .selection-page-layout {
+    width: min(100% - 24px, 1180px) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Aquí reorganizo cada producto de Mi selección. */
+  .selection-table article {
+    grid-template-columns: 82px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Aquí mantengo la imagen compacta. */
+  .selection-table article img {
+    width: 82px !important;
+    height: 98px !important;
+  }
+
+  /* Aquí ubico cantidad, estado y precio debajo de los datos. */
+  .selection-table article > .qty-control,
+  .selection-table article > strong,
+  .selection-table article > .price-disclosure {
+    grid-column: 2 !important;
+    grid-row: auto !important;
+    text-align: left !important;
+  }
+}
+
+/* Aquí refino celulares especialmente pequeños. */
+@media (max-width: 390px) {
+  /* Aquí reduzco la separación del encabezado. */
+  .header-main {
+    grid-template-columns: 44px 1fr auto;
+    gap: 2px;
+  }
+
+  /* Aquí reduzco ligeramente el logo para mantener todos los iconos visibles. */
+  .brand img {
+    width: 100px;
+  }
+
+  /* Aquí oculto uno de los accesos menos prioritarios si el espacio es insuficiente. */
+  .header-actions .legal-access {
+    display: none !important;
+  }
+
+  /* Aquí ajusto la portada para pantallas de 320 a 360 píxeles. */
+  .hero-carousel .hero-copy {
+    padding-inline: 18px;
+  }
+
+  /* Aquí convierto los botones de portada a una columna. */
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* Aquí hago que cada botón use todo el ancho disponible. */
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  /* Aquí reduzco la tarjeta del carrusel de productos. */
+  .carousel .product-card {
+    flex-basis: min(82vw, 300px) !important;
+  }
+
+  /* Aquí reduzco la imagen manteniendo una proporción cómoda. */
+  .carousel .product-image,
+  .product-image,
+  .search-product-card .product-image {
+    height: 290px !important;
+  }
+
+  /* Aquí reduzco el collage para evitar una sección demasiado larga. */
+  .campaign-collage {
+    min-height: 320px;
+  }
+
+  /* Aquí ajusto la imagen principal del collage. */
+  .campaign-collage .main-photo {
+    height: 320px;
+  }
+
+  /* Aquí reduzco la fotografía secundaria. */
+  .campaign-collage .detail-photo {
+    height: 136px;
+    top: 92px;
+  }
+
+  /* Aquí hago que los controles de cumpleaños no salgan del formulario. */
+  .birthday-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Aquí llevo el año a una fila completa. */
+  .birthday-fields input:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Aquí adapto las páginas legales y PQRS cuando usan la hoja legal.css. */
+@media (max-width: 760px) {
+  /* Aquí reduzco el ancho lateral de las páginas legales. */
+  .legal-main .shell,
+  .legal-top .shell {
+    width: min(100% - 24px, 980px);
+  }
+
+  /* Aquí compacto el encabezado legal. */
+  .legal-nav {
+    min-height: 66px;
+    height: auto;
+    gap: 14px;
+    padding: 8px 0;
+  }
+
+  /* Aquí ajusto el logo legal. */
+  .legal-nav img {
+    width: 104px;
+  }
+
+  /* Aquí permito que el enlace de regreso se ajuste. */
+  .legal-nav a {
+    max-width: 52%;
+    text-align: right;
+    line-height: 1.3;
+  }
+
+  /* Aquí reduzco el espacio principal. */
+  .legal-main {
+    padding: 28px 0 64px;
+  }
+
+  /* Aquí compacto la portada legal. */
+  .legal-hero {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+
+  /* Aquí convierto cuadrículas legales a una sola columna. */
+  .rights,
+  .zone-grid,
+  .rule-grid,
+  .stats,
+  .pqrs-grid,
+  .legal-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Aquí alíneo los filtros legales en una fila desplazable. */
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 12px;
+    scrollbar-width: none;
+  }
+
+  /* Aquí oculto la barra visual de filtros. */
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aquí evito que el texto de cada filtro se parta. */
+  .filters button {
+    flex: 0 0 auto;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+
+  /* Aquí simplifico el encabezado de cada acordeón. */
+  .accordion button {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 16px 14px;
+  }
+
+  /* Aquí oculto la etiqueta auxiliar cuando estrecha demasiado el título. */
+  .accordion button .pill {
+    display: none;
+  }
+
+  /* Aquí dejo el contenido del acordeón alineado bajo su título. */
+  .panel {
+    padding: 4px 16px 22px 58px;
+  }
+
+  /* Aquí adapto pasos y formularios a una columna segura. */
+  .step {
+    grid-template-columns: 34px minmax(0, 1fr);
+    padding: 15px;
+  }
+
+  /* Aquí hago que campos y botones legales usen el ancho disponible. */
+  .legal-main input,
+  .legal-main select,
+  .legal-main textarea,
+  .legal-main button,
+  .legal-main .btn {
+    max-width: 100%;
+  }
+}
+
+/* Aquí mantengo una experiencia estable cuando la persona reduce animaciones. */
+@media (prefers-reduced-motion: reduce) {
+  /* Aquí retiro transiciones no esenciales. */
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Aquí bloqueo el fondo únicamente mientras la navegación móvil está abierta. */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Aquí muestro en toque la segunda imagen de la tarjeta sin depender de hover. */
+@media (hover: none) {
+  .product-card.is-touch-active .product-image .primary,
+  .swap-card.is-touch-active .swap-media .primary {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  /* Aquí hago visible la vista secundaria seleccionada mediante toque. */
+  .product-card.is-touch-active .product-image .secondary,
+  .swap-card.is-touch-active .swap-media .secondary {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aquí aplico las correcciones al nombre real de las flechas de la galería. */
+@media (max-width: 700px) {
+  /* Aquí mantengo las flechas dentro de la fotografía del producto. */
+  .gallery-arrow {
+    width: 46px;
+    height: 46px;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  /* Aquí acerco la flecha izquierda sin salir del modal. */
+  .gallery-arrow.left {
+    left: 8px;
+  }
+
+  /* Aquí acerco la flecha derecha sin salir del modal. */
+  .gallery-arrow.right {
+    right: 8px;
+  }
+
+  /* Aquí uso la altura dinámica real en Mi selección. */
+  .selection-drawer {
+    height: 100dvh;
+  }
+
+  /* Aquí compacto la cabecera de Mi selección. */
+  .drawer-head {
+    padding: 18px 16px;
+  }
+
+  /* Aquí dejo el contenido principal con márgenes pequeños. */
+  .drawer-body {
+    padding: 0 16px;
+  }
+
+  /* Aquí reorganizo cada producto del panel lateral. */
+  .drawer-items article {
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: start;
+    gap: 11px;
+  }
+
+  /* Aquí coloco los controles del producto bajo sus datos. */
+  .drawer-items article > .qty-control,
+  .drawer-items article > .remove {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  /* Aquí reduzco la fotografía del producto dentro del panel. */
+  .drawer-items img {
+    width: 72px;
+    height: 84px;
+  }
+
+  /* Aquí compacto el pie fijo del panel. */
+  .drawer-footer {
+    padding: 16px;
+  }
+
+  /* Aquí apilo las acciones finales para que ningún texto se corte. */
+  .drawer-footer > div {
+    grid-template-columns: 1fr !important;
+  }
+}
