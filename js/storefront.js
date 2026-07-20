@@ -146,93 +146,57 @@ document.addEventListener('click',event=>{if(event.target.closest('[data-prelaun
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!document.querySelector('[data-prelaunch-modal]')?.hidden)closePrelaunchModal();});
 mountPrelaunchModal();
 
-// ETAPA 37: aquí estabilizo el carrusel principal y garantizo su avance automático.
+// Aquí inicio el carrusel principal con una velocidad cómoda de lectura y ahorro de recursos.
 (function initHeroCarousel(){
+  // Aquí localizo la portada que contiene todas las imágenes principales.
   const root=document.querySelector('[data-hero-carousel]');
-  if(!root||root.dataset.heroStage37==='true')return;
-  root.dataset.heroStage37='true';
-
+  // Aquí termino la función cuando la página actual no incluye esta portada.
+  if(!root)return;
+  // Aquí evito crear dos temporizadores sobre el mismo carrusel.
+  if(root.dataset.autoplayReady==='true')return;
+  // Aquí marco el carrusel como preparado.
+  root.dataset.autoplayReady='true';
+  // Aquí reúno todas las diapositivas para poder activar una sola a la vez.
   const slides=[...root.querySelectorAll('[data-hero-slide]')];
+  // Aquí localizo el contenedor donde dibujo los indicadores inferiores.
   const dots=root.querySelector('[data-hero-dots]');
-  const previous=root.querySelector('[data-hero-prev]');
-  const nextButton=root.querySelector('[data-hero-next]');
-  if(slides.length<2)return;
-
-  const INTERVAL=5000;
-  let index=Math.max(0,slides.findIndex(slide=>slide.classList.contains('is-active')));
-  let timer=null;
-  let touchStart=0;
-
-  const renderDots=()=>{
-    if(!dots)return;
-    dots.innerHTML=slides.map((_,position)=>`<button type="button" class="${position===index?'active':''}" data-hero-index="${position}" aria-label="Ver imagen ${position+1}" aria-current="${position===index?'true':'false'}"></button>`).join('');
+  // Aquí guardo la posición actual, el temporizador y el punto inicial de un gesto táctil.
+  let index=0,timer=null,touchStart=0,isVisible=true;
+  // Aquí dibujo los puntos y marco visualmente la imagen activa.
+  const renderDots=()=>{if(!dots)return;dots.innerHTML=slides.map((_,i)=>`<button type="button" class="${i===index?'active':''}" data-hero-index="${i}" aria-label="Ver imagen ${i+1}"></button>`).join('')};
+  // Aquí cambio únicamente la diapositiva activa sin pausar el movimiento automático.
+  const show=i=>{index=(i+slides.length)%slides.length;slides.forEach((slide,n)=>slide.classList.toggle('is-active',n===index));renderDots()};
+  // Aquí preparo el avance hacia la siguiente imagen.
+  const next=()=>show(index+1);
+  // Aquí preparo el regreso hacia la imagen anterior.
+  const prev=()=>show(index-1);
+  // Aquí limpio el temporizador anterior antes de crear uno nuevo.
+  const clearTimer=()=>{if(timer){clearTimeout(timer);timer=null}};
+  // Aquí programo el siguiente avance cada cinco segundos solo cuando la portada está visible.
+  const schedule=()=>{
+    clearTimer();
+    if(document.hidden||!isVisible||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    timer=window.setTimeout(()=>{next();schedule()},5000);
   };
-
-  const show=position=>{
-    index=(position+slides.length)%slides.length;
-    slides.forEach((slide,slideIndex)=>{
-      const active=slideIndex===index;
-      slide.classList.toggle('is-active',active);
-      slide.setAttribute('aria-hidden',String(!active));
-      if(active)slide.removeAttribute('tabindex');
-      else slide.setAttribute('tabindex','-1');
-    });
-    renderDots();
-  };
-
-  const stop=()=>{
-    if(timer!==null){
-      window.clearInterval(timer);
-      timer=null;
-    }
-  };
-
-  const start=()=>{
-    stop();
-    if(document.hidden)return;
-    timer=window.setInterval(()=>show(index+1),INTERVAL);
-  };
-
-  const manual=direction=>{
-    show(index+direction);
-    start();
-  };
-
-  previous?.addEventListener('click',event=>{
-    event.preventDefault();
-    manual(-1);
-  });
-
-  nextButton?.addEventListener('click',event=>{
-    event.preventDefault();
-    manual(1);
-  });
-
-  dots?.addEventListener('click',event=>{
-    const button=event.target.closest('[data-hero-index]');
-    if(!button)return;
-    event.preventDefault();
-    show(Number(button.dataset.heroIndex));
-    start();
-  });
-
-  root.addEventListener('touchstart',event=>{
-    touchStart=event.touches[0]?.clientX??0;
-  },{passive:true});
-
-  root.addEventListener('touchend',event=>{
-    const touchEnd=event.changedTouches[0]?.clientX??touchStart;
-    const delta=touchEnd-touchStart;
-    if(Math.abs(delta)>45)manual(delta<0?1:-1);
-  },{passive:true});
-
-  document.addEventListener('visibilitychange',()=>{
-    if(document.hidden)stop();
-    else start();
-  });
-
-  show(index);
-  start();
+  // Aquí permito avanzar manualmente y luego continúo el autoplay.
+  root.querySelector('[data-hero-next]')?.addEventListener('click',event=>{event.preventDefault();next();schedule()});
+  // Aquí permito retroceder manualmente y luego continúo el autoplay.
+  root.querySelector('[data-hero-prev]')?.addEventListener('click',event=>{event.preventDefault();prev();schedule()});
+  // Aquí permito seleccionar un punto específico y luego continúo el autoplay.
+  dots?.addEventListener('click',event=>{const button=event.target.closest('[data-hero-index]');if(!button)return;event.preventDefault();show(Number(button.dataset.heroIndex));schedule()});
+  // Aquí guardo la posición inicial cuando la persona toca la pantalla.
+  root.addEventListener('touchstart',event=>{touchStart=event.touches[0].clientX},{passive:true});
+  // Aquí interpreto el deslizamiento sin detener el temporizador permanente.
+  root.addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchStart;if(Math.abs(delta)>45)(delta<0?next:prev)();schedule()},{passive:true});
+  // Aquí reanudo el conteo cuando la persona regresa a la pestaña del navegador.
+  document.addEventListener('visibilitychange',()=>{document.hidden?clearTimer():schedule()});
+  // Aquí detengo el carrusel cuando sale de pantalla para no gastar recursos innecesarios.
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{isVisible=entries[0]?.isIntersecting??true;isVisible?schedule():clearTimer()},{threshold:.15});
+    observer.observe(root);
+  }
+  // Aquí muestro la primera imagen y comienzo el movimiento automático inmediatamente.
+  show(0);schedule();
 })();
 
 
