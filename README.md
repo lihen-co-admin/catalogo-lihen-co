@@ -1,32 +1,64 @@
 # LIHEN_WEB_RENACER
 
-Versión 19.0.0 — integración final, validación, documentación y preparación para Netlify.
+**Versión 35.0.0** — catálogo web responsive de LIHEN.CO preparado para GitHub Pages y pruebas de publicación.
 
-## Ejecutar
+## Propósito
+
+Este proyecto presenta las líneas Beauty Care y Style, permite consultar productos, crear una selección y enviarla por WhatsApp. La selección no constituye una compra hasta que LIHEN.CO confirme disponibilidad, variantes, precio y envío.
+
+## Ejecutar localmente
 
 ```bash
+npm install
 npm run check
 npm run dev
 ```
 
+Después se abre la dirección local indicada por la terminal.
+
+## Validar antes de publicar
+
+```bash
+npm run check
+npm run check:js
+```
+
+También se debe comprobar manualmente la navegación, los enlaces, los modales, la selección, WhatsApp y el diseño en celular, tableta y escritorio.
+
 ## Rutas principales
 
-- `/` — catálogo y página institucional.
-- `/inauguracion/` — participante.
-- `/inauguracion/pantalla.html` — televisor/proyector.
+- `/` — inicio, catálogo y presentación institucional.
+- `/buscar.html` — búsqueda y filtros.
+- `/ideas-para-regalar.html` — ideas organizadas por categoría.
+- `/mi-seleccion.html` — resumen de productos seleccionados.
+- `/nosotros.html` — información corporativa y contacto.
+- `/inauguracion/` — experiencia de inauguración.
 - `/evento-admin.html` — administración del evento.
-- `/admin.html` — solicitudes de contacto.
 
-## Configuración pendiente antes de una prueba real
+## Organización
 
-1. Ejecutar las migraciones SQL `001` a `012` en Supabase.
-2. Configurar URL y clave pública en `js/config/env.js` en la copia privada de despliegue.
-3. Crear y autorizar una cuenta administrativa.
-4. Configurar el número oficial de WhatsApp.
-5. Completar el plan multidispositivo de `docs/57_PLAN_DE_PRUEBAS_MULTIDISPOSITIVO.md`.
+- `assets/`: imágenes, banners, íconos y videos.
+- `css/`: estilos generales, legales y responsive.
+- `js/`: catálogo, búsqueda, selección, componentes y utilidades.
+- `supabase/`: migraciones y recursos de base de datos.
+- `scripts/`: validadores técnicos.
+- `docs/`: guía académica, técnica, pruebas, publicación y mantenimiento.
 
-No colocar una clave `service_role` en el frontend.
+## Seguridad
 
-## Etapa 30
+No se debe publicar una clave `service_role`, contraseña o secreto dentro del frontend. Las variables públicas deben revisarse antes de cada despliegue.
 
-Yo corrijo navegación, autoplay, galería de vista previa, favicon, títulos dinámicos y botón compacto de WhatsApp. Consulta `docs/73_ETAPA_30_NAVEGACION_AUTOPLAY_GALERIA_FAVICON.md`.
+## Documentación
+
+La ruta de lectura recomendada es:
+
+1. `docs/01_GUIA_MAESTRA_DESARROLLO_WEB.md`
+2. `docs/02_DEFINICION_Y_PLANEACION_LIHEN.md`
+3. `docs/03_ARQUITECTURA_Y_ESTRUCTURA.md`
+4. `docs/04_DESARROLLO_FRONTEND.md`
+5. `docs/05_RESPONSIVE_Y_MULTIDISPOSITIVO.md`
+6. `docs/06_PRUEBAS_Y_VALIDACION.md`
+7. `docs/07_GIT_GITHUB_Y_PUBLICACION.md`
+8. `docs/08_MANUAL_TECNICO.md`
+9. `docs/09_MANUAL_DE_USUARIO.md`
+10. `docs/10_MANTENIMIENTO_Y_MEJORAS.md`

@@ -1172,3 +1172,196 @@ body.mobile-menu-open {
   .filter-chip { min-height: 44px; padding-inline: 17px; }
   .about-contact-card .btn-lilac { width: 100%; }
 }
+
+
+/* ==============================================================
+   ETAPA 35 · SISTEMA DE INTERACCIONES LIHEN.CO
+   Aquí mantengo una misma identidad de movimiento, pero adapto
+   la intensidad de cada efecto a la importancia de la acción.
+   ============================================================== */
+
+/* Aquí normalizo los dos botones de la tarjeta de contacto para
+   que compartan exactamente el mismo ancho, altura y alineación. */
+.about-contact-card .btn {
+  width: 100%;
+  min-height: 44px;
+  margin-inline: 0;
+  text-align: center;
+}
+.about-contact-card .btn + .btn { margin-top: 10px; }
+
+/* Base común: respuesta rápida, foco accesible y sin saltos de diseño. */
+.btn,
+.product-hover-actions button,
+.filter-chip,
+.category-filter button,
+.pagination button,
+.hero-arrow,
+.carousel-arrow,
+.qty-control button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transform: translateZ(0);
+  transition: transform .22s cubic-bezier(.2,.8,.2,1),
+              box-shadow .22s ease,
+              background-color .22s ease,
+              color .22s ease,
+              border-color .22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Brillo sutil reservado para llamadas principales. */
+.btn::after,
+.product-hover-actions button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -40% auto -40% -45%;
+  width: 32%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.42), transparent);
+  transform: skewX(-18deg) translateX(-260%);
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+  pointer-events: none;
+}
+.btn:hover::after,
+.product-hover-actions button:hover::after,
+.btn:focus-visible::after,
+.product-hover-actions button:focus-visible::after {
+  transform: skewX(-18deg) translateX(620%);
+}
+
+/* Acciones principales: elevación premium y resplandor controlado. */
+.btn-lilac:hover,
+.btn-dark:hover,
+.product-hover-actions button[data-add]:hover,
+.product-hover-actions button[data-add]:focus-visible {
+  transform: translateY(-2px) scale(1.012);
+  box-shadow: 0 12px 28px rgba(105,76,143,.24);
+}
+.btn-lilac:active,
+.btn-dark:active,
+.product-hover-actions button[data-add]:active {
+  transform: translateY(0) scale(.975);
+  transition-duration: .08s;
+}
+
+/* Acciones secundarias: movimiento más sobrio y borde definido. */
+.btn-light:hover,
+.product-hover-actions button[data-preview]:hover,
+.product-hover-actions button[data-preview]:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 22px rgba(73,45,50,.17);
+  filter: saturate(1.06);
+}
+.btn-light:active,
+.product-hover-actions button[data-preview]:active {
+  transform: scale(.98);
+}
+
+/* Botones de producto: íconos ligeros sin alterar el espacio disponible. */
+.product-hover-actions button { min-height: 52px; }
+.product-hover-actions button[data-preview]::before {
+  content: "◉";
+  display: inline-block;
+  margin-right: 7px;
+  font-size: .72rem;
+  transform: scale(.78);
+  opacity: .78;
+  transition: transform .22s ease, opacity .22s ease;
+}
+.product-hover-actions button[data-add]::before {
+  content: "+";
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  margin-right: 7px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: .75rem;
+  line-height: 1;
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), background-color .2s ease;
+}
+.product-hover-actions button:hover::before,
+.product-hover-actions button:focus-visible::before {
+  transform: scale(1.08) rotate(-5deg);
+  opacity: 1;
+}
+
+/* Confirmación temporal al agregar una referencia. */
+.product-hover-actions button[data-add].is-confirmed {
+  background: linear-gradient(135deg,#8f6fbd,#bda6df);
+  color: #fff;
+  animation: lihen-confirm .46s cubic-bezier(.2,.9,.2,1);
+}
+.product-hover-actions button[data-add].is-confirmed::before {
+  content: "✓";
+  border-color: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.15);
+  transform: scale(1.08);
+}
+@keyframes lihen-confirm {
+  0% { transform: scale(.96); }
+  55% { transform: scale(1.025); box-shadow: 0 0 0 8px rgba(183,160,219,.17); }
+  100% { transform: scale(1); }
+}
+
+/* Filtros y controles: respuesta breve, sin competir con los CTA. */
+.filter-chip:hover,
+.category-filter button:hover,
+.pagination button:hover,
+.hero-arrow:hover,
+.carousel-arrow:hover,
+.qty-control button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(68,48,74,.13);
+}
+.filter-chip:active,
+.category-filter button:active,
+.pagination button:active,
+.hero-arrow:active,
+.carousel-arrow:active,
+.qty-control button:active { transform: scale(.94); }
+
+/* El foco siempre debe ser visible para navegación con teclado. */
+.btn:focus-visible,
+.product-hover-actions button:focus-visible,
+.filter-chip:focus-visible,
+.category-filter button:focus-visible,
+.pagination button:focus-visible,
+.hero-arrow:focus-visible,
+.carousel-arrow:focus-visible,
+.qty-control button:focus-visible {
+  outline: 3px solid rgba(126,99,168,.38);
+  outline-offset: 3px;
+}
+
+/* En pantallas táctiles muestro una respuesta inmediata sin depender del hover. */
+@media (hover: none) {
+  .btn:active,
+  .product-hover-actions button:active,
+  .filter-chip:active { filter: brightness(.97); }
+}
+
+/* Aquí respeto a quienes solicitan menos movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .product-hover-actions button,
+  .filter-chip,
+  .category-filter button,
+  .pagination button,
+  .hero-arrow,
+  .carousel-arrow,
+  .qty-control button,
+  .btn::after,
+  .product-hover-actions button::after,
+  .product-hover-actions button::before {
+    animation: none !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .btn:hover,
+  .product-hover-actions button:hover,
+  .filter-chip:hover { transform: none !important; }
+}

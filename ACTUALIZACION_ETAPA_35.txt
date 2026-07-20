@@ -1,0 +1,9 @@
+ACTUALIZACIÓN ETAPA 35 — INTERACCIONES, CONTACTO Y DOCUMENTACIÓN
+
+1. Normalicé “Escribir por WhatsApp” y “Enviar correo” para que tengan el mismo ancho, altura y alineación.
+2. Creé un sistema de interacción por jerarquía: CTA principales, acciones secundarias, filtros y controles.
+3. Añadí brillo sutil, elevación, presión al clic, foco visible y respuesta táctil.
+4. “Agregar a mi selección” cambia temporalmente a “Añadido” y muestra confirmación visual.
+5. Respeté `prefers-reduced-motion` para accesibilidad.
+6. Actualicé README y versión a 35.0.0.
+7. Incorporé diez documentos que organizan el proceso desde la idea hasta el mantenimiento.
