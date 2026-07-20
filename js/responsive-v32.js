@@ -151,3 +151,30 @@ window.addEventListener('orientationchange', responderAlCambioDePantalla, { pass
 
 // Aquí respondo también cuando cambia directamente la consulta de pantalla.
 CONSULTA_MOVIL.addEventListener?.('change', responderAlCambioDePantalla);
+
+// ═══════════════════════════════════════════════════════════════
+// Etapa 33 — Botón "Volver arriba" con desplazamiento suave
+// ═══════════════════════════════════════════════════════════════
+
+// Aquí intercepto el clic del botón .to-top para hacer scroll suave
+// en lugar de saltar abruptamente al ancla #inicio.
+(function prepararBotonVolverArriba() {
+  const btn = document.querySelector('.to-top');
+  if (!btn) return;
+
+  // Aquí muestro u oculto el botón según cuánto ha bajado el usuario.
+  function actualizarVisibilidadBoton() {
+    btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+    btn.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+  }
+
+  // Aquí hago el desplazamiento suave al tope de la página.
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Aquí inicio el estado de visibilidad y respondo al scroll.
+  actualizarVisibilidadBoton();
+  window.addEventListener('scroll', actualizarVisibilidadBoton, { passive: true });
+}());

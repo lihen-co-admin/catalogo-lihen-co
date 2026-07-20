@@ -980,3 +980,137 @@ body.mobile-menu-open {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   Etapa 33 — Refinamiento visual y correcciones de usabilidad
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Ocultar descripción corta en tarjetas de producto ─────────
+   La descripción en cada tarjeta ocupaba espacio visual innecesario.
+   Las ficha completa sigue mostrando la descripción en el modal.  */
+.product-card .product-info > p {
+  display: none;
+}
+
+/* ── 2. Legibilidad de pasos en páginas legales ───────────────────
+   El texto dentro de .step tenía contraste bajo sobre fondo neutro.
+   Aquí refuerzo el tamaño, espaciado y claridad del texto.         */
+.step {
+  background: #fffaf6;
+  border: 1.5px solid #e4d5c8;
+  border-radius: 16px;
+  padding: 20px 22px;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.step b:first-child {
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 36px;
+  height: 36px;
+  font-size: .92rem;
+}
+
+.step > div,
+.step > p,
+.step > span {
+  color: #1d1717;
+  font-size: .96rem;
+  line-height: 1.7;
+}
+
+.step strong {
+  display: block;
+  font-size: 1rem;
+  color: #1d1717;
+  margin-bottom: 4px;
+}
+
+/* ── 3. Filter chips → estilo lila suave cápsula ─────────────────
+   Chips de filtro en ideas-para-regalar.html y buscar.html         */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #b7a0db;
+  border-radius: 999px;
+  background: #fff;
+  color: #4a3870;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: 9px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.filter-chip:hover {
+  background: #ede6f8;
+  border-color: #9b83cc;
+}
+
+.filter-chip.active {
+  background: #b7a0db;
+  color: #21192b;
+  border-color: #b7a0db;
+}
+
+/* ── 4. Carrusel hero — encuadre del bloque de texto ─────────────
+   El texto del primer slide (hero-copy) se desbordaba o quedaba
+   sin respiración lateral en pantallas medianas.                    */
+@media (max-width: 950px) {
+  .hero-carousel .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .hero-copy {
+    padding: 40px 28px 48px;
+    order: 2;
+  }
+
+  .hero-media {
+    order: 1;
+    height: clamp(280px, 52vw, 420px);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.1rem, 8vw, 3.2rem);
+    margin: .25em 0 .4em;
+  }
+
+  .hero-copy > p {
+    font-size: .95rem;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+/* ── 5. Imágenes de slides de banner en móvil ────────────────────
+   Mejora la presentación de hero-image-slide en pantallas pequeñas */
+@media (max-width: 600px) {
+  .hero-image-slide {
+    min-height: clamp(340px, 80vw, 520px);
+    background: #f5f0e9;
+  }
+
+  .hero-image-slide img {
+    object-fit: cover !important;
+    object-position: top center;
+  }
+
+  .hero-copy {
+    padding: 32px 20px 40px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.9rem, 9vw, 2.8rem);
+  }
+}
