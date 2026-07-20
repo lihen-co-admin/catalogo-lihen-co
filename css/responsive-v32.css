@@ -1004,7 +1004,7 @@ body.mobile-menu-open {
   gap: 16px;
 }
 
-.step b:first-child {
+.step > b:first-child {
   flex-shrink: 0;
   margin-top: 2px;
   width: 36px;
@@ -1113,4 +1113,62 @@ body.mobile-menu-open {
   .hero-copy h1 {
     font-size: clamp(1.9rem, 9vw, 2.8rem);
   }
+}
+
+
+/* Etapa 34 — Consolidación final para publicación */
+.step > div > b {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0 0 6px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #1d1717;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.btn-lilac {
+  min-height: 44px;
+  border: 1px solid rgba(88, 63, 126, .14);
+  box-shadow: 0 8px 20px rgba(126, 99, 168, .14);
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.btn-lilac:hover {
+  background: #a991d6;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(126, 99, 168, .2);
+}
+.btn-lilac:focus-visible, .filter-chip:focus-visible {
+  outline: 3px solid rgba(126, 99, 168, .32);
+  outline-offset: 3px;
+}
+
+.about-lines > a > .about-line-icon {
+  width: 58px;
+  height: 58px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eee7f8;
+  color: #624b82;
+}
+.about-line-icon svg { width: 30px; height: 30px; }
+.about-contact-card .btn-lilac { width: fit-content; max-width: 100%; }
+
+@media (max-width: 620px) {
+  .product-hover-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .product-hover-actions button {
+    width: 100%;
+    min-height: 44px;
+  }
+  .filter-chip { min-height: 44px; padding-inline: 17px; }
+  .about-contact-card .btn-lilac { width: 100%; }
 }

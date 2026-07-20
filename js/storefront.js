@@ -39,9 +39,19 @@ function closeMega(){megaPanel?.classList.remove('open');megaPanel?.setAttribute
 $$('[data-mega]').forEach(a=>{a.addEventListener('mouseenter',()=>{clearTimeout(megaTimer);renderMega(a.dataset.mega)});a.addEventListener('focus',()=>renderMega(a.dataset.mega))});
 $('.site-header')?.addEventListener('mouseleave',()=>megaTimer=setTimeout(closeMega,150));megaPanel?.addEventListener('mouseenter',()=>clearTimeout(megaTimer));
 
-function productCard(p){const second=img(p,1);return `<article class="product-card" data-product-id="${p.id}"><div class="product-image"><span class="tag">${safe(p.tag||p.availability||'Disponible')}</span><img class="primary" src="${img(p)}" alt="${safe(p.name)}" loading="lazy"><img class="secondary" src="${second}" alt="Otra vista de ${safe(p.name)}" loading="lazy"><div class="product-hover-actions"><button type="button" data-preview="${p.id}">Vista previa</button><button type="button" data-add="${p.id}">Agregar a mi selección</button></div></div><div class="product-info"><small>${safe(p.line)} · ${safe(p.brand)}</small><h3>${safe(p.name)}</h3><p>${safe(short(p.desc))}</p>${priceDisclosure(p)}</div></article>`}
+// Aquí cargo la segunda fotografía únicamente cuando la persona interactúa con la tarjeta.
+document.addEventListener('pointerover',event=>{
+  const card=event.target.closest('.product-card');
+  if(!card)return;
+  const secondary=card.querySelector('img.secondary[data-secondary-src]');
+  if(!secondary)return;
+  secondary.src=secondary.dataset.secondarySrc;
+  secondary.removeAttribute('data-secondary-src');
+},{passive:true});
 
-function initCarousel(root,items){if(!root)return;const track=$('[data-track]',root),dots=$('[data-dots]',root);if(!track)return;track.innerHTML=items.map(productCard).join('');let index=0,timer;const visible=()=>innerWidth<=620?1:innerWidth<=980?2:4;const max=()=>Math.max(0,items.length-visible());function update(){index=Math.min(index,max());const first=$('.product-card',track);if(first){const gap=parseFloat(getComputedStyle(track).gap)||18;track.style.transform=`translateX(-${index*(first.getBoundingClientRect().width+gap)}px)`}if(dots){dots.innerHTML=Array.from({length:max()+1},(_,i)=>`<button class="${i===index?'active':''}" data-index="${i}" aria-label="Grupo ${i+1}"></button>`).join('')}}function next(){index=index>=max()?0:index+1;update()}function prev(){index=index<=0?max():index-1;update()}function start(){if(!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(next,5000)}function stop(){clearInterval(timer)}root.addEventListener('click',e=>{const b=e.target.closest('[data-index]');if(b){index=+b.dataset.index;update();stop();start()}});$('.next',root)?.addEventListener('click',()=>{next();stop();start()});$('.prev',root)?.addEventListener('click',()=>{prev();stop();start()});root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);let x=0;root.addEventListener('touchstart',e=>{x=e.touches[0].clientX;stop()},{passive:true});root.addEventListener('touchend',e=>{if(Math.abs(e.changedTouches[0].clientX-x)>45)(e.changedTouches[0].clientX<x?next:prev)();start()},{passive:true});addEventListener('resize',update);update();start()}
+function productCard(p){const second=img(p,1);return `<article class="product-card" data-product-id="${p.id}"><div class="product-image"><span class="tag">${safe(p.tag||p.availability||'Disponible')}</span><img class="primary" src="${img(p)}" alt="${safe(p.name)}" loading="lazy"><img class="secondary" src="${img(p)}" data-secondary-src="${second}" alt="Otra vista de ${safe(p.name)}" loading="lazy"><div class="product-hover-actions"><button type="button" data-preview="${p.id}">Vista previa</button><button type="button" data-add="${p.id}">Agregar a mi selección</button></div></div><div class="product-info"><small>${safe(p.line)} · ${safe(p.brand)}</small><h3>${safe(p.name)}</h3>${priceDisclosure(p)}</div></article>`}
+
+function initCarousel(root,items){if(!root)return;const track=$('[data-track]',root),dots=$('[data-dots]',root);if(!track)return;track.innerHTML=items.map(productCard).join('');let index=0,timer;const visible=()=>innerWidth<=620?1:innerWidth<=980?2:4;const max=()=>Math.max(0,items.length-visible());function update(){index=Math.min(index,max());const first=$('.product-card',track);if(first){const gap=parseFloat(getComputedStyle(track).gap)||18;track.style.transform=`translateX(-${index*(first.getBoundingClientRect().width+gap)}px)`}if(dots){dots.innerHTML=Array.from({length:max()+1},(_,i)=>`<button class="${i===index?'active':''}" data-index="${i}" aria-label="Grupo ${i+1}"></button>`).join('')}}function next(){index=index>=max()?0:index+1;update()}function prev(){index=index<=0?max():index-1;update()}function start(){stop();if(!document.hidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(next,5000)}function stop(){clearInterval(timer)}root.addEventListener('click',e=>{const b=e.target.closest('[data-index]');if(b){index=+b.dataset.index;update();stop();start()}});$('.next',root)?.addEventListener('click',()=>{next();stop();start()});$('.prev',root)?.addEventListener('click',()=>{prev();stop();start()});root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);let x=0;root.addEventListener('touchstart',e=>{x=e.touches[0].clientX;stop()},{passive:true});root.addEventListener('touchend',e=>{if(Math.abs(e.changedTouches[0].clientX-x)>45)(e.changedTouches[0].clientX<x?next:prev)();start()},{passive:true});addEventListener('resize',update);update();start()}
 
 $$('[data-carousel]').forEach(root=>{let items=[];const kind=root.dataset.carousel;if(kind==='beauty')items=products.filter(p=>p.line==='Beauty Care');else if(kind==='style')items=products.filter(p=>p.line==='Style');else if(kind==='gifts')items=products.filter((_,i)=>i%3===0||i%5===0).slice(0,24);else items=products.filter(p=>!selection[p.id]).slice(0,18);initCarousel(root,items)});
 
@@ -93,7 +103,7 @@ function renderSelectionPage(){const list=$('[data-selection-page-list]'),summar
 function toast(text){let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.append(t)}t.textContent=text;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
 updateSelectionUI();
 
-// Aquí inicio el carrusel principal y explico que debe avanzar siempre cada tres segundos.
+// Aquí inicio el carrusel principal con una velocidad cómoda de lectura y ahorro de recursos.
 (function initHeroCarousel(){
   // Aquí localizo la portada que contiene todas las imágenes principales.
   const root=document.querySelector('[data-hero-carousel]');
@@ -108,7 +118,7 @@ updateSelectionUI();
   // Aquí localizo el contenedor donde dibujo los indicadores inferiores.
   const dots=root.querySelector('[data-hero-dots]');
   // Aquí guardo la posición actual, el temporizador y el punto inicial de un gesto táctil.
-  let index=0,timer=null,touchStart=0;
+  let index=0,timer=null,touchStart=0,isVisible=true;
   // Aquí dibujo los puntos y marco visualmente la imagen activa.
   const renderDots=()=>{if(!dots)return;dots.innerHTML=slides.map((_,i)=>`<button type="button" class="${i===index?'active':''}" data-hero-index="${i}" aria-label="Ver imagen ${i+1}"></button>`).join('')};
   // Aquí cambio únicamente la diapositiva activa sin pausar el movimiento automático.
@@ -119,8 +129,12 @@ updateSelectionUI();
   const prev=()=>show(index-1);
   // Aquí limpio el temporizador anterior antes de crear uno nuevo.
   const clearTimer=()=>{if(timer){clearTimeout(timer);timer=null}};
-  // Aquí programo el siguiente avance exactamente tres segundos después.
-  const schedule=()=>{clearTimer();timer=window.setTimeout(()=>{next();schedule()},3000)};
+  // Aquí programo el siguiente avance cada cinco segundos solo cuando la portada está visible.
+  const schedule=()=>{
+    clearTimer();
+    if(document.hidden||!isVisible||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    timer=window.setTimeout(()=>{next();schedule()},5000);
+  };
   // Aquí permito avanzar manualmente y luego continúo el autoplay.
   root.querySelector('[data-hero-next]')?.addEventListener('click',event=>{event.preventDefault();next();schedule()});
   // Aquí permito retroceder manualmente y luego continúo el autoplay.
@@ -132,7 +146,12 @@ updateSelectionUI();
   // Aquí interpreto el deslizamiento sin detener el temporizador permanente.
   root.addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchStart;if(Math.abs(delta)>45)(delta<0?next:prev)();schedule()},{passive:true});
   // Aquí reanudo el conteo cuando la persona regresa a la pestaña del navegador.
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)schedule()});
+  document.addEventListener('visibilitychange',()=>{document.hidden?clearTimer():schedule()});
+  // Aquí detengo el carrusel cuando sale de pantalla para no gastar recursos innecesarios.
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{isVisible=entries[0]?.isIntersecting??true;isVisible?schedule():clearTimer()},{threshold:.15});
+    observer.observe(root);
+  }
   // Aquí muestro la primera imagen y comienzo el movimiento automático inmediatamente.
   show(0);schedule();
 })();

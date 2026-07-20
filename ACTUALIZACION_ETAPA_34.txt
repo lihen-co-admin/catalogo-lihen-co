@@ -1,0 +1,14 @@
+LIHEN.CO — ETAPA 34 · CONSOLIDACIÓN PARA PUBLICACIÓN
+
+Cambios aplicados:
+- Botones Vista previa y Agregar a mi selección visibles y táctiles en móvil.
+- Descripción corta eliminada desde el HTML generado de las tarjetas.
+- Descripción completa conservada en la vista previa.
+- Selector de pasos legales corregido en Cambios y devoluciones y Política de envíos.
+- Botón Volver arriba con desplazamiento suave.
+- Botones lila unificados, con hover, foco visible y tamaño táctil.
+- Filtros Todos/Todo unificados como cápsulas lila.
+- Íconos de Nosotros sustituidos por SVG relacionados con maquillaje, cuidado y ropa deportiva.
+- Carrusel principal ajustado a 5 segundos, detenido fuera de pantalla o en pestaña oculta.
+- Segunda fotografía de producto diferida hasta la interacción para reducir descargas.
+- Validación integral y sintaxis JavaScript aprobadas.

@@ -1,6 +1,6 @@
 {
   "name": "lihen-web-renacer",
-  "version": "32.0.0",
+  "version": "34.0.0",
   "private": true,
   "scripts": {
     "dev": "npx serve .",
