@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LIHEN.CO | PQRS</title>
+  <link rel="icon" type="image/webp" href="./assets/images/lihen_favicon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/legal.css">
+  <script src="./js/pqrs.js" defer></script>
+</head>
+<body>
+  <header class="legal-top">
+    <nav class="legal-nav shell">
+      <a href="./index.html"><img src="./assets/images/lihen_logo_transparente.webp" alt="LIHEN.CO"></a>
+      <a href="./index.html">← Volver a la tienda</a>
+    </nav>
+  </header>
+  <main class="legal-main shell">
+    <section class="legal-hero">
+      <h1>Peticiones, quejas, reclamos y solicitudes</h1>
+      <p>Canal formal de atención de LIHEN.CO S.A.S.</p>
+    </section>
+    <div class="legal-alert">Aquí registro tu solicitud y genero un número de radicado para que puedas conservar constancia de la fecha y hora.</div>
+    <form class="pqrs-form" id="pqrs-form" novalidate>
+      <div class="pqrs-grid">
+        <label>Nombre completo<input name="nombre" autocomplete="name" required></label>
+        <label>Correo electrónico<input type="email" name="correo" autocomplete="email" required></label>
+        <label>Teléfono<input type="tel" name="telefono" autocomplete="tel" required></label>
+        <label>Número de pedido (opcional)<input name="pedido"></label>
+        <label>Tipo de solicitud<select name="tipo" required><option value="">Selecciona una opción</option><option>Petición</option><option>Queja</option><option>Reclamo</option><option>Solicitud de información</option><option>Garantía</option><option>Cambio o devolución</option></select></label>
+        <label>Medio de respuesta preferido<select name="medio" required><option value="">Selecciona una opción</option><option>Correo electrónico</option><option>WhatsApp</option></select></label>
+      </div>
+      <label>Descripción<textarea name="descripcion" rows="7" required></textarea></label>
+      <label class="pqrs-check"><input type="checkbox" name="autorizacion" required> Autorizo el tratamiento de mis datos para gestionar esta solicitud y acepto la Política de privacidad.</label>
+      <div class="pqrs-actions"><button class="pqrs-submit" type="submit">Generar radicado y preparar envío</button></div>
+    </form>
+    <section class="pqrs-result" id="pqrs-result" hidden aria-live="polite"></section>
+    <div class="legal-note">Este formulario prepara la información para enviarla al correo corporativo. Conserva el radicado generado y la copia del mensaje enviado.</div>
+  </main>
+  <footer><div class="legal-footer shell"><span>© 2026 LIHEN.CO S.A.S.</span><span><a href="./terminos-y-condiciones.html">Términos</a> · <a href="./politica-de-privacidad.html">Privacidad</a> · <a href="./cambios-y-devoluciones.html">Cambios</a> · <a href="./politica-de-envios.html">Envíos</a> · <a href="https://sedeelectronica.sic.gov.co/" target="_blank" rel="noopener noreferrer">Protección al consumidor - SIC</a></span></div></footer>
+</body>
+</html>

@@ -115,3 +115,11 @@
     min-width:48px;
   }
 }
+
+/* Aquí organizo la información del precio para que sea visible y no dependa únicamente de una consulta por WhatsApp. */
+.price-disclosure{display:grid;gap:3px;margin-top:10px;color:#823047}
+.price-disclosure strong{font-size:1rem}
+.price-disclosure small{font-size:.7rem;line-height:1.35;color:var(--muted)}
+.modal-details .price-disclosure{margin:18px 0}
+.selection-table .price-disclosure{min-width:170px;text-align:right}
+@media(max-width:620px){.selection-table .price-disclosure{text-align:left;min-width:0}}

@@ -67,3 +67,21 @@ footer{background:linear-gradient(135deg,#4d4947,#625d5a);padding:38px 0;border-
 .legal-footer a{display:inline-block;color:#f4eee9;text-decoration:none;margin:0 4px;transition:.25s}
 .legal-footer a:hover{color:#ead7b8}
 @media(max-width:720px){.shell{width:min(100% - 24px,1100px)}.legal-nav{height:72px}.legal-nav img{width:124px}.legal-hero{padding:30px 24px;border-radius:18px}.legal-hero::before{font-size:1.8rem;right:18px}.legal-main{padding-top:34px}.legal-footer{flex-direction:column;align-items:flex-start}}
+
+/* Aquí integro el formulario de PQRS con la misma identidad visual de las páginas legales de LIHEN.CO. */
+.pqrs-form{display:grid;gap:18px;border:1px solid var(--line);border-radius:18px;padding:26px;background:#fff;box-shadow:0 14px 34px rgba(70,49,39,.08)}
+.pqrs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pqrs-form label{display:grid;gap:8px;font-weight:700;color:var(--ink)}
+.pqrs-form input,.pqrs-form select,.pqrs-form textarea{width:100%;border:1px solid #d9cfd1;border-radius:11px;padding:13px 14px;font:inherit;color:var(--ink);background:#fff}
+.pqrs-form input:focus,.pqrs-form select:focus,.pqrs-form textarea:focus{outline:3px solid rgba(212,166,79,.2);border-color:var(--gold)}
+.pqrs-check{grid-template-columns:auto 1fr!important;align-items:start;font-weight:500!important;line-height:1.5}
+.pqrs-check input{width:18px;height:18px;margin-top:2px}
+.pqrs-actions{display:flex;justify-content:flex-end}
+.pqrs-submit,.pqrs-send{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:13px 22px;background:var(--wine);color:#fff;font-weight:700;text-decoration:none;cursor:pointer}
+.pqrs-result{margin-top:22px;border:1px solid var(--gold);border-radius:16px;padding:24px;background:var(--cream)}
+.pqrs-result h2{font-family:"Playfair Display",serif;margin-top:0;color:var(--wine)}
+.footer-link-sic{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.footer-link-sic:hover,.footer-link-sic:focus-visible{text-decoration-thickness:2px}
+.legal-tools{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px}
+.legal-tools button,.legal-tools a{border:1px solid var(--wine);border-radius:999px;padding:10px 16px;background:#fff;color:var(--wine);font-weight:700;text-decoration:none;cursor:pointer}
+@media(max-width:720px){.pqrs-grid{grid-template-columns:1fr}.pqrs-form{padding:20px}.pqrs-actions{justify-content:stretch}.pqrs-submit{width:100%}}
