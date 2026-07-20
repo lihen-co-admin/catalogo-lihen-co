@@ -1,4 +1,5 @@
 import { products } from './data/products.js';
+import { openPrelaunchModal } from './components/prelaunchModal.js';
 
 const $=(s,r=document)=>r.querySelector(s); const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const STORAGE='lihen-selection-v1';
@@ -90,7 +91,7 @@ function closeModal(){const h=$('[data-product-modal]');if(h){h.hidden=true;h.in
 document.addEventListener('click',e=>{const p=e.target.closest('[data-preview]');if(p)openModal(p.dataset.preview);const a=e.target.closest('[data-add]');if(a){addSelection(a.dataset.add,1);const original=a.textContent;a.classList.add('is-confirmed');a.textContent='Añadido';window.setTimeout(()=>{a.classList.remove('is-confirmed');a.textContent=original},1100)};if(e.target.matches('[data-modal-close]')||e.target.matches('[data-product-modal]'))closeModal();if(e.target.matches('[data-gallery-prev]')){e.preventDefault();e.stopPropagation();modalIndex=(modalIndex-1+modalProduct.images.length)%modalProduct.images.length;updateModalGallery()}if(e.target.matches('[data-gallery-next]')){e.preventDefault();e.stopPropagation();modalIndex=(modalIndex+1)%modalProduct.images.length;updateModalGallery()}const gi=e.target.closest('[data-gallery-index]');if(gi){e.preventDefault();e.stopPropagation();modalIndex=+gi.dataset.galleryIndex;updateModalGallery()}if(e.target.matches('[data-modal-minus]')){const q=$('[data-modal-qty]');q.textContent=Math.max(1,+q.textContent-1)}if(e.target.matches('[data-modal-plus]')){const q=$('[data-modal-qty]');q.textContent=+q.textContent+1}if(e.target.matches('[data-modal-add]'))addSelection(modalProduct.id,+$('[data-modal-qty]').textContent)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeDrawer()}});
 
-function drawerHTML(){const rows=selectionRows();const suggested=products.filter(p=>!selection[p.id]&&(!rows[0]||p.line===rows[0].product.line)).slice(0,10);return `<div class="drawer-head"><div><small>Consulta por WhatsApp</small><h2>Mi selección <span>(${totalUnits()})</span></h2></div><button data-drawer-close>×</button></div><div class="drawer-body">${rows.length?`<div class="drawer-items">${rows.map(({product,qty})=>`<article><img src="${img(product)}" alt="${safe(product.name)}"><div><h3>${safe(product.name)}</h3><small>${safe(product.brand)}</small><div class="qty-control"><button data-dec="${product.id}">−</button><span>${qty}</span><button data-inc="${product.id}">+</button></div></div><button class="remove" data-remove="${product.id}">Eliminar</button></article>`).join('')}</div>`:`<div class="empty-selection"><h3>Aún no has agregado productos.</h3><p>Explora el catálogo y crea una consulta organizada.</p></div>`}<section class="drawer-suggestions"><div class="suggest-title"><h3>¡Esto te va a interesar!</h3><div><button type="button" data-drawer-suggest-prev aria-label="Anterior">‹</button><button type="button" data-drawer-suggest-next aria-label="Siguiente">›</button></div></div><div class="mini-suggestions-viewport"><div class="mini-suggestions" data-drawer-suggest-track>${suggested.map(p=>`<article><img src="${img(p)}" alt="${safe(p.name)}"><div><strong>${safe(p.name)}</strong><button data-add="${p.id}">+ Agregar</button></div></article>`).join('')}</div></div></section></div><div class="drawer-footer"><p><strong>${totalUnits()}</strong> unidades seleccionadas</p><small>Esta selección no es una compra final. Confirmaremos disponibilidad, variantes y precio.</small><div><a class="btn btn-light" href="./mi-seleccion.html">Ver mi selección</a><a class="btn btn-lilac ${rows.length?'':'disabled'}" href="${rows.length?whatsappUrl():'#'}" target="${rows.length?'_blank':'_self'}">Consultar por WhatsApp</a></div></div>`}
+function drawerHTML(){const rows=selectionRows();const suggested=products.filter(p=>!selection[p.id]&&(!rows[0]||p.line===rows[0].product.line)).slice(0,10);return `<div class="drawer-head"><div><small>Consulta por WhatsApp</small><h2>Mi selección <span>(${totalUnits()})</span></h2></div><button data-drawer-close>×</button></div><div class="drawer-body">${rows.length?`<div class="drawer-items">${rows.map(({product,qty})=>`<article><img src="${img(product)}" alt="${safe(product.name)}"><div><h3>${safe(product.name)}</h3><small>${safe(product.brand)}</small><div class="qty-control"><button data-dec="${product.id}">−</button><span>${qty}</span><button data-inc="${product.id}">+</button></div></div><button class="remove" data-remove="${product.id}">Eliminar</button></article>`).join('')}</div>`:`<div class="empty-selection"><h3>Aún no has agregado productos.</h3><p>Explora el catálogo y crea una consulta organizada.</p></div>`}<section class="drawer-suggestions"><div class="suggest-title"><h3>¡Esto te va a interesar!</h3><div><button type="button" data-drawer-suggest-prev aria-label="Anterior">‹</button><button type="button" data-drawer-suggest-next aria-label="Siguiente">›</button></div></div><div class="mini-suggestions-viewport"><div class="mini-suggestions" data-drawer-suggest-track>${suggested.map(p=>`<article><img src="${img(p)}" alt="${safe(p.name)}"><div><strong>${safe(p.name)}</strong><button data-add="${p.id}">+ Agregar</button></div></article>`).join('')}</div></div></section></div><div class="drawer-footer"><p><strong>${totalUnits()}</strong> unidades seleccionadas</p><small>Esta selección no es una compra final. Confirmaremos disponibilidad, variantes y precio.</small><div><a class="btn btn-light" href="./mi-seleccion.html">Ver mi selección</a><button class="btn btn-lilac ${rows.length?'':'disabled'}" type="button" data-prelaunch-open ${rows.length?'':'disabled'}>Consultar por WhatsApp</button></div></div>`}
 function openDrawer(){const d=$('[data-selection-drawer]'),bg=$('[data-drawer-backdrop]');if(!d)return;d.innerHTML=drawerHTML();d.classList.add('open');d.setAttribute('aria-hidden','false');if(bg)bg.hidden=false;document.body.classList.add('no-scroll');initDrawerSuggestions()}
 let drawerSuggestTimer;
 function initDrawerSuggestions(){clearInterval(drawerSuggestTimer);const track=$('[data-drawer-suggest-track]');if(!track)return;const move=(dir=1)=>{const card=track.querySelector('article');if(!card)return;const gap=parseFloat(getComputedStyle(track).gap)||10;const step=card.getBoundingClientRect().width+gap;track.scrollBy({left:dir*step,behavior:'smooth'});if(dir>0&&track.scrollLeft+track.clientWidth>=track.scrollWidth-step*1.2)track.scrollTo({left:0,behavior:'smooth'});if(dir<0&&track.scrollLeft<=step*.2)track.scrollTo({left:track.scrollWidth,behavior:'smooth'})};$('[data-drawer-suggest-next]')?.addEventListener('click',()=>move(1));$('[data-drawer-suggest-prev]')?.addEventListener('click',()=>move(-1));if(!matchMedia('(prefers-reduced-motion: reduce)').matches)drawerSuggestTimer=setInterval(()=>move(1),5000)}
@@ -98,64 +99,37 @@ function closeDrawer(){clearInterval(drawerSuggestTimer);const d=$('[data-select
 $$('.selection-trigger').forEach(b=>b.addEventListener('click',openDrawer));$('[data-drawer-backdrop]')?.addEventListener('click',closeDrawer);
 document.addEventListener('click',e=>{if(e.target.closest('[data-drawer-close]'))closeDrawer();const inc=e.target.closest('[data-inc]');if(inc)setQty(inc.dataset.inc,(selection[inc.dataset.inc]||0)+1);const dec=e.target.closest('[data-dec]');if(dec)setQty(dec.dataset.dec,(selection[dec.dataset.dec]||0)-1);const rem=e.target.closest('[data-remove]');if(rem)setQty(rem.dataset.remove,0);if((inc||dec||rem)&&$('[data-selection-drawer].open'))openDrawer()});
 
+// Aquí abro la invitación de preinauguración solo desde los botones de consulta.
+document.addEventListener('click',event=>{const trigger=event.target.closest('[data-prelaunch-open]');if(!trigger||trigger.disabled||trigger.classList.contains('disabled'))return;event.preventDefault();openPrelaunchModal({rows:selectionRows(),totalUnits:totalUnits()},trigger)});
+
 function updateSelectionUI(){$$('[data-selection-count]').forEach(x=>x.textContent=`(${totalUnits()})`);renderSelectionPage()}
-function renderSelectionPage(){const list=$('[data-selection-page-list]'),summary=$('[data-selection-summary]');if(!list||!summary)return;const rows=selectionRows();list.innerHTML=rows.length?`<div class="selection-table"><div class="selection-table-head"><span>Producto</span><span>Cantidad</span><span>Estado</span></div>${rows.map(({product,qty})=>`<article><img src="${img(product)}" alt="${safe(product.name)}"><div><h3>${safe(product.name)}</h3><p>${safe(product.brand)} · ${safe(product.line)}</p><button data-remove="${product.id}">Quitar</button></div><div class="qty-control"><button data-dec="${product.id}">−</button><span>${qty}</span><button data-inc="${product.id}">+</button></div>${priceDisclosure(product)}</article>`).join('')}</div>`:`<div class="empty-selection page-empty"><h2>Tu selección está vacía</h2><p>Agrega productos desde el inicio o Ideas para regalar.</p><a class="btn btn-lilac" href="./index.html#beauty">Explorar productos</a></div>`;summary.innerHTML=`<h2>Resumen</h2><div><span>Referencias</span><strong>${rows.length}</strong></div><div><span>Total de unidades</span><strong>${totalUnits()}</strong></div><p>Los precios, variantes y disponibilidad se confirman por WhatsApp antes de cualquier pago.</p><a class="btn btn-lilac ${rows.length?'':'disabled'}" href="${rows.length?whatsappUrl():'#'}" target="${rows.length?'_blank':'_self'}">Enviar selección por WhatsApp</a><a class="btn btn-light" href="./index.html">Seguir explorando</a>`}
+function renderSelectionPage(){const list=$('[data-selection-page-list]'),summary=$('[data-selection-summary]');if(!list||!summary)return;const rows=selectionRows();list.innerHTML=rows.length?`<div class="selection-table"><div class="selection-table-head"><span>Producto</span><span>Cantidad</span><span>Estado</span></div>${rows.map(({product,qty})=>`<article><img src="${img(product)}" alt="${safe(product.name)}"><div><h3>${safe(product.name)}</h3><p>${safe(product.brand)} · ${safe(product.line)}</p><button data-remove="${product.id}">Quitar</button></div><div class="qty-control"><button data-dec="${product.id}">−</button><span>${qty}</span><button data-inc="${product.id}">+</button></div>${priceDisclosure(product)}</article>`).join('')}</div>`:`<div class="empty-selection page-empty"><h2>Tu selección está vacía</h2><p>Agrega productos desde el inicio o Ideas para regalar.</p><a class="btn btn-lilac" href="./index.html#beauty">Explorar productos</a></div>`;summary.innerHTML=`<h2>Resumen</h2><div><span>Referencias</span><strong>${rows.length}</strong></div><div><span>Total de unidades</span><strong>${totalUnits()}</strong></div><p>Los precios, variantes y disponibilidad se confirman por WhatsApp antes de cualquier pago.</p><button class="btn btn-lilac ${rows.length?'':'disabled'}" type="button" data-prelaunch-open ${rows.length?'':'disabled'}>Enviar selección por WhatsApp</button><a class="btn btn-light" href="./index.html">Seguir explorando</a>`}
 function toast(text){let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.append(t)}t.textContent=text;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
 updateSelectionUI();
 
 // Aquí inicio el carrusel principal con una velocidad cómoda de lectura y ahorro de recursos.
 (function initHeroCarousel(){
-  // Aquí localizo la portada que contiene todas las imágenes principales.
   const root=document.querySelector('[data-hero-carousel]');
-  // Aquí termino la función cuando la página actual no incluye esta portada.
-  if(!root)return;
-  // Aquí evito crear dos temporizadores sobre el mismo carrusel.
-  if(root.dataset.autoplayReady==='true')return;
-  // Aquí marco el carrusel como preparado.
+  if(!root||root.dataset.autoplayReady==='true')return;
   root.dataset.autoplayReady='true';
-  // Aquí reúno todas las diapositivas para poder activar una sola a la vez.
   const slides=[...root.querySelectorAll('[data-hero-slide]')];
-  // Aquí localizo el contenedor donde dibujo los indicadores inferiores.
   const dots=root.querySelector('[data-hero-dots]');
-  // Aquí guardo la posición actual, el temporizador y el punto inicial de un gesto táctil.
-  let index=0,timer=null,touchStart=0,isVisible=true;
-  // Aquí dibujo los puntos y marco visualmente la imagen activa.
-  const renderDots=()=>{if(!dots)return;dots.innerHTML=slides.map((_,i)=>`<button type="button" class="${i===index?'active':''}" data-hero-index="${i}" aria-label="Ver imagen ${i+1}"></button>`).join('')};
-  // Aquí cambio únicamente la diapositiva activa sin pausar el movimiento automático.
-  const show=i=>{index=(i+slides.length)%slides.length;slides.forEach((slide,n)=>slide.classList.toggle('is-active',n===index));renderDots()};
-  // Aquí preparo el avance hacia la siguiente imagen.
-  const next=()=>show(index+1);
-  // Aquí preparo el regreso hacia la imagen anterior.
-  const prev=()=>show(index-1);
-  // Aquí limpio el temporizador anterior antes de crear uno nuevo.
-  const clearTimer=()=>{if(timer){clearTimeout(timer);timer=null}};
-  // Aquí programo el siguiente avance cada cinco segundos solo cuando la portada está visible.
-  const schedule=()=>{
-    clearTimer();
-    if(document.hidden||!isVisible||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    timer=window.setTimeout(()=>{next();schedule()},5000);
-  };
-  // Aquí permito avanzar manualmente y luego continúo el autoplay.
-  root.querySelector('[data-hero-next]')?.addEventListener('click',event=>{event.preventDefault();next();schedule()});
-  // Aquí permito retroceder manualmente y luego continúo el autoplay.
-  root.querySelector('[data-hero-prev]')?.addEventListener('click',event=>{event.preventDefault();prev();schedule()});
-  // Aquí permito seleccionar un punto específico y luego continúo el autoplay.
-  dots?.addEventListener('click',event=>{const button=event.target.closest('[data-hero-index]');if(!button)return;event.preventDefault();show(Number(button.dataset.heroIndex));schedule()});
-  // Aquí guardo la posición inicial cuando la persona toca la pantalla.
-  root.addEventListener('touchstart',event=>{touchStart=event.touches[0].clientX},{passive:true});
-  // Aquí interpreto el deslizamiento sin detener el temporizador permanente.
-  root.addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchStart;if(Math.abs(delta)>45)(delta<0?next:prev)();schedule()},{passive:true});
-  // Aquí reanudo el conteo cuando la persona regresa a la pestaña del navegador.
-  document.addEventListener('visibilitychange',()=>{document.hidden?clearTimer():schedule()});
-  // Aquí detengo el carrusel cuando sale de pantalla para no gastar recursos innecesarios.
-  if('IntersectionObserver' in window){
-    const observer=new IntersectionObserver(entries=>{isVisible=entries[0]?.isIntersecting??true;isVisible?schedule():clearTimer()},{threshold:.15});
-    observer.observe(root);
-  }
-  // Aquí muestro la primera imagen y comienzo el movimiento automático inmediatamente.
-  show(0);schedule();
+  if(slides.length<2)return;
+  let index=0,timer=null,touchStart=0;
+  const renderDots=()=>{if(dots)dots.innerHTML=slides.map((_,i)=>`<button type="button" class="${i===index?'active':''}" data-hero-index="${i}" aria-label="Ver imagen ${i+1}" aria-current="${i===index?'true':'false'}"></button>`).join('')};
+  const show=i=>{index=(i+slides.length)%slides.length;slides.forEach((slide,n)=>{slide.classList.toggle('is-active',n===index);slide.setAttribute('aria-hidden',n===index?'false':'true')});renderDots()};
+  const clearTimer=()=>{if(timer!==null){window.clearTimeout(timer);timer=null}};
+  const schedule=()=>{clearTimer();if(document.hidden)return;timer=window.setTimeout(()=>{show(index+1);schedule()},5000)};
+  const move=i=>{show(i);schedule()};
+  root.querySelector('[data-hero-next]')?.addEventListener('click',event=>{event.preventDefault();move(index+1)});
+  root.querySelector('[data-hero-prev]')?.addEventListener('click',event=>{event.preventDefault();move(index-1)});
+  dots?.addEventListener('click',event=>{const button=event.target.closest('[data-hero-index]');if(button){event.preventDefault();move(Number(button.dataset.heroIndex))}});
+  root.addEventListener('touchstart',event=>{touchStart=event.touches[0].clientX;clearTimer()},{passive:true});
+  root.addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchStart;if(Math.abs(delta)>45)show(index+(delta<0?1:-1));schedule()},{passive:true});
+  document.addEventListener('visibilitychange',()=>document.hidden?clearTimer():schedule());
+  show(0);
+  schedule();
 })();
-
 
 // ETAPA 27: pestaña promocional de bienvenida y formulario con autorización.
 function mountWelcomePromo(){

@@ -1,0 +1,10 @@
+LIHEN.CO — ETAPA 40
+
+Base utilizada: ETAPA 35 INTERACCIONES Y DOCUMENTACIÓN.
+
+Se integró de forma modular:
+- Modal previo a WhatsApp con resumen, registro, grupo y consulta.
+- Landing pública de inauguración dentro de /inauguracion/.
+- Conservación de la experiencia interactiva como /inauguracion/experiencia.html.
+- Hero estabilizado dentro de los archivos responsables.
+- Sin reemplazar tarjetas, hover, efectos, vista previa, selección ni botones existentes.
