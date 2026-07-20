@@ -1,0 +1,13 @@
+LIHEN.CO · ETAPA 37 · ESTABILIZACIÓN DEL HERO
+
+Cambios realizados:
+1. Restauré el avance automático del carrusel principal cada cinco segundos.
+2. Eliminé la condición que podía dejar el autoplay detenido permanentemente.
+3. Evité la creación de temporizadores duplicados.
+4. Conservé la pausa cuando la pestaña no está visible y la reanudación al regresar.
+5. Corregí las flechas para mantenerlas dentro del carrusel, una en cada extremo y centradas verticalmente.
+6. Corregí los puntos indicadores y su posición inferior centrada.
+7. Ajusté la altura del hero para que el texto, la descripción y los botones se vean completos.
+8. Consolidé el comportamiento responsive para escritorio, tableta y celular.
+9. Añadí estados ARIA a las diapositivas y puntos para mejorar accesibilidad.
+10. Conservé la transición reducida cuando el sistema solicita menos movimiento, sin desactivar el cambio automático de diapositiva.

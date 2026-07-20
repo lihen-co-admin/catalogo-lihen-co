@@ -1,0 +1,10 @@
+LIHEN.CO · ACTUALIZACIÓN ETAPA 36
+
+1. Se añadió una pantalla previa al consultar una selección por WhatsApp.
+2. Se incorporaron accesos a la inauguración, al grupo oficial y a la consulta directa.
+3. La consulta directa conserva el listado de productos e incluye autorización breve de contacto.
+4. Se creó una landing pública en inauguracion/index.html.
+5. La experiencia interactiva anterior se conservó en inauguracion/experiencia.html.
+6. Se añadieron registro de interés, cuenta regresiva, modalidad presencial/virtual y redes oficiales.
+7. Catálogo e inauguración permanecen separados dentro del mismo repositorio.
+8. Versión actualizada a 36.0.0.

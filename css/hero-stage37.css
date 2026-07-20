@@ -1,0 +1,289 @@
+/*
+ * ETAPA 37 · ESTABILIZACIÓN DEL CARRUSEL PRINCIPAL
+ *
+ * Aquí concentro las reglas definitivas del hero para evitar que estilos de
+ * etapas anteriores vuelvan a desplazar flechas, indicadores o contenido.
+ */
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: clamp(560px, calc(100svh - 200px), 680px);
+  min-height: 560px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f3e9e2;
+}
+
+.hero-carousel .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.hero-carousel .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.hero-carousel .hero-media,
+.hero-carousel .hero-copy {
+  min-width: 0;
+  min-height: 0;
+}
+
+.hero-carousel .hero-media {
+  height: 100%;
+}
+
+.hero-carousel .hero-media img,
+.hero-carousel .hero-image-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-carousel .hero-media img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-carousel .hero-copy {
+  height: 100%;
+  padding: clamp(44px, 5vw, 72px) clamp(54px, 6vw, 104px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+}
+
+.hero-carousel .hero-copy .kicker {
+  margin: 0 0 18px;
+}
+
+.hero-carousel .hero-copy h1 {
+  max-width: 760px;
+  margin: 0 0 22px;
+  font-size: clamp(3.4rem, 4.75vw, 5.25rem);
+  line-height: .98;
+  text-wrap: balance;
+}
+
+.hero-carousel .hero-copy > p:not(.kicker) {
+  width: min(100%, 580px);
+  margin: 0;
+  font-size: clamp(.94rem, 1.05vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.hero-carousel .hero-buttons {
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.hero-carousel .hero-arrow {
+  position: absolute !important;
+  top: 50% !important;
+  z-index: 20 !important;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%) !important;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.hero-carousel .hero-prev {
+  left: clamp(18px, 2.4vw, 40px) !important;
+  right: auto !important;
+}
+
+.hero-carousel .hero-next {
+  right: clamp(18px, 2.4vw, 40px) !important;
+  left: auto !important;
+}
+
+.hero-carousel .hero-arrow:hover {
+  transform: translateY(-50%) scale(1.07) !important;
+}
+
+.hero-carousel .hero-arrow:active {
+  transform: translateY(-50%) scale(.94) !important;
+}
+
+.hero-carousel .hero-carousel-dots {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: 20px !important;
+  z-index: 21 !important;
+  transform: translateX(-50%) !important;
+}
+
+.hero-carousel .hero-image-slide {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.hero-carousel .hero-image-slide img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+@media (max-width: 1100px) {
+  .hero-carousel .hero-copy {
+    padding-inline: clamp(48px, 6vw, 70px);
+  }
+
+  .hero-carousel .hero-copy h1 {
+    font-size: clamp(3rem, 5.8vw, 4.4rem);
+  }
+}
+
+@media (max-width: 950px) {
+  .hero-carousel {
+    height: auto;
+    min-height: 720px;
+  }
+
+  .hero-carousel .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(300px, 52%) minmax(330px, 48%);
+  }
+
+  .hero-carousel .hero-media {
+    height: 100%;
+  }
+
+  .hero-carousel .hero-copy {
+    height: 100%;
+    padding: 38px 64px 66px;
+    justify-content: center;
+  }
+
+  .hero-carousel .hero-copy h1 {
+    font-size: clamp(2.75rem, 8vw, 4rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-carousel .hero-copy > p:not(.kicker) {
+    line-height: 1.48;
+  }
+
+  .hero-carousel .hero-arrow {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .hero-carousel .hero-prev {
+    left: 14px !important;
+  }
+
+  .hero-carousel .hero-next {
+    right: 14px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-carousel {
+    min-height: 680px;
+  }
+
+  .hero-carousel .hero {
+    grid-template-rows: minmax(270px, 45%) minmax(360px, 55%);
+  }
+
+  .hero-carousel .hero-copy {
+    padding: 32px 52px 62px;
+  }
+
+  .hero-carousel .hero-copy .kicker {
+    margin-bottom: 12px;
+    font-size: .63rem;
+  }
+
+  .hero-carousel .hero-copy h1 {
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
+    line-height: 1;
+  }
+
+  .hero-carousel .hero-copy > p:not(.kicker) {
+    font-size: .9rem;
+  }
+
+  .hero-carousel .hero-buttons {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .hero-carousel .hero-buttons .btn {
+    flex: 1 1 180px;
+    min-height: 46px;
+  }
+
+  .hero-carousel .hero-arrow {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    font-size: 1.7rem;
+  }
+
+  .hero-carousel .hero-prev {
+    left: 10px !important;
+  }
+
+  .hero-carousel .hero-next {
+    right: 10px !important;
+  }
+
+  .hero-carousel .hero-carousel-dots {
+    bottom: 12px !important;
+  }
+
+  .hero-carousel .hero-image-slide img {
+    object-fit: contain !important;
+    object-position: center;
+    background: #f8f2ef;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-carousel {
+    min-height: 720px;
+  }
+
+  .hero-carousel .hero {
+    grid-template-rows: 300px 420px;
+  }
+
+  .hero-carousel .hero-copy {
+    padding: 30px 48px 62px;
+  }
+
+  .hero-carousel .hero-copy h1 {
+    font-size: clamp(2.05rem, 11.5vw, 2.85rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel .hero-slide {
+    transition: none !important;
+    transform: none !important;
+  }
+}

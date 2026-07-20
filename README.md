@@ -1,6 +1,6 @@
 # LIHEN_WEB_RENACER
 
-**Versión 35.0.0** — catálogo web responsive de LIHEN.CO preparado para GitHub Pages y pruebas de publicación.
+**Versión 36.0.0** — catálogo web responsive de LIHEN.CO preparado para GitHub Pages y pruebas de publicación.
 
 ## Propósito
 
@@ -62,3 +62,15 @@ La ruta de lectura recomendada es:
 8. `docs/08_MANUAL_TECNICO.md`
 9. `docs/09_MANUAL_DE_USUARIO.md`
 10. `docs/10_MANTENIMIENTO_Y_MEJORAS.md`
+
+
+## Inauguración 2 de agosto
+
+La inauguración pública vive dentro del mismo repositorio, sin reemplazar el catálogo:
+
+- Catálogo: `/index.html`
+- Invitación pública: `/inauguracion/index.html`
+- Experiencia interactiva: `/inauguracion/experiencia.html`
+- Pantalla para proyección: `/inauguracion/pantalla.html`
+
+Hasta la inauguración, los botones de consulta de Mi selección abren primero una pantalla informativa. La persona puede conocer el evento, unirse voluntariamente al grupo oficial o continuar a WhatsApp con su selección y una autorización breve de contacto.
