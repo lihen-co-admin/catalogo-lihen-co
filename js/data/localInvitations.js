@@ -1,5 +1,6 @@
 export const LOCAL_INVITATIONS = [
   {
+<<<<<<< HEAD
     "access_code": "LHN-DIA-001",
     "responsible": "Diana Restrepo",
     "display_name": "Jesica Guerrero",
@@ -18,13 +19,20 @@ export const LOCAL_INVITATIONS = [
     "notes": ""
   },
   {
+=======
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
     "access_code": "LHN-DIA-003",
     "responsible": "Diana Restrepo",
     "display_name": "Erika Palomino",
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-004",
@@ -33,7 +41,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-005",
@@ -42,7 +55,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-006",
@@ -51,7 +69,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-007",
@@ -60,7 +83,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-008",
@@ -69,7 +97,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": "Referencia interna: la de las arepas"
+=======
+    "notes": "Referencia interna: la de las arepas",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-009",
@@ -78,7 +111,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-010",
@@ -87,7 +125,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-011",
@@ -96,7 +139,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-012",
@@ -105,7 +153,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-013",
@@ -114,7 +167,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-014",
@@ -123,7 +181,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-015",
@@ -132,7 +195,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-016",
@@ -141,7 +209,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-017",
@@ -150,7 +223,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-018",
@@ -159,7 +237,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-019",
@@ -168,7 +251,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-020",
@@ -177,7 +265,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-021",
@@ -186,7 +279,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-022",
@@ -195,7 +293,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-023",
@@ -204,7 +307,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-024",
@@ -213,7 +321,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-025",
@@ -222,7 +335,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-026",
@@ -231,7 +349,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-DIA-027",
@@ -240,7 +363,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-001",
@@ -249,7 +377,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-002",
@@ -258,7 +391,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-003",
@@ -267,7 +405,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-004",
@@ -276,7 +419,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-005",
@@ -285,7 +433,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-006",
@@ -294,7 +447,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 2,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": "Puede agregar 1 acompañante"
+=======
+    "notes": "Puede agregar 1 acompañante",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-007",
@@ -303,7 +461,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-008",
@@ -312,7 +475,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-009",
@@ -321,7 +489,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-010",
@@ -330,7 +503,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-011",
@@ -339,7 +517,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-012",
@@ -348,7 +531,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-013",
@@ -357,16 +545,30 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-014",
     "responsible": "Lizeth Londoño",
+<<<<<<< HEAD
     "display_name": "Natalia Lorena",
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
     "notes": "Apellido pendiente"
+=======
+    "display_name": "Natalia Moreno",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-015",
@@ -375,7 +577,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-016",
@@ -384,7 +591,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-017",
@@ -393,7 +605,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-018",
@@ -402,7 +619,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-019",
@@ -411,7 +633,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": "Brasil; apellido pendiente; probable modalidad virtual"
+=======
+    "notes": "Brasil; apellido pendiente; probable modalidad virtual",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-020",
@@ -420,7 +647,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-021",
@@ -429,6 +661,7 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
   },
   {
@@ -439,6 +672,10 @@ export const LOCAL_INVITATIONS = [
     "max_attendees": 3,
     "status": "pending",
     "notes": "Apellido pendiente"
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-023",
@@ -447,16 +684,30 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-024",
     "responsible": "Lizeth Londoño",
+<<<<<<< HEAD
     "display_name": "Idali",
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
     "notes": "Apellido pendiente"
+=======
+    "display_name": "Idali Hurtado",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "Vecina",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-025",
@@ -465,7 +716,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-026",
@@ -474,7 +730,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-027",
@@ -483,7 +744,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-028",
@@ -492,7 +758,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-029",
@@ -501,6 +772,7 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
   },
   {
@@ -511,6 +783,10 @@ export const LOCAL_INVITATIONS = [
     "max_attendees": 3,
     "status": "pending",
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-031",
@@ -519,16 +795,30 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-032",
     "responsible": "Lizeth Londoño",
+<<<<<<< HEAD
     "display_name": "Jorge Gómez",
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
     "notes": ""
+=======
+    "display_name": "Jorge Londoño Gómez",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-033",
@@ -537,7 +827,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-034",
@@ -546,7 +841,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": "Brasil; probable modalidad virtual"
+=======
+    "notes": "Brasil; probable modalidad virtual",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-035",
@@ -555,16 +855,30 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": "Apellido pendiente"
+=======
+    "notes": "Apellido pendiente",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-036",
     "responsible": "Lizeth Londoño",
+<<<<<<< HEAD
     "display_name": "Liliana",
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
     "notes": "Apellido pendiente"
+=======
+    "display_name": "Lila",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "Apellido pendiente",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-LIZ-037",
@@ -573,7 +887,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": "Invitación separada; puede agregar hasta 2 acompañantes"
+=======
+    "notes": "Invitación separada; puede agregar hasta 2 acompañantes",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-HEL-001",
@@ -582,7 +901,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-HEL-002",
@@ -591,7 +915,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-HEL-003",
@@ -600,7 +929,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-HEL-004",
@@ -609,7 +943,12 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   },
   {
     "access_code": "LHN-HEL-005",
@@ -618,6 +957,451 @@ export const LOCAL_INVITATIONS = [
     "named_guests": 1,
     "max_attendees": 3,
     "status": "pending",
+<<<<<<< HEAD
     "notes": ""
+=======
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-006",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Lucia Santacruz",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-007",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Tiana",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "Apellido pendiente",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-008",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Brenda Popo",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-009",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Didier Ramirez",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-010",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Laura Navarez",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-011",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Karen Restrepo",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-012",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Valeria Hurtado",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-013",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Angie Garcia",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-014",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Angeli Ocampo",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-015",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Karen Dayana Box",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-016",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Miguel Riascos box",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-017",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Daniela Box",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-018",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Camila Palacio",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-019",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Carol Moreno",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-020",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Ana Ramirez",
+    "named_guests": 3,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-021",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Angela cartagena",
+    "named_guests": 3,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-022",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Sofia chambo",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-023",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Sofia Bravo",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-024",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Brayan Suescun",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-025",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Yosef Moreno",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-026",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Liseth Ruiz",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-027",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Nicol Correa",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-028",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Jeimy",
+    "named_guests": 4,
+    "max_attendees": 4,
+    "status": "pending",
+    "notes": "Apellido pendiente",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-029",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Estefany salazar",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-030",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Laura Velazco",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-031",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Diana Sacananbuy",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-LIZ-038",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Sirney Marin Tabares",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-HEL-032",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Juan Carlos Restrepo Martinez",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-LIZ-039",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Nelvi",
+    "named_guests": 2,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "Apellido pendiente",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-LIZ-040",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Yurani Tabares",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-LIZ-041",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Orfaneri Londoño",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-LIZ-042",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Fary Bohorquez",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-LIZ-043",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Sandra Cordoba",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-LIZ-044",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Mery Bohórquez",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-LIZ-045",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Angelli  Londoño",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-LIZ-046",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Steven Pelaez",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-LIZ-047",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Martha",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "Apellido pendiente",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-HEL-033",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Esteban Bermudez",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-034",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Evelin",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "Apellido pendiente",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-035",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Juan Jose",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-HEL-036",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Erick Ramiro Sarasti",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-HEL-037",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Heidi Sarasti",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": false
+  },
+  {
+    "access_code": "LHN-HEL-038",
+    "responsible": "Hellen Restrepo",
+    "display_name": "Yaneth",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "Apellido pendiente",
+    "virtual_only": true
+  },
+  {
+    "access_code": "LHN-LIZ-048",
+    "responsible": "Lizeth Londoño",
+    "display_name": "Leonardo Londoño",
+    "named_guests": 1,
+    "max_attendees": 3,
+    "status": "pending",
+    "notes": "",
+    "virtual_only": true
+>>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   }
 ];

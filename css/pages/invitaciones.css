@@ -676,3 +676,22 @@
   .screen-entry.transitioning .ambient-layer,
   .screen-seal.arriving .seal-stage{animation-duration:.01ms!important}
 }
+
+/* V16 · invitaciones habilitadas solo para modalidad virtual */
+.virtual-only-notice{
+  margin: 1rem auto 0;
+  max-width: 760px;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(183, 132, 74, .35);
+  border-radius: 18px;
+  background: rgba(255, 250, 246, .82);
+  color: #59483c;
+  text-align: center;
+  line-height: 1.45;
+}
+.mode-card[hidden]{display:none !important;}
+.mode-card:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  pointer-events:none;
+}
