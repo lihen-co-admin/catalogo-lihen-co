@@ -1,0 +1,251 @@
+/*
+ * AUDITORÍA RESPONSIVE BASADA EN BREAKPOINTS DE BOOTSTRAP
+ * No instala Bootstrap ni reemplaza el CSS propio de LIHEN.CO.
+ * Solo adopta sus puntos de control para revisar y estabilizar el diseño.
+ * xs <576 | sm >=576 | md >=768 | lg >=992 | xl >=1200 | xxl >=1400
+ */
+
+:root {
+  --responsive-gutter: clamp(16px, 3vw, 32px);
+  --responsive-content: 1320px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 0;
+}
+
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Contenedor adaptable equivalente al enfoque .container de Bootstrap. */
+.shell,
+.page-shell,
+.invitation-wrap,
+.launch-shell,
+.transmission-shell,
+main > .container {
+  width: min(calc(100% - (var(--responsive-gutter) * 2)), var(--responsive-content));
+  margin-inline: auto;
+  min-width: 0;
+}
+
+/* Evita desbordes de elementos flex y grid. */
+:is(.shell, .page-shell, .invitation-wrap, .launch-shell, .transmission-shell) > *,
+:is(.grid, .row, .header-main, .footer-grid, .mode-grid, .invitation-ticket) > * {
+  min-width: 0;
+}
+
+/* Controles accesibles sin forzar botones decorativos demasiado altos. */
+.btn,
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+/* XXL: >=1400px */
+@media (min-width: 1400px) {
+  :root { --responsive-content: 1320px; }
+}
+
+/* XL: 1200px–1399px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  :root { --responsive-content: 1140px; }
+}
+
+/* LG: 992px–1199px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  :root { --responsive-content: 960px; }
+
+  .invitation-ticket {
+    gap: clamp(18px, 2vw, 26px);
+  }
+
+  .ticket-event h2 {
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+  }
+}
+
+/* MD: 768px–991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  :root {
+    --responsive-content: 720px;
+    --responsive-gutter: 22px;
+  }
+
+  .invitation-ticket {
+    grid-template-columns: minmax(150px, .72fr) minmax(0, 1.4fr);
+  }
+
+  .ticket-confirm {
+    grid-column: 1 / -1;
+  }
+
+  .quick-actions {
+    gap: 12px;
+  }
+
+  .quick-actions .btn {
+    min-width: 190px;
+  }
+
+  .whatsapp-confirm {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 230px);
+  }
+}
+
+/* SM: 576px–767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  :root {
+    --responsive-content: 540px;
+    --responsive-gutter: 18px;
+  }
+
+  .entry-card {
+    width: 100%;
+    max-width: 540px;
+  }
+
+  .invitation-ticket,
+  .whatsapp-confirm {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-intro,
+  .ticket-event,
+  .ticket-confirm {
+    text-align: center;
+  }
+
+  .ticket-event dl {
+    width: min(100%, 430px);
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  .quick-actions .btn {
+    flex: 1 1 220px;
+  }
+}
+
+/* XS: <576px */
+@media (max-width: 575.98px) {
+  :root {
+    --responsive-gutter: 14px;
+  }
+
+  .screen {
+    padding-inline: 10px;
+  }
+
+  .entry-card {
+    width: 100%;
+    padding-inline: 20px;
+  }
+
+  .entry-card h1,
+  .seal-copy h1 {
+    text-wrap: balance;
+  }
+
+  .identity-form,
+  .identity-form input,
+  .identity-form button,
+  .quick-actions,
+  .quick-actions .btn,
+  .dialog-actions,
+  .dialog-actions .btn {
+    width: 100%;
+  }
+
+  .quick-actions,
+  .dialog-actions {
+    flex-direction: column;
+  }
+
+  .invitation-ticket {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px 16px;
+  }
+
+  .ticket-event,
+  .ticket-confirm,
+  .ticket-intro {
+    text-align: center;
+  }
+
+  .ticket-event dl {
+    width: 100%;
+    text-align: left;
+  }
+
+  .ticket-event dl div {
+    grid-template-columns: minmax(62px, 76px) minmax(0, 1fr);
+  }
+
+  .ticket-event dd {
+    overflow-wrap: anywhere;
+  }
+
+  .ticket-confirm img {
+    width: min(150px, 58vw);
+  }
+
+  .mode-card {
+    padding: 18px;
+  }
+
+  .consent {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .whatsapp-confirm {
+    grid-template-columns: 1fr;
+    padding: 22px 16px;
+  }
+
+  .qr-card img {
+    width: min(190px, 70vw);
+  }
+
+  .share-links div {
+    gap: 12px 18px;
+  }
+}
+
+/* Alturas pequeñas: evita que las pantallas obliguen a recortes verticales. */
+@media (max-height: 720px) and (min-width: 768px) {
+  .screen {
+    min-height: auto;
+    padding-block: 36px;
+  }
+
+  .entry-card {
+    min-height: min(610px, calc(100vh - 72px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

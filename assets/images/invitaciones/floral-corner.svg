@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7c3cd"/>
+      <stop offset="0.55" stop-color="#d98f95"/>
+      <stop offset="1" stop-color="#c9934a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7c477"/>
+      <stop offset="1" stop-color="#b7822e"/>
+    </linearGradient>
+  </defs>
+  <path d="M12 108C24 76 47 48 94 12" fill="none" stroke="url(#gold)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M29 79C13 68 12 51 17 39c17 7 24 20 12 40Z" fill="url(#petal)" stroke="#d3a052" stroke-width="1"/>
+  <path d="M42 64C29 45 35 29 45 19c13 13 15 29-3 45Z" fill="url(#petal)" stroke="#d3a052" stroke-width="1"/>
+  <path d="M59 48C54 26 64 13 77 7c7 18 1 33-18 41Z" fill="url(#petal)" stroke="#d3a052" stroke-width="1"/>
+  <path d="M28 86C42 75 57 77 68 83c-10 14-25 17-40 3Z" fill="#f1b7c4" stroke="#d3a052" stroke-width="1"/>
+  <path d="M47 70C60 58 74 59 84 65c-10 13-23 16-37 5Z" fill="#e7a1aa" stroke="#d3a052" stroke-width="1"/>
+  <circle cx="18" cy="92" r="3" fill="#c99a48"/>
+  <circle cx="25" cy="99" r="2" fill="#e5bd6b"/>
+  <circle cx="33" cy="94" r="1.6" fill="#c99a48"/>
+</svg>

@@ -12,3 +12,6 @@ coverage/
 # Configuración local del navegador
 js/config/env.js
 !js/config/env.example.js
+
+# Datos privados de invitados: nunca publicar en GitHub
+data-private/

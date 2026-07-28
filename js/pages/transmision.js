@@ -1,0 +1,1 @@
+document.querySelector("[data-share]")?.addEventListener("click",async()=>{const data={title:"Inauguración LIHEN.CO",text:"Acompáñanos en la transmisión de la inauguración de LIHEN.CO por TikTok.",url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);alert("Enlace copiado.")}}catch{}});

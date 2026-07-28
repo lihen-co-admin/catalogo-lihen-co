@@ -1,0 +1,16 @@
+ACTUALIZACIÓN INVITACIONES LIHEN.CO
+
+Se agregaron:
+- invitaciones/index.html
+- transmision/index.html
+- css/pages/invitaciones.css
+- css/pages/transmision.css
+- js/pages/invitaciones.js
+- js/pages/transmision.js
+- docs/invitaciones/supabase_invitaciones.sql
+- docs/invitaciones/README_CONFIGURACION.md
+- data-private/invitados_provisionales.csv (NO PUBLICAR)
+
+Invitaciones provisionales cargadas en CSV privado: 69
+Personas nombradas: 77
+Pendiente: invitados adicionales, dirección exacta, revisión final de cupos y beneficios.
