@@ -189,6 +189,19 @@
       event.preventDefault();
     });
   </script>
-  <script type="module" src="../js/pages/invitaciones.js?v=16"></script>
+  <script defer src="../js/pages/invitaciones.bundle.js?v=162"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.setTimeout(function () {
+        if (!window.__LIHEN_INVITACIONES_READY__) {
+          var out = document.querySelector("[data-form-message]");
+          if (out) {
+            out.textContent = "No pudimos iniciar la invitación. Recarga la página con Ctrl + F5.";
+            out.className = "form-message error";
+          }
+        }
+      }, 1200);
+    });
+  </script>
 </body>
 </html>
