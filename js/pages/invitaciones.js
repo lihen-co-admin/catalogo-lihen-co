@@ -137,8 +137,6 @@ async function prepareInvitation(inv){
     select.append(op);
   }
   select.value=state.count;
-<<<<<<< HEAD
-=======
 
   const virtualOnly = Boolean(inv.virtual_only);
   const presencialButton = document.querySelector('[data-mode="presencial"]');
@@ -151,7 +149,6 @@ async function prepareInvitation(inv){
   if(virtualNotice) virtualNotice.hidden = !virtualOnly;
   if(virtualOnly && state.mode === "presencial") state.mode = null;
 
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   const initialUrl=whatsappUrl(buildInitialWhatsappText());
   document.querySelector("[data-ticket-qr]").src=qrUrl(initialUrl);
   await transitionToSeal();
@@ -199,19 +196,12 @@ function createCelebration({secondary=false}={}){
 }
 
 const identityForm=document.querySelector("[data-identity-form]");
-<<<<<<< HEAD
-identityForm.addEventListener("submit",async e=>{
-  e.preventDefault();
-  const out=document.querySelector("[data-form-message]");
-  const typedName=cleanName(e.currentTarget.guestName.value);
-=======
 const discoverButton=document.querySelector("[data-discover-button]");
 
 async function handleDiscovery(event){
   event?.preventDefault?.();
   const out=document.querySelector("[data-form-message]");
   const typedName=cleanName(identityForm?.elements?.guestName?.value);
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   if(typedName.length<2){
     message(out,"Escribe tu nombre para continuar.","error");
     return;
@@ -232,14 +222,10 @@ async function handleDiscovery(event){
   }catch(err){
     message(out,err.message,"error");
   }
-<<<<<<< HEAD
-});
-=======
 }
 
 identityForm?.addEventListener("submit",handleDiscovery);
 discoverButton?.addEventListener("click",handleDiscovery);
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
 
 state.urlCode=normalizeCode(new URLSearchParams(location.search).get("codigo"));
 if(!state.urlCode){
@@ -306,13 +292,10 @@ document.querySelectorAll("[data-mode]").forEach(btn=>btn.addEventListener("clic
 }));
 
 function selectMode(mode){
-<<<<<<< HEAD
-=======
   if(mode==="presencial" && state.invitation?.virtual_only){
     message(document.querySelector("[data-rsvp-message]"),"Esta invitación está habilitada únicamente para modalidad virtual o para registrar que no podrás acompañarnos.","error");
     return;
   }
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   state.mode=mode;
   if(mode!=="presencial") resetProtectedLocation();
   document.querySelectorAll("[data-mode]").forEach(b=>b.classList.toggle("selected",b.dataset.mode===mode));

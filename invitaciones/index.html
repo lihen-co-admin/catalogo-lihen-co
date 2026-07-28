@@ -11,10 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/pages/invitaciones.css" />
-<<<<<<< HEAD
-  <script type="module" src="../js/pages/invitaciones.js"></script>
-=======
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
   <link rel="stylesheet" href="../css/responsive-bootstrap-audit.css">
 </head>
 <body>
@@ -32,17 +28,10 @@
           <p class="eyebrow">Una experiencia preparada para ti</p>
           <h1 id="entry-title">Tienes una invitación especial de LIHEN.CO</h1>
           <p class="entry-copy">Queremos que este comienzo se sienta cercano desde el primer instante.</p>
-<<<<<<< HEAD
-          <form data-identity-form class="identity-form" novalidate>
-            <label for="guest-identity">Escribe tu nombre</label>
-            <input id="guest-identity" name="guestName" autocomplete="name" placeholder="Nombre y apellido" required />
-            <button type="submit" class="btn premium-pill primary-action" data-discover-button>Descubrir mi invitación</button>
-=======
           <form data-identity-form class="identity-form" novalidate onsubmit="return false;">
             <label for="guest-identity">Escribe tu nombre</label>
             <input id="guest-identity" name="guestName" autocomplete="name" placeholder="Nombre y apellido" required />
             <button type="button" class="btn premium-pill primary-action" data-discover-button>Descubrir mi invitación</button>
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
             <p class="form-message" data-form-message role="status"></p>
           </form>
           <p class="privacy-note">Tu enlace es personal y fue preparado especialmente para ti.</p>
@@ -124,10 +113,7 @@
             <button type="button" class="mode-card" data-mode="virtual"><strong>Acompañaré la transmisión</strong><span>Conéctate al live de TikTok desde donde estés.</span></button>
             <button type="button" class="mode-card" data-mode="no_asiste"><strong>No podré acompañarlos</strong><span>Gracias por hacérnoslo saber.</span></button>
           </div>
-<<<<<<< HEAD
-=======
           <p class="virtual-only-notice" data-virtual-only-notice hidden>Esta invitación fue habilitada exclusivamente para acompañarnos de forma virtual. Puedes confirmar la transmisión o informarnos que no podrás acompañarnos.</p>
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
           <div class="attendance-box" data-attendance-box hidden>
             <label for="attendee-count">Personas que asistirán con esta invitación</label>
             <select id="attendee-count" data-attendee-count></select>
@@ -198,14 +184,11 @@
       <div class="dialog-actions"><button value="cancel" class="btn ghost">Volver</button><button value="confirm" class="btn primary" data-no-attend-confirm disabled>Confirmar que no asistiré</button></div>
     </form>
   </dialog>
-<<<<<<< HEAD
-=======
   <script>
     document.querySelector("[data-identity-form]")?.addEventListener("submit", function (event) {
       event.preventDefault();
     });
   </script>
   <script type="module" src="../js/pages/invitaciones.js?v=16"></script>
->>>>>>> 05e6dc1 (Actualiza invitaciones V16 con invitados virtuales y correccion de formulario)
 </body>
 </html>
