@@ -21,3 +21,11 @@ export function getSupabaseConfig() {
     isConfigured: !isPlaceholder(url) && !isPlaceholder(anonKey),
   };
 }
+
+/**
+ * Indica si la configuración pública de Supabase está disponible.
+ * Mantiene una única fuente de verdad a través de getSupabaseConfig().
+ */
+export function isSupabaseConfigured() {
+  return getSupabaseConfig().isConfigured;
+}

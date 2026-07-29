@@ -26,12 +26,73 @@ async function exists(file) {
   try { await access(file, constants.F_OK); return true; } catch { return false; }
 }
 
+function stripQueryAndHash(value) {
+  return value.split(/[?#]/)[0];
+}
+
+function collectNamedExports(source) {
+  const names = new Set();
+
+  for (const match of source.matchAll(/\bexport\s+(?:async\s+)?(?:function|class|const|let|var)\s+([A-Za-z_$][\w$]*)/g)) {
+    names.add(match[1]);
+  }
+
+  for (const match of source.matchAll(/\bexport\s*\{([\s\S]*?)\}(?:\s+from\s+["'][^"']+["'])?\s*;?/g)) {
+    for (const part of match[1].split(',')) {
+      const clean = part.trim();
+      if (!clean) continue;
+      const alias = clean.match(/^(?:[A-Za-z_$][\w$]*)(?:\s+as\s+([A-Za-z_$][\w$]*))?$/);
+      if (alias) names.add(alias[1] || clean);
+    }
+  }
+
+  return names;
+}
+
+async function validateModuleContracts(files) {
+  let importCount = 0;
+
+  for (const file of files) {
+    const source = await readFile(file, 'utf8');
+    const importPattern = /\bimport\s*\{([\s\S]*?)\}\s*from\s*["']([^"']+)["']\s*;?/g;
+
+    for (const match of source.matchAll(importPattern)) {
+      const specifier = match[2];
+      if (!specifier.startsWith('.')) continue;
+
+      importCount += 1;
+      const cleanSpecifier = stripQueryAndHash(specifier);
+      const target = path.resolve(path.dirname(file), cleanSpecifier);
+
+      if (!await exists(target)) {
+        errors.push(`Módulo JavaScript inexistente en ${relative(file)}: ${specifier}`);
+        continue;
+      }
+
+      const targetSource = await readFile(target, 'utf8');
+      const exportedNames = collectNamedExports(targetSource);
+
+      for (const importedPart of match[1].split(',')) {
+        const clean = importedPart.trim();
+        if (!clean) continue;
+        const importedName = clean.split(/\s+as\s+/)[0]?.trim();
+        if (importedName && !exportedNames.has(importedName)) {
+          errors.push(`Exportación inexistente: ${relative(file)} importa "${importedName}" desde ${relative(target)}.`);
+        }
+      }
+    }
+  }
+
+  notes.push(`${importCount} contratos de importación/exportación revisados.`);
+}
+
 const jsFiles = await walk(path.join(root, 'js'), ['.js']);
 for (const file of jsFiles) {
   const result = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
   if (result.status !== 0) errors.push(`Sintaxis JavaScript: ${relative(file)}\n${result.stderr.trim()}`);
 }
 notes.push(`${jsFiles.length} archivos JavaScript revisados.`);
+await validateModuleContracts(jsFiles);
 
 const htmlFiles = await walk(root, ['.html']);
 const localRefPattern = /(?:src|href)=["']([^"']+)["']/g;

@@ -1,5 +1,6 @@
-import { calculateTriviaSeconds, formatTriviaTime } from "./triviaTimer.js";
-export const calculateVoteSeconds = calculateTriviaSeconds;
+import { getTriviaSecondsLeft, formatTriviaTime } from "./triviaTimer.js";
+
+export const calculateVoteSeconds = getTriviaSecondsLeft;
 export const formatVoteTime = formatTriviaTime;
 export function createVoteTicker(getRound, onTick) {
   const tick = () => onTick(calculateVoteSeconds(getRound()));
