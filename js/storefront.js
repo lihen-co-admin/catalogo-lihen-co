@@ -1,5 +1,7 @@
 import { products } from './data/products.js';
 import { openPrelaunchModal } from './components/prelaunchModal.js';
+import { setupHeroCarousel } from './storefront/heroCarousel.js';
+import { mountWelcomePromo } from './storefront/welcomePromo.js';
 
 const $=(s,r=document)=>r.querySelector(s); const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const STORAGE='lihen-selection-v1';
@@ -107,42 +109,6 @@ function renderSelectionPage(){const list=$('[data-selection-page-list]'),summar
 function toast(text){let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.append(t)}t.textContent=text;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
 updateSelectionUI();
 
-// Aquí inicio el carrusel principal con una velocidad cómoda de lectura y ahorro de recursos.
-(function initHeroCarousel(){
-  const root=document.querySelector('[data-hero-carousel]');
-  if(!root||root.dataset.autoplayReady==='true')return;
-  root.dataset.autoplayReady='true';
-  const slides=[...root.querySelectorAll('[data-hero-slide]')];
-  const dots=root.querySelector('[data-hero-dots]');
-  if(slides.length<2)return;
-  let index=0,timer=null,touchStart=0;
-  const renderDots=()=>{if(dots)dots.innerHTML=slides.map((_,i)=>`<button type="button" class="${i===index?'active':''}" data-hero-index="${i}" aria-label="Ver imagen ${i+1}" aria-current="${i===index?'true':'false'}"></button>`).join('')};
-  const show=i=>{index=(i+slides.length)%slides.length;slides.forEach((slide,n)=>{slide.classList.toggle('is-active',n===index);slide.setAttribute('aria-hidden',n===index?'false':'true')});renderDots()};
-  const clearTimer=()=>{if(timer!==null){window.clearTimeout(timer);timer=null}};
-  const schedule=()=>{clearTimer();if(document.hidden)return;timer=window.setTimeout(()=>{show(index+1);schedule()},5000)};
-  const move=i=>{show(i);schedule()};
-  root.querySelector('[data-hero-next]')?.addEventListener('click',event=>{event.preventDefault();move(index+1)});
-  root.querySelector('[data-hero-prev]')?.addEventListener('click',event=>{event.preventDefault();move(index-1)});
-  dots?.addEventListener('click',event=>{const button=event.target.closest('[data-hero-index]');if(button){event.preventDefault();move(Number(button.dataset.heroIndex))}});
-  root.addEventListener('touchstart',event=>{touchStart=event.touches[0].clientX;clearTimer()},{passive:true});
-  root.addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchStart;if(Math.abs(delta)>45)show(index+(delta<0?1:-1));schedule()},{passive:true});
-  document.addEventListener('visibilitychange',()=>document.hidden?clearTimer():schedule());
-  show(0);
-  schedule();
-})();
-
-// ETAPA 27: pestaña promocional de bienvenida y formulario con autorización.
-function mountWelcomePromo(){
-  if(document.querySelector('[data-welcome-tab]'))return;
-  const host=document.createElement('div');
-  host.innerHTML=`<div class="welcome-tab-wrap"><button class="welcome-tab" type="button" data-welcome-tab aria-label="Abrir beneficio de bienvenida"><span>10%</span><small>BIENVENIDA</small></button><button class="welcome-tab-close" type="button" data-welcome-tab-hide aria-label="Ocultar beneficio">×</button></div><div class="welcome-modal-backdrop" data-welcome-modal hidden><section class="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcome-title"><button class="welcome-modal-close" type="button" data-welcome-close aria-label="Cerrar">×</button><div class="welcome-modal-copy"><p class="eyebrow">Beneficio LIHEN.CO</p><h2 id="welcome-title">Recibe un beneficio en tu primera compra.</h2><p>Déjanos tus datos para solicitar las condiciones vigentes de la campaña.</p><form data-welcome-form><label>Correo electrónico<input type="email" name="email" required placeholder="tu@correo.com"></label><fieldset><legend>Cumpleaños <small>(opcional)</small></legend><div class="birthday-fields"><input type="number" name="month" min="1" max="12" placeholder="MM" aria-label="Mes"><input type="number" name="day" min="1" max="31" placeholder="DD" aria-label="Día"><input type="number" name="year" min="1900" max="2026" placeholder="AAAA" aria-label="Año"></div></fieldset><label class="consent-check"><input type="checkbox" name="consent" required><span>Autorizo a LIHEN.CO a contactarme sobre este beneficio y acepto la <a href="./politica-de-privacidad.html">Política de privacidad</a>.</span></label><button class="btn btn-dark" type="submit">Solicitar beneficio</button><button class="welcome-no" type="button" data-welcome-close>Ahora no</button></form><small>El beneficio está sujeto a vigencia, productos participantes y demás condiciones informadas por LIHEN.CO.</small></div><div class="welcome-modal-art"><img src="./assets/banners/lihen_beneficio_bienvenida.webp" alt="Identidad visual de LIHEN.CO para el beneficio de bienvenida"></div></section></div>`;
-  document.body.append(...host.children);
-  const modal=document.querySelector('[data-welcome-modal]');
-  const open=()=>{modal.hidden=false;document.body.classList.add('no-scroll')};
-  const close=()=>{modal.hidden=true;document.body.classList.remove('no-scroll')};
-  document.querySelector('[data-welcome-tab]')?.addEventListener('click',open);
-  document.querySelector('[data-welcome-tab-hide]')?.addEventListener('click',e=>{e.stopPropagation();document.querySelector('.welcome-tab-wrap')?.remove()});
-  modal?.addEventListener('click',e=>{if(e.target===modal||e.target.closest('[data-welcome-close]'))close()});
-  document.querySelector('[data-welcome-form]')?.addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.currentTarget);const birth=[data.get('month'),data.get('day'),data.get('year')].filter(Boolean).join('/');const text=`Hola LIHEN.CO, deseo solicitar el beneficio de bienvenida. Correo: ${data.get('email')}.${birth?` Cumpleaños: ${birth}.`:''} Autorizo el contacto para conocer condiciones vigentes.`;window.open(`https://wa.me/573058947808?text=${encodeURIComponent(text)}`,'_blank','noopener');close()});
-}
+// Componentes de experiencia desacoplados del archivo principal.
+setupHeroCarousel();
 mountWelcomePromo();
