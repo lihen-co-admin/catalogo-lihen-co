@@ -7,6 +7,7 @@ import {
   matchesInvitationName,
   normalizeInvitationCode
 } from "../invitations/invitationValidators.js?v=180";
+import { createInvitationView } from "../invitations/invitationView.js?v=182";
 
 const STARTUP_ERROR_MESSAGE = "No pudimos iniciar la invitación. Recarga la página con Ctrl + F5 y vuelve a intentarlo.";
 
@@ -24,17 +25,9 @@ function initializeInvitationPage() {
 
     const WHATSAPP = "573058947808";
     const state = { invitation:null, mode:null, count:1, audio:null, ambienceTimer:null, ambienceNodes:[], typedName:"", urlCode:"", location:null };
-    const screens = Object.fromEntries([...document.querySelectorAll("[data-screen]")].map(el=>[el.dataset.screen,el]));
-    const guestLabels = document.querySelectorAll("[data-guest-name]");
-
-    function showScreen(name){
-      Object.entries(screens).forEach(([key,el])=>{const active=key===name;el.hidden=!active;el.classList.toggle("is-active",active)});
-      window.scrollTo({top:0,behavior:"smooth"});
-    }
-    function message(el,text,type=""){
-      el.textContent=text;
-      el.className=`form-message ${type}`.trim();
-    }
+    const view = createInvitationView({ qrUrl });
+    const { screens } = view;
+    const { message, showScreen } = view;
     function responsibleName(){ return state.invitation?.responsible || "LIHEN.CO"; }
 
     function buildInitialWhatsappText(){
@@ -46,32 +39,14 @@ function initializeInvitationPage() {
     async function prepareInvitation(inv){
       state.invitation=inv;
       state.count=Math.max(1,Number(inv.named_guests||1));
-      guestLabels.forEach(el=>el.textContent=inv.display_name);
-      const max=Math.max(state.count,Number(inv.max_attendees||3));
-      document.querySelector("[data-max-attendees]").textContent=max;
-      const select=document.querySelector("[data-attendee-count]");
-      select.innerHTML="";
-      for(let i=state.count;i<=max;i++){
-        const op=document.createElement("option");
-        op.value=i;
-        op.textContent=`${i} ${i===1?"persona":"personas"}`;
-        select.append(op);
-      }
-      select.value=state.count;
+      view.renderInvitation(inv, state.count);
 
       const virtualOnly = Boolean(inv.virtual_only);
-      const presencialButton = document.querySelector('[data-mode="presencial"]');
-      const virtualNotice = document.querySelector("[data-virtual-only-notice]");
-      if(presencialButton){
-        presencialButton.hidden = virtualOnly;
-        presencialButton.disabled = virtualOnly;
-        presencialButton.setAttribute("aria-disabled", String(virtualOnly));
-      }
-      if(virtualNotice) virtualNotice.hidden = !virtualOnly;
+      view.renderVirtualOnly(virtualOnly);
       if(virtualOnly && state.mode === "presencial") state.mode = null;
 
       const initialUrl=whatsappUrl(buildInitialWhatsappText());
-      document.querySelector("[data-ticket-qr]").src=qrUrl(initialUrl);
+      view.updateTicketQr(initialUrl);
       await transitionToSeal();
     }
 
@@ -170,34 +145,17 @@ function initializeInvitationPage() {
     });
 
     document.querySelector("[data-location-locked]")?.addEventListener("click",()=>{
-      toggleModeSection(true);
+      view.toggleModeSection(true);
       message(document.querySelector("[data-rsvp-message]"),"Confirma asistencia presencial para revelar la dirección y el mapa.");
     });
 
     document.querySelector("[data-agenda-toggle]").addEventListener("click",e=>{
-      const panel=document.querySelector("[data-agenda]");
-      panel.hidden=!panel.hidden;
-      e.currentTarget.textContent=panel.hidden?"Ver programación":"Ocultar programación";
+      view.toggleAgenda(e.currentTarget);
     });
 
-    const rsvpSection = document.getElementById("confirmacion");
     const modeToggleButtons = document.querySelectorAll("[data-mode-toggle]");
-    function setModeToggleText(open){
-      modeToggleButtons.forEach(btn=>{
-        btn.textContent = open ? "Ocultar modalidad" : "Elegir modalidad";
-        btn.setAttribute("aria-expanded", String(open));
-      });
-    }
-    function toggleModeSection(forceOpen=null){
-      const willOpen = forceOpen === null ? rsvpSection.hidden : forceOpen;
-      rsvpSection.hidden = !willOpen;
-      setModeToggleText(willOpen);
-      if(willOpen){
-        rsvpSection.scrollIntoView({behavior:"smooth", block:"start"});
-      }
-    }
-    modeToggleButtons.forEach(btn=>btn.addEventListener("click",()=>toggleModeSection()));
-    setModeToggleText(false);
+    modeToggleButtons.forEach(btn=>btn.addEventListener("click",()=>view.toggleModeSection()));
+    view.setModeToggleText(false);
 
     document.querySelectorAll("[data-mode]").forEach(btn=>btn.addEventListener("click",()=>{
       const mode=btn.dataset.mode;
@@ -218,11 +176,12 @@ function initializeInvitationPage() {
         return;
       }
       state.mode=mode;
-      if(mode!=="presencial") resetProtectedLocation();
-      document.querySelectorAll("[data-mode]").forEach(b=>b.classList.toggle("selected",b.dataset.mode===mode));
-      document.querySelector("[data-attendance-box]").hidden=mode!=="presencial";
-      document.querySelector("[data-whatsapp-panel]").hidden=true;
-      updateConfirmState();
+      if(mode!=="presencial") {
+        state.location=null;
+        view.resetProtectedLocation();
+      }
+      view.renderSelectedMode(mode);
+      view.updateConfirmState(state.mode);
     }
 
     const accept=document.querySelector("[data-virtual-accept]");
@@ -243,37 +202,7 @@ function initializeInvitationPage() {
       noAttendConfirm.disabled=true;
     });
     document.querySelector("[data-attendee-count]").addEventListener("change",e=>state.count=Number(e.target.value));
-    document.querySelector("[data-data-consent]").addEventListener("change",updateConfirmState);
-    function updateConfirmState(){ document.querySelector("[data-confirm]").disabled=!(state.mode&&document.querySelector("[data-data-consent]").checked); }
-
-
-    function revealProtectedLocation(locationData){
-      if(!locationData || state.mode!=="presencial") return;
-      const address=String(locationData.address||"").trim();
-      const mapsUrl=String(locationData.maps_url||"").trim();
-      if(!address || !mapsUrl) return;
-      state.location={address,maps_url:mapsUrl};
-      const summary=document.querySelector("[data-location-summary]");
-      const locked=document.querySelector("[data-location-locked]");
-      const link=document.querySelector("[data-location-link]");
-      const notice=document.querySelector("[data-location-notice]");
-      if(summary) summary.textContent=address;
-      if(locked) locked.hidden=true;
-      if(link){ link.href=mapsUrl; link.hidden=false; }
-      if(notice) notice.textContent="Tu asistencia presencial quedó registrada. Ya puedes consultar la ubicación confirmada.";
-    }
-
-    function resetProtectedLocation(){
-      state.location=null;
-      const summary=document.querySelector("[data-location-summary]");
-      const locked=document.querySelector("[data-location-locked]");
-      const link=document.querySelector("[data-location-link]");
-      const notice=document.querySelector("[data-location-notice]");
-      if(summary) summary.textContent="Se revelará únicamente después de confirmar asistencia presencial.";
-      if(locked) locked.hidden=false;
-      if(link){ link.hidden=true; link.removeAttribute("href"); }
-      if(notice) notice.textContent="Por seguridad, la dirección y el acceso al mapa solo se mostrarán después de registrar una confirmación presencial.";
-    }
+    document.querySelector("[data-data-consent]").addEventListener("change",()=>view.updateConfirmState(state.mode));
 
     function buildWhatsappText(){
       const modeText={presencial:"confirmo mi asistencia presencial",virtual:"confirmo que deseo acompañarlos de forma virtual",no_asiste:"agradezco mi invitación y confirmo que en esta ocasión no podré acompañarlos"}[state.mode];
@@ -281,17 +210,6 @@ function initializeInvitationPage() {
       const virtual=state.mode==="virtual"?" Comprendo que la plataforma y el enlace de transmisión se compartirán posteriormente, y estaré pendiente de las redes y del grupo de WhatsApp.":"";
       const absence=state.mode==="no_asiste"?" Por favor, registren mi ausencia para organizar correctamente los cupos, actividades, premios, descuentos y beneficios destinados a los asistentes confirmados. Seguiré pendiente de las novedades y próximas oportunidades de LIHEN.CO.":"";
       return `Hola LIHEN.CO, soy ${state.invitation.display_name}. ${modeText}.${count}${virtual}${absence} Invitación realizada por ${responsibleName()}. Referencia interna: ${state.invitation.access_code}.`;
-    }
-
-    function revealWhatsapp(){
-      const url=whatsappUrl(buildWhatsappText());
-      const link=document.querySelector("[data-whatsapp-link]");
-      link.href=url;
-      document.querySelector("[data-whatsapp-qr]").src=qrUrl(url);
-      document.querySelector("[data-ticket-qr]").src=qrUrl(url);
-      const panel=document.querySelector("[data-whatsapp-panel]");
-      panel.hidden=false;
-      panel.scrollIntoView({behavior:"smooth",block:"center"});
     }
 
     document.querySelector("[data-confirm]").addEventListener("click",async()=>{
@@ -305,27 +223,23 @@ function initializeInvitationPage() {
           mode: state.mode,
           attendees: state.count
         });
-        if(state.mode==="presencial") revealProtectedLocation(result?.location);
+        if(state.mode==="presencial") {
+          state.location=view.revealProtectedLocation(result?.location, state.mode);
+        }
         message(out,state.mode==="presencial" && result?.location
           ? "Tu asistencia presencial quedó registrada. Ya puedes consultar la ubicación y confirmar desde WhatsApp."
           : "Tu respuesta quedó preparada. Confírmala desde tu WhatsApp.","success");
-        revealWhatsapp();
+        view.revealWhatsapp(whatsappUrl(buildWhatsappText()));
       } catch(err) {
         message(out,err.message,"error");
         btn.disabled=false;
       }
     });
 
-    function updateSoundButtons(active){
-      document.querySelectorAll("[data-sound-toggle]").forEach(btn=>{
-        btn.textContent=active?"♫ Pausar ambiente":"♫ Activar ambiente";
-        btn.setAttribute("aria-pressed",String(active));
-      });
-    }
     async function startAmbience(){
       if(state.audio){
         if(state.audio.state==="suspended") await state.audio.resume();
-        updateSoundButtons(true);
+        view.updateSoundButtons(true);
         return;
       }
       const AudioCtx=window.AudioContext||window.webkitAudioContext;
@@ -376,7 +290,7 @@ function initializeInvitationPage() {
       };
       playPad();
       state.ambienceTimer=setInterval(playPad,5200);
-      updateSoundButtons(true);
+      view.updateSoundButtons(true);
     }
     async function stopAmbience(){
       if(state.ambienceTimer) clearInterval(state.ambienceTimer);
@@ -384,7 +298,7 @@ function initializeInvitationPage() {
       if(state.audio && state.audio.state!=="closed") await state.audio.close();
       state.audio=null;
       state.ambienceNodes=[];
-      updateSoundButtons(false);
+      view.updateSoundButtons(false);
     }
     document.querySelectorAll("[data-sound-toggle]").forEach(btn=>btn.addEventListener("click",async()=>{
       if(state.audio) await stopAmbience(); else await startAmbience();
