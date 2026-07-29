@@ -1,5 +1,10 @@
 import { getSupabaseConfig } from "../config/supabase.js?v=171";
 import { LOCAL_INVITATIONS } from "../data/localInvitations.js?v=171";
+import {
+  cleanInvitationName,
+  matchesInvitationName,
+  normalizeInvitationCode
+} from "../invitations/invitationValidators.js?v=180";
 
 const STARTUP_ERROR_MESSAGE = "No pudimos iniciar la invitación. Recarga la página con Ctrl + F5 y vuelve a intentarlo.";
 
@@ -26,76 +31,11 @@ function initializeInvitationPage() {
       Object.entries(screens).forEach(([key,el])=>{const active=key===name;el.hidden=!active;el.classList.toggle("is-active",active)});
       window.scrollTo({top:0,behavior:"smooth"});
     }
-    function normalizeCode(v){ return String(v||"").trim().toUpperCase(); }
-    function cleanName(v){ return String(v||"").trim().replace(/\s+/g," "); }
-    function normalizeName(v){
-      return cleanName(v)
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g,"")
-        .replace(/[.,/#!$%^&*;:{}=_`~()¿?¡+\\-]/g, " ")
-        .replace(/\s+/g," ")
-        .toLowerCase();
-    }
-    function words(v){ return normalizeName(v).split(" ").filter(Boolean); }
     function message(el,text,type=""){
       el.textContent=text;
       el.className=`form-message ${type}`.trim();
     }
     function responsibleName(){ return state.invitation?.responsible || "LIHEN.CO"; }
-
-    function buildAliases(displayName=""){
-      const aliases = new Set();
-      const normalizedFull = normalizeName(displayName);
-      if(normalizedFull) aliases.add(normalizedFull);
-
-      const rawParts = displayName.split(/\s+y\s+/i).map(part=>cleanName(part)).filter(Boolean);
-      if(rawParts.length > 1){
-        const normalizedParts = rawParts.map(part=>words(part));
-        const lastPartWords = normalizedParts[normalizedParts.length - 1] || [];
-        const sharedSurname = lastPartWords.length > 1 ? lastPartWords[lastPartWords.length - 1] : "";
-
-        rawParts.forEach((part, index)=>{
-          const partWords = words(part);
-          if(!partWords.length) return;
-          aliases.add(partWords.join(" "));
-
-          if(partWords.length === 1 && sharedSurname){
-            aliases.add(`${partWords[0]} ${sharedSurname}`.trim());
-          }
-
-          if(index === 0 && partWords.length >= 2){
-            aliases.add(partWords.slice(0, Math.min(3, partWords.length)).join(" "));
-          }
-        });
-      } else {
-        const w = words(displayName);
-        if(w.length){
-          aliases.add(w.join(" "));
-          aliases.add(w.slice(0, Math.min(3, w.length)).join(" "));
-        }
-      }
-
-      return [...aliases].filter(Boolean);
-    }
-
-    function matchesInvitationName(typedName, invitation){
-      const typed = normalizeName(typedName);
-      if(!typed) return false;
-      const typedWords = typed.split(" ").filter(Boolean);
-      const aliases = buildAliases(invitation.display_name);
-
-      return aliases.some(alias=>{
-        const aliasWords = alias.split(" ").filter(Boolean);
-        if(!aliasWords.length) return false;
-        if(alias === typed) return true;
-        if(alias.startsWith(typed) || typed.startsWith(alias)) return true;
-        if(typedWords.length <= aliasWords.length){
-          const prefixMatches = typedWords.every((word, index)=>aliasWords[index] === word);
-          if(prefixMatches) return true;
-        }
-        return false;
-      });
-    }
 
     async function lookupInvitation(code){
       if(code==="LHN-DEMO-001") return DEMO;
@@ -215,7 +155,7 @@ function initializeInvitationPage() {
     async function handleDiscovery(event){
       event?.preventDefault?.();
       const out=document.querySelector("[data-form-message]");
-      const typedName=cleanName(identityForm?.elements?.guestName?.value);
+      const typedName=cleanInvitationName(identityForm?.elements?.guestName?.value);
       if(typedName.length<2){
         message(out,"Escribe tu nombre para continuar.","error");
         return;
@@ -241,7 +181,7 @@ function initializeInvitationPage() {
     identityForm?.addEventListener("submit",handleDiscovery);
     discoverButton?.addEventListener("click",handleDiscovery);
 
-    state.urlCode=normalizeCode(new URLSearchParams(location.search).get("codigo"));
+    state.urlCode=normalizeInvitationCode(new URLSearchParams(location.search).get("codigo"));
     if(!state.urlCode){
       message(document.querySelector("[data-form-message]"),"Abre el enlace personal que te envió Lizeth, Diana o Hellen.","error");
     }
