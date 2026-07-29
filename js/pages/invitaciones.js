@@ -1,5 +1,7 @@
-import { getSupabaseConfig } from "../config/supabase.js?v=171";
-import { LOCAL_INVITATIONS } from "../data/localInvitations.js?v=171";
+import {
+  confirmInvitation,
+  findInvitationByCode
+} from "../invitations/invitationRepository.js?v=181";
 import {
   cleanInvitationName,
   matchesInvitationName,
@@ -21,11 +23,9 @@ function initializeInvitationPage() {
   try {
 
     const WHATSAPP = "573058947808";
-    const DEMO = { access_code:"LHN-DEMO-001", display_name:"Lizeth Londoño", responsible:"Lizeth Londoño", named_guests:1, max_attendees:3, status:"pending" };
     const state = { invitation:null, mode:null, count:1, audio:null, ambienceTimer:null, ambienceNodes:[], typedName:"", urlCode:"", location:null };
     const screens = Object.fromEntries([...document.querySelectorAll("[data-screen]")].map(el=>[el.dataset.screen,el]));
     const guestLabels = document.querySelectorAll("[data-guest-name]");
-    const localInvitationMap = new Map(LOCAL_INVITATIONS.map(item=>[String(item.access_code).trim().toUpperCase(), item]));
 
     function showScreen(name){
       Object.entries(screens).forEach(([key,el])=>{const active=key===name;el.hidden=!active;el.classList.toggle("is-active",active)});
@@ -36,39 +36,6 @@ function initializeInvitationPage() {
       el.className=`form-message ${type}`.trim();
     }
     function responsibleName(){ return state.invitation?.responsible || "LIHEN.CO"; }
-
-    async function lookupInvitation(code){
-      if(code==="LHN-DEMO-001") return DEMO;
-      if(localInvitationMap.has(code)) return localInvitationMap.get(code);
-
-      const cfg = getSupabaseConfig();
-      if(!cfg.isConfigured) {
-        throw new Error("No encontramos una invitación asociada a este enlace. Solicita a la persona que te invitó que te reenvíe tu enlace personal.");
-      }
-
-      const response = await fetch(`${cfg.url}/rest/v1/rpc/get_invitation_by_code`, {
-        method:"POST",
-        headers:{apikey:cfg.anonKey, Authorization:`Bearer ${cfg.anonKey}`, "Content-Type":"application/json"},
-        body:JSON.stringify({p_code:code})
-      });
-
-      if(!response.ok) throw new Error("No pudimos validar la invitación en este momento.");
-      const rows = await response.json();
-      return Array.isArray(rows) ? rows[0] : rows;
-    }
-
-    async function saveConfirmation(){
-      const cfg=getSupabaseConfig();
-      if(!cfg.isConfigured){
-        if(state.invitation.access_code==="LHN-DEMO-001" || localInvitationMap.has(state.invitation.access_code)){
-          return {ok:true, local:true, location:null};
-        }
-        throw new Error("Supabase no está configurado.");
-      }
-      const response=await fetch(`${cfg.url}/rest/v1/rpc/confirm_invitation`,{method:"POST",headers:{apikey:cfg.anonKey,Authorization:`Bearer ${cfg.anonKey}`,"Content-Type":"application/json"},body:JSON.stringify({p_code:state.invitation.access_code,p_mode:state.mode,p_attendees:state.count})});
-      if(!response.ok) throw new Error("No pudimos guardar la confirmación.");
-      return response.json();
-    }
 
     function buildInitialWhatsappText(){
       return `Hola LIHEN.CO, soy ${state.invitation.display_name}. Deseo confirmar mi invitación a la inauguración. Invitación realizada por ${responsibleName()}. Referencia interna: ${state.invitation.access_code}.`;
@@ -167,7 +134,7 @@ function initializeInvitationPage() {
       state.typedName=typedName;
       message(out,"Preparando tu experiencia…");
       try{
-        const inv=await lookupInvitation(state.urlCode);
+        const inv=await findInvitationByCode(state.urlCode);
         if(!inv) throw new Error("No encontramos una invitación asociada a este enlace.");
         if(!matchesInvitationName(typedName, inv)){
           throw new Error("Escribe tu nombre o tus nombres y primer apellido como aparecen en tu invitación.");
@@ -333,7 +300,11 @@ function initializeInvitationPage() {
       btn.disabled=true;
       message(out,"Guardando tu respuesta…");
       try{
-        const result=await saveConfirmation();
+        const result=await confirmInvitation({
+          accessCode: state.invitation.access_code,
+          mode: state.mode,
+          attendees: state.count
+        });
         if(state.mode==="presencial") revealProtectedLocation(result?.location);
         message(out,state.mode==="presencial" && result?.location
           ? "Tu asistencia presencial quedó registrada. Ya puedes consultar la ubicación y confirmar desde WhatsApp."
