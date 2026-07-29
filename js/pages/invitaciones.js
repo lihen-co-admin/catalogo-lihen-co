@@ -1,5 +1,5 @@
-import { getSupabaseConfig } from "../config/supabase.js?v=170";
-import { LOCAL_INVITATIONS } from "../data/localInvitations.js?v=170";
+import { getSupabaseConfig } from "../config/supabase.js?v=171";
+import { LOCAL_INVITATIONS } from "../data/localInvitations.js?v=171";
 
 const STARTUP_ERROR_MESSAGE = "No pudimos iniciar la invitación. Recarga la página con Ctrl + F5 y vuelve a intentarlo.";
 
