@@ -9,7 +9,7 @@ Transformar la página principal en una experiencia comercial inspirada en una t
 - `js/storefront.js`: comportamiento del menú responsive.
 
 ## Respaldo
-La versión anterior quedó guardada como `index_etapa20_respaldo.html`.
+La versión anterior quedó guardada como `docs/legacy/index_etapa20_respaldo.html`.
 
 ## Secciones construidas
 1. Franja informativa.
