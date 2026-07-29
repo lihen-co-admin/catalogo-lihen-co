@@ -1,0 +1,17 @@
+LIHEN.CO V18 — REPORTE DE CIERRE FASES 6 Y 7
+
+Validaciones automatizadas previstas:
+- npm run check
+- npm run check:js
+- npm run check:release
+- revisión de conflictos Git
+- revisión de secretos en frontend
+- revisión de referencias localhost
+- revisión de enlaces target=_blank
+- revisión de archivos críticos de GitHub Pages
+
+Alcance de integración:
+La rama queda preparada para Pull Request. El merge a main y la comprobación del despliegue público deben ejecutarse desde el repositorio GitHub con historial y checks disponibles.
+
+Supabase:
+Sin cambios SQL ni de configuración remota.

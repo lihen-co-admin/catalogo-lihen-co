@@ -277,21 +277,29 @@ const envPath = path.join(
   "env.js"
 );
 
-const envText = await readFile(envPath, "utf8");
+if (await exists(envPath)) {
+  const envText = await readFile(envPath, "utf8");
 
-if (/service_role/i.test(envText)) {
-  errors.push(
-    "env.js contiene una referencia a service_role. " +
-    "Esa clave no debe estar en el frontend."
-  );
-}
+  if (/service_role/i.test(envText)) {
+    errors.push(
+      "env.js contiene una referencia a service_role. " +
+      "Esa clave no debe estar en el frontend."
+    );
+  }
 
-if (
-  /SUPABASE_(?:URL|ANON_KEY):\s*["'][^"']{20,}["']/.test(envText)
-) {
-  errors.push(
-    "env.js parece contener credenciales reales. " +
-    "Deben retirarse antes de compartir el ZIP."
+  if (
+    /SUPABASE_(?:URL|ANON_KEY):\s*["'][^"']{20,}["']/.test(envText)
+  ) {
+    errors.push(
+      "env.js parece contener credenciales reales. " +
+      "Deben retirarse antes de compartir el ZIP."
+    );
+  }
+
+  notes.push("Configuración local env.js revisada.");
+} else {
+  notes.push(
+    "env.js no está incluido, como corresponde en un ZIP descargado de GitHub."
   );
 }
 
