@@ -1,0 +1,4 @@
+Producto: Pantaloneta básica hombre sin licra interna
+ID: S059
+Imagen web: pantaloneta_basica_hombre_sin_licra_interna_0.webp
+Nota: Recorte automático desde composición con dos productos.

@@ -1,0 +1,4 @@
+Producto: Licra sirena bota ancha suplex
+ID: S005
+Imagen web: licra_sirena_bota_ancha_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

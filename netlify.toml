@@ -2,21 +2,6 @@
   publish = "."
 
 [[redirects]]
-  from = "/inauguracion"
-  to = "/inauguracion/"
-  status = 301
-
-[[redirects]]
-  from = "/pantalla"
-  to = "/inauguracion/pantalla.html"
-  status = 302
-
-[[redirects]]
-  from = "/evento-admin"
-  to = "/evento-admin.html"
-  status = 302
-
-[[redirects]]
   from = "/admin"
   to = "/admin.html"
   status = 302

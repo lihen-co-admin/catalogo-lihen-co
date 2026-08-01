@@ -1,0 +1,4 @@
+Producto: Pantaloneta importada hombre sin licra interna
+ID: S063
+Imagen web: pantaloneta_importada_hombre_sin_licra_interna_0.webp
+Nota: Recorte automático desde composición con dos productos.

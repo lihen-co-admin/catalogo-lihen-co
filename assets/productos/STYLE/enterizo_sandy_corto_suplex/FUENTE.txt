@@ -1,0 +1,4 @@
+Producto: Enterizo Sandy corto suplex
+ID: S022
+Imagen web: enterizo_sandy_corto_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

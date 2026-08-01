@@ -1,0 +1,4 @@
+Producto: Falda unicolor + top
+ID: S014
+Imagen web: falda_unicolor_top_0.webp
+Nota: Recorte automático superior del arte del catálogo.

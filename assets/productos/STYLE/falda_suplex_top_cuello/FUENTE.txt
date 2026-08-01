@@ -1,0 +1,4 @@
+Producto: Falda suplex + top cuello
+ID: S017
+Imagen web: falda_suplex_top_cuello_0.webp
+Nota: Recorte automático superior del arte del catálogo.

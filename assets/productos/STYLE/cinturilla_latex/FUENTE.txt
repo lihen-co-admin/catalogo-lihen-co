@@ -1,0 +1,4 @@
+Producto: Cinturilla Látex
+ID: S046
+Imagen web: cinturilla_latex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

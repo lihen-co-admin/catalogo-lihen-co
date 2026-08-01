@@ -1,0 +1,4 @@
+Producto: Sudadera nacional hombre antifluido
+ID: S058
+Imagen web: sudadera_nacional_hombre_antifluido_0.webp
+Nota: Recorte automático desde composición con dos productos.

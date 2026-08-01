@@ -1,0 +1,4 @@
+Producto: Licra corta hombre nacional
+ID: S057
+Imagen web: licra_corta_hombre_nacional_0.webp
+Nota: Recorte automático superior del arte del catálogo.

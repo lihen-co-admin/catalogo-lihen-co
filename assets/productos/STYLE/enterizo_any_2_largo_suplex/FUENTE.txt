@@ -1,0 +1,4 @@
+Producto: Enterizo Any 2 largo suplex
+ID: S027
+Imagen web: enterizo_any_2_largo_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

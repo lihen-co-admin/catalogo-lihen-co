@@ -1,0 +1,4 @@
+Producto: Cinturilla Magic Látex
+ID: S047
+Imagen web: cinturilla_magic_latex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

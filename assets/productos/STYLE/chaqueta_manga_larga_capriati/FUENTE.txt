@@ -1,0 +1,4 @@
+Producto: Chaqueta manga larga Capriati
+ID: S043
+Imagen web: chaqueta_manga_larga_capriati_0.webp
+Nota: Recorte automático superior del arte del catálogo.

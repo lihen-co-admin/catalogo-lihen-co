@@ -1,0 +1,10 @@
+ACTUALIZACIÓN FINAL LIHEN.CO
+
+- Ideas para regalar: productos reales de hasta $30.000 COP.
+- Filtros del mega menú conectados a buscar.html.
+- Botones Vista previa y Agregar reforzados en búsqueda.
+- Navegación rápida expandible en páginas públicas.
+- Títulos de pestaña dinámicos y títulos legales conservados.
+- Footer y accesos principales revisados.
+- Parte pública de inauguración retirada de la entrega.
+- Carpeta .git excluida.

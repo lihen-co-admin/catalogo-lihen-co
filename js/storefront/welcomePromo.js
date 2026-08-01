@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "573058947808";
+const OFFICIAL_WHATSAPP_URL = "https://wa.me/message/2JDWBH57SQG4F1";
 
 function buildWelcomeMessage(formData) {
   const birthday = [formData.get("month"), formData.get("day"), formData.get("year")]
@@ -38,8 +38,9 @@ export function mountWelcomePromo() {
   document.querySelector("[data-welcome-form]")?.addEventListener("submit", (event) => {
     event.preventDefault();
     const message = buildWelcomeMessage(new FormData(event.currentTarget));
+    navigator.clipboard?.writeText(message).catch(() => {});
     window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+      OFFICIAL_WHATSAPP_URL,
       "_blank",
       "noopener",
     );

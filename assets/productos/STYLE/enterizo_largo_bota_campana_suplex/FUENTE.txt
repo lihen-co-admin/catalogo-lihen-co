@@ -1,0 +1,4 @@
+Producto: Enterizo largo bota campana suplex
+ID: S033
+Imagen web: enterizo_largo_bota_campana_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

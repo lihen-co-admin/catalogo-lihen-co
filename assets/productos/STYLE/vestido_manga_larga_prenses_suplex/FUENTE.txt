@@ -1,0 +1,4 @@
+Producto: Vestido manga larga prenses suplex
+ID: S021
+Imagen web: vestido_manga_larga_prenses_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

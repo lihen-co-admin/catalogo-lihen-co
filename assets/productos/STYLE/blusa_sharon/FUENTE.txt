@@ -1,0 +1,4 @@
+Producto: Blusa Sharon
+ID: S036
+Imagen web: blusa_sharon_0.webp
+Nota: Recorte automático superior del arte del catálogo.

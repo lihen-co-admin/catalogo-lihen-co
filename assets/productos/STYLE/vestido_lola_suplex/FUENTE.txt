@@ -1,0 +1,4 @@
+Producto: Vestido Lola suplex
+ID: S018
+Imagen web: vestido_lola_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

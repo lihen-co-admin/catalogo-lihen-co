@@ -1,0 +1,4 @@
+Producto: Conjunto Danny
+ID: S016
+Imagen web: conjunto_danny_0.webp
+Nota: Recorte automático superior del arte del catálogo.

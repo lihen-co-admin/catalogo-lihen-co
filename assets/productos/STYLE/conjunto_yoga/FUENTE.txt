@@ -1,0 +1,4 @@
+Producto: Conjunto Yoga
+ID: S007
+Imagen web: conjunto_yoga_0.webp
+Nota: Recorte automático superior del arte del catálogo.

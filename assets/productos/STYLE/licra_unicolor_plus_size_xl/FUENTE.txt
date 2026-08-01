@@ -1,0 +1,4 @@
+Producto: Licra unicolor Plus Size XL
+ID: S009
+Imagen web: licra_unicolor_plus_size_xl_0.webp
+Nota: Recorte automático superior del arte del catálogo.

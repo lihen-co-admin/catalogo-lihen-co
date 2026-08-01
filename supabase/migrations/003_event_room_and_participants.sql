@@ -36,10 +36,10 @@ for insert to anon, authenticated with check (accepted_rules = true);
 -- Los administradores autorizados de la etapa 8 pueden leer y gestionar la sala.
 drop policy if exists "admins can read event participants" on public.event_participants;
 create policy "admins can read event participants" on public.event_participants
-for select to authenticated using (exists(select 1 from public.admin_profiles ap where ap.user_id=auth.uid() and ap.active=true));
+for select to authenticated using (exists(select 1 from public.admin_profiles ap where ap.user_id=auth.uid() and ap.is_active=true));
 
 drop policy if exists "admins can update event participants" on public.event_participants;
 create policy "admins can update event participants" on public.event_participants
-for update to authenticated using (exists(select 1 from public.admin_profiles ap where ap.user_id=auth.uid() and ap.active=true)) with check (exists(select 1 from public.admin_profiles ap where ap.user_id=auth.uid() and ap.active=true));
+for update to authenticated using (exists(select 1 from public.admin_profiles ap where ap.user_id=auth.uid() and ap.is_active=true)) with check (exists(select 1 from public.admin_profiles ap where ap.user_id=auth.uid() and ap.is_active=true));
 
 insert into public.event_rooms(slug,title) values ('inauguracion-lihen','Inauguración LIHEN.CO') on conflict (slug) do nothing;

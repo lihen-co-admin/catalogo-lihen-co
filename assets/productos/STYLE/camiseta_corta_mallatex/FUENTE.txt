@@ -1,0 +1,4 @@
+Producto: Camiseta corta Mallatex
+ID: S038
+Imagen web: camiseta_corta_mallatex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

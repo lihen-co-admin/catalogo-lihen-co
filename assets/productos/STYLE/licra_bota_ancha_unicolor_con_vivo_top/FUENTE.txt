@@ -1,0 +1,4 @@
+Producto: Licra bota ancha unicolor con vivo + top
+ID: S001
+Imagen web: licra_bota_ancha_unicolor_con_vivo_top_0.webp
+Nota: Recorte automático superior del arte del catálogo.

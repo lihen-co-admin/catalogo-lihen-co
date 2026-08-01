@@ -1,0 +1,4 @@
+Producto: Enterizo Fryda corto suplex
+ID: S026
+Imagen web: enterizo_fryda_corto_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

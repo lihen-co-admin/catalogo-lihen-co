@@ -1,0 +1,4 @@
+Producto: Pantaloneta básica hombre con licra interna
+ID: S060
+Imagen web: pantaloneta_basica_hombre_con_licra_interna_0.webp
+Nota: Recorte automático desde composición con dos productos.

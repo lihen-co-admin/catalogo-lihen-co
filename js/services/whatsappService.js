@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "";
+const OFFICIAL_WHATSAPP_URL = "https://wa.me/message/2JDWBH57SQG4F1";
 export function buildProductWhatsAppMessage(product, quantity = 1) {
   return [
     "Hola LIHEN.CO, vengo de la página web y quiero consultar este producto:",
@@ -37,15 +37,9 @@ export function buildMultipleProductsWhatsAppMessage(items) {
 export function openWhatsApp(
   message = "Hola LIHEN.CO, quiero consultar productos disponibles.",
 ) {
-  if (!WHATSAPP_NUMBER) {
-    navigator.clipboard?.writeText(message).catch(() => {});
-    alert(
-      "El número oficial de WhatsApp todavía está pendiente. El mensaje de consulta fue copiado.",
-    );
-    return;
-  }
+  navigator.clipboard?.writeText(message).catch(() => {});
   window.open(
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+    OFFICIAL_WHATSAPP_URL,
     "_blank",
     "noopener,noreferrer",
   );

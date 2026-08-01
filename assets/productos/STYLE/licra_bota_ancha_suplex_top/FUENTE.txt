@@ -1,0 +1,4 @@
+Producto: Licra bota ancha suplex + top
+ID: S004
+Imagen web: licra_bota_ancha_suplex_top_0.webp
+Nota: Recorte automático superior del arte del catálogo.

@@ -1,0 +1,4 @@
+Producto: Pantaloneta importada hombre con licra interna
+ID: S064
+Imagen web: pantaloneta_importada_hombre_con_licra_interna_0.webp
+Nota: Recorte automático superior del arte del catálogo.

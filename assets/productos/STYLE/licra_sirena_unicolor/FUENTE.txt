@@ -1,0 +1,4 @@
+Producto: Licra sirena unicolor
+ID: S003
+Imagen web: licra_sirena_unicolor_0.webp
+Nota: Recorte automático superior del arte del catálogo.

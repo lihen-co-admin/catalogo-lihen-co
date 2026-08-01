@@ -1,0 +1,4 @@
+Producto: Vestido Karla suplex
+ID: S019
+Imagen web: vestido_karla_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

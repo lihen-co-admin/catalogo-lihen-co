@@ -1,0 +1,4 @@
+Producto: Buzo calentador dama
+ID: S044
+Imagen web: buzo_calentador_dama_0.webp
+Nota: Recorte automático superior del arte del catálogo.

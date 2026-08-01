@@ -1,0 +1,4 @@
+Producto: Short malla push up suplex + top
+ID: S012
+Imagen web: short_malla_push_up_suplex_top_0.webp
+Nota: Recorte automático superior del arte del catálogo.
