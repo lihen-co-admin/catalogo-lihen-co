@@ -1,0 +1,4 @@
+Producto: Chaqueta hombre antifluido con capucha
+ID: S061
+Imagen web: chaqueta_hombre_antifluido_con_capucha_0.webp
+Nota: Recorte automático superior del arte del catálogo.

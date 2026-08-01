@@ -1,0 +1,4 @@
+Producto: Sudadera bota recta burda + chaqueta
+ID: S051
+Imagen web: sudadera_bota_recta_burda_chaqueta_0.webp
+Nota: Recorte automático desde composición con dos productos.

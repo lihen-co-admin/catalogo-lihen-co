@@ -1,0 +1,4 @@
+Producto: Blusa Libélula
+ID: S037
+Imagen web: blusa_libelula_0.webp
+Nota: Recorte automático superior del arte del catálogo.

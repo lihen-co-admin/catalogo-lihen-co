@@ -1,0 +1,4 @@
+Producto: Camiseta importada hombre
+ID: S062
+Imagen web: camiseta_importada_hombre_0.webp
+Nota: Recorte automático desde composición con dos productos.

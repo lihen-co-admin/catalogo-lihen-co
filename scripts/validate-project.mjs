@@ -12,6 +12,8 @@ async function walk(dir, extensions = null) {
   const files = [];
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
+    const rel = path.relative(root, full).replaceAll('\\', '/');
+    if (entry.isDirectory() && (entry.name === '.git' || entry.name === 'node_modules' || rel === 'docs/legacy')) continue;
     if (entry.isDirectory()) files.push(...await walk(full, extensions));
     else if (!extensions || extensions.includes(path.extname(entry.name))) files.push(full);
   }

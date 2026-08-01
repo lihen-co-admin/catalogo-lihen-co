@@ -1,0 +1,4 @@
+Producto: Falda prenses + top unicolor
+ID: S015
+Imagen web: falda_prenses_top_unicolor_0.webp
+Nota: Recorte automático superior del arte del catálogo.

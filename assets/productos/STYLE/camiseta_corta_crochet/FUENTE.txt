@@ -1,0 +1,4 @@
+Producto: Camiseta corta Crochet
+ID: S039
+Imagen web: camiseta_corta_crochet_0.webp
+Nota: Recorte automático superior del arte del catálogo.

@@ -16,9 +16,9 @@ export function createProductCard(product, onOpen) {
   image.src = getPrimaryImage(product);
   image.alt = `${product.name} de ${product.brand}`;
   image.loading = "lazy";
+  image.decoding = "async";
   image.width = 640;
   image.height = 640;
-  imageButton.innerHTML = `<span class="product-card__tag">${product.tag || "Referencia en consulta"}</span>`;
   imageButton.append(image);
   if (product.images?.length > 1) {
     const n = document.createElement("span");

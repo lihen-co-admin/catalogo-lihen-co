@@ -1,0 +1,4 @@
+Producto: Top Coco
+ID: S067
+Imagen web: top_coco_0.webp
+Nota: Recorte automático desde composición con dos productos.

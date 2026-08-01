@@ -1,0 +1,4 @@
+Producto: Licra malla push up suplex + top
+ID: S002
+Imagen web: licra_malla_push_up_suplex_top_0.webp
+Nota: Recorte automático superior del arte del catálogo. La imagen fuente muestra marca de “Agotado”; conviene reemplazarla con foto limpia o confirmar disponibilidad.

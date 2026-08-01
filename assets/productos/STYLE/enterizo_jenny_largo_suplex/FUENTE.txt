@@ -1,0 +1,4 @@
+Producto: Enterizo Jenny largo suplex
+ID: S034
+Imagen web: enterizo_jenny_largo_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

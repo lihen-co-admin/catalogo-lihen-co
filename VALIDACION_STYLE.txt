@@ -1,0 +1,32 @@
+
+> lihen-web-renacer@40.0.0 check:release
+> npm run check && npm run check:js && node scripts/validate-release.mjs
+
+
+> lihen-web-renacer@40.0.0 check
+> node scripts/validate-project.mjs
+
+
+VALIDACIÓN INTEGRAL LIHEN.CO
+✓ 117 archivos JavaScript revisados.
+✓ 180 contratos de importación/exportación revisados.
+✓ 18 páginas HTML activas revisadas.
+✓ 1 página(s) HTML histórica(s) excluida(s) de la validación de despliegue.
+✓ 12 migraciones SQL encontradas en secuencia.
+✓ Configuración local env.js revisada.
+✓ 247 referencias de imágenes de producto revisadas.
+
+✓ Proyecto listo para pruebas manuales y despliegue de preproducción.
+
+
+> lihen-web-renacer@40.0.0 check:js
+> find js -type f -name "*.js" -print0 | xargs -0 -n1 node --check
+
+
+VALIDACIÓN DE PUBLICACIÓN LIHEN.CO
+✓ 8 archivos críticos de despliegue revisados.
+✓ 134 archivos activos revisados para publicación.
+✓ Protección de configuración local revisada.
+
+✓ Rama preparada para revisión, integración y despliegue.
+

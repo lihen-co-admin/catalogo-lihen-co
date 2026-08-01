@@ -1,0 +1,4 @@
+Producto: Conjunto Natzuki
+ID: S052
+Imagen web: conjunto_natzuki_0.webp
+Nota: Recorte automático desde composición con dos productos.

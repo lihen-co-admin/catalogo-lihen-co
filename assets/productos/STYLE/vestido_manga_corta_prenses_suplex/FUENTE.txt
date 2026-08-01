@@ -1,0 +1,4 @@
+Producto: Vestido manga corta prenses suplex
+ID: S020
+Imagen web: vestido_manga_corta_prenses_suplex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

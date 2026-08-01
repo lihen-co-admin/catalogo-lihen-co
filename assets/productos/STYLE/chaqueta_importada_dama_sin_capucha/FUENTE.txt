@@ -1,0 +1,4 @@
+Producto: Chaqueta importada dama sin capucha
+ID: S045
+Imagen web: chaqueta_importada_dama_sin_capucha_0.webp
+Nota: Recorte automático superior del arte del catálogo.

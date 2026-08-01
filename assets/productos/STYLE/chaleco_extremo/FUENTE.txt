@@ -1,0 +1,4 @@
+Producto: Chaleco Extremo
+ID: S050
+Imagen web: chaleco_extremo_0.webp
+Nota: Recorte automático desde composición con dos productos.

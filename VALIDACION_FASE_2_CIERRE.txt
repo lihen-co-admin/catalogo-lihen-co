@@ -1,0 +1,18 @@
+LIHEN.CO V18 — VALIDACIÓN DE CIERRE FASE 2
+
+Validación automática ejecutada sobre el proyecto completo:
+
+✓ 112 archivos JavaScript revisados.
+✓ 174 contratos de importación/exportación revisados.
+✓ 18 páginas HTML activas revisadas.
+✓ 1 página HTML histórica excluida del despliegue.
+✓ 12 migraciones SQL encontradas en secuencia.
+✓ 295 referencias de imágenes de producto revisadas.
+✓ npm run check aprobado.
+✓ npm run check:js aprobado.
+✓ Prueba rápida del módulo invitationState aprobada.
+
+Nota: el ZIP descargado de GitHub no incluye js/config/env.js porque está ignorado.
+Para ejecutar la validación se usó temporalmente una configuración vacía, que no se incluye en este paquete.
+
+No se modificó Supabase.

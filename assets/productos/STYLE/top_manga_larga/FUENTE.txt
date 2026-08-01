@@ -1,0 +1,4 @@
+Producto: Top manga larga
+ID: S068
+Imagen web: top_manga_larga_0.webp
+Nota: Recorte automático desde composición con dos productos.

@@ -1,0 +1,4 @@
+Producto: Blusa Laura
+ID: S035
+Imagen web: blusa_laura_0.webp
+Nota: Recorte automático superior del arte del catálogo.

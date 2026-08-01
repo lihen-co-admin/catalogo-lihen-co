@@ -1,0 +1,4 @@
+Producto: Camiseta corta capucha cierre Mallatex
+ID: S040
+Imagen web: camiseta_corta_capucha_cierre_mallatex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

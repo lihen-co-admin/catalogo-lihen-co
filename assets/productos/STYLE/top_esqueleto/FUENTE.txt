@@ -1,0 +1,4 @@
+Producto: Top Esqueleto
+ID: S066
+Imagen web: top_esqueleto_0.webp
+Nota: Recorte automático desde composición con dos productos.

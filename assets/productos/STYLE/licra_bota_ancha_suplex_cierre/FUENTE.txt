@@ -1,0 +1,4 @@
+Producto: Licra bota ancha suplex cierre
+ID: S006
+Imagen web: licra_bota_ancha_suplex_cierre_0.webp
+Nota: Recorte automático superior del arte del catálogo.

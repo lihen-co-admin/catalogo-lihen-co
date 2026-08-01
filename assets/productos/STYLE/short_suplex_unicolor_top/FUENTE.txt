@@ -1,0 +1,4 @@
+Producto: Short suplex unicolor + top
+ID: S011
+Imagen web: short_suplex_unicolor_top_0.webp
+Nota: Recorte automático superior del arte del catálogo.

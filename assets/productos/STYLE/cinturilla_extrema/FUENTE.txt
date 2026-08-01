@@ -1,0 +1,4 @@
+Producto: Cinturilla Extrema
+ID: S049
+Imagen web: cinturilla_extrema_0.webp
+Nota: Recorte automático desde composición con dos productos.

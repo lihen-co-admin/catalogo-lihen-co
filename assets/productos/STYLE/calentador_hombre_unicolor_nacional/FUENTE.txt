@@ -1,0 +1,4 @@
+Producto: Calentador hombre unicolor nacional
+ID: S055
+Imagen web: calentador_hombre_unicolor_nacional_0.webp
+Nota: Recorte automático desde composición con dos productos.

@@ -15,7 +15,7 @@ function showStartupError(error) {
 function initializeInvitationPage() {
   try {
 
-    const WHATSAPP = "573058947808";
+    const OFFICIAL_WHATSAPP_URL = "https://wa.me/message/2JDWBH57SQG4F1";
     const DEMO = { access_code:"LHN-DEMO-001", display_name:"Lizeth Londoño", responsible:"Lizeth Londoño", named_guests:1, max_attendees:3, status:"pending" };
     const state = { invitation:null, mode:null, count:1, audio:null, ambienceTimer:null, ambienceNodes:[], typedName:"", urlCode:"", location:null };
     const screens = Object.fromEntries([...document.querySelectorAll("[data-screen]")].map(el=>[el.dataset.screen,el]));
@@ -133,7 +133,7 @@ function initializeInvitationPage() {
     function buildInitialWhatsappText(){
       return `Hola LIHEN.CO, soy ${state.invitation.display_name}. Deseo confirmar mi invitación a la inauguración. Invitación realizada por ${responsibleName()}. Referencia interna: ${state.invitation.access_code}.`;
     }
-    function whatsappUrl(text){ return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`; }
+    function whatsappUrl(text){ navigator.clipboard?.writeText(text).catch(()=>{}); return OFFICIAL_WHATSAPP_URL; }
     function qrUrl(url){ return `https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=12&data=${encodeURIComponent(url)}`; }
 
     async function prepareInvitation(inv){

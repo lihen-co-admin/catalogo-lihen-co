@@ -1,0 +1,4 @@
+Producto: Camiseta Capriati cuello V o redondo
+ID: S041
+Imagen web: camiseta_capriati_cuello_v_o_redondo_0.webp
+Nota: Recorte automático superior del arte del catálogo.

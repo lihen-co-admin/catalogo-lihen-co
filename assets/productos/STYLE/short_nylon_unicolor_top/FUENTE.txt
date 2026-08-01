@@ -1,0 +1,4 @@
+Producto: Short nylon unicolor + top
+ID: S010
+Imagen web: short_nylon_unicolor_top_0.webp
+Nota: Recorte automático superior del arte del catálogo.

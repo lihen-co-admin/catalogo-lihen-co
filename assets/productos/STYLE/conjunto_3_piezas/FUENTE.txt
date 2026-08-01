@@ -1,0 +1,4 @@
+Producto: Conjunto 3 piezas
+ID: S008
+Imagen web: conjunto_3_piezas_0.webp
+Nota: Recorte automático superior del arte del catálogo.

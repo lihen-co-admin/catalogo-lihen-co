@@ -1,0 +1,4 @@
+Producto: Camiseta hombre unicolor nacional
+ID: S053
+Imagen web: camiseta_hombre_unicolor_nacional_0.webp
+Nota: Recorte automático desde composición con dos productos.

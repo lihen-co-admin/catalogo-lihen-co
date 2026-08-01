@@ -1,0 +1,4 @@
+Producto: Chaleco tira brasier Látex
+ID: S048
+Imagen web: chaleco_tira_brasier_latex_0.webp
+Nota: Recorte automático superior del arte del catálogo.

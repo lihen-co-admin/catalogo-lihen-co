@@ -1,0 +1,15 @@
+ACTUALIZACIÓN FINAL LIHEN.CO
+
+- Carruseles con instancia controlada, actualización sin listeners duplicados y autoplay de 3 segundos.
+- prefers-reduced-motion cambia la transición, pero no bloquea el avance.
+- Ideas para regalar usa productos reales con precio mayor a 0 y hasta 30.000 COP.
+- Filtros Todos, Beauty Care y Style actualizan la misma instancia.
+- Mega menú con enlaces reales hacia buscar.html usando parámetros de línea, categoría o estado.
+- Buscar productos interpreta URL, conserva filtros, actualiza contador y título.
+- Vista previa y Agregar a mi selección operan mediante delegación global.
+- Imágenes secundarias diferidas y decoding async en imágenes no críticas.
+- Etiqueta visual Producto confirmado eliminada de tarjetas.
+- Títulos de pestaña corregidos en páginas principales y legales.
+- Menú flotante de navegación rápida agregado.
+- Enlaces del footer verificados.
+- Carpeta .git excluida de esta entrega.

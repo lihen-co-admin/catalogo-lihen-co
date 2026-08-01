@@ -1,0 +1,4 @@
+Producto: Calentador niño
+ID: S065
+Imagen web: calentador_nino_0.webp
+Nota: Recorte automático desde composición con dos productos.

@@ -1,0 +1,24 @@
+OPTIMIZACIÓN DE IMÁGENES — LIHEN.CO
+
+Imágenes WebP verificadas: 691
+Errores de lectura: 0
+
+Peso aproximado inicial de BEAUTY_CARE + STYLE: 261.00 MB
+Peso final de BEAUTY_CARE + STYLE: 28.36 MB
+Ahorro aproximado: 232.64 MB (89.13%)
+
+Reglas aplicadas:
+- Imágenes principales (*_0.webp): máximo 1200 x 1500 px, calidad WebP 80.
+- Imágenes secundarias: máximo 800 x 1000 px, calidad WebP 76.
+- No se ampliaron imágenes pequeñas.
+- Se mantuvieron proporción, transparencia, nombres y rutas.
+- Solo se reemplazaron archivos cuando la versión optimizada era válida y más liviana.
+- Se eliminaron metadatos durante la recodificación.
+- La carpeta .git fue excluida únicamente del ZIP de entrega.
+
+Validación del proyecto:
+- 118 archivos JavaScript revisados.
+- 19 páginas HTML revisadas.
+- 12 migraciones SQL encontradas.
+- 282 referencias de imágenes de producto revisadas.
+- Sin errores de sintaxis JavaScript.

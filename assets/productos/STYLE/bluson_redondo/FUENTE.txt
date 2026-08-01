@@ -1,0 +1,4 @@
+Producto: Blusón redondo
+ID: S042
+Imagen web: bluson_redondo_0.webp
+Nota: Recorte automático superior del arte del catálogo.

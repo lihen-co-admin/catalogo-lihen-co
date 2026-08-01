@@ -1,0 +1,21 @@
+LIHEN.CO V18 — VALIDACIÓN FASES 3, 4 Y 5
+
+VALIDACIONES AUTOMÁTICAS REALIZADAS
+- 117 archivos JavaScript revisados.
+- 179 contratos de importación/exportación revisados.
+- 18 páginas HTML activas revisadas.
+- 1 página HTML histórica excluida.
+- 12 migraciones SQL en secuencia.
+- 295 referencias de imágenes de producto revisadas.
+- npm run check aprobado con env.js temporal vacío.
+- npm run check:js aprobado.
+- Pruebas puras de filtrado del catálogo aprobadas.
+
+PRUEBAS MANUALES PENDIENTES EN EL EQUIPO LOCAL
+- Carrusel principal y promoción de bienvenida.
+- Filtros, carruseles y modal de productos.
+- Inicio de sesión administrativo con una cuenta autorizada.
+- Listado y cambio de estado de solicitudes.
+
+SUPABASE
+- Sin cambios de tablas, políticas, funciones o migraciones.
