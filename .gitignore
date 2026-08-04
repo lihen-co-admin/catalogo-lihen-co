@@ -15,3 +15,7 @@ js/config/env.js
 
 # Datos privados de invitados: nunca publicar en GitHub
 data-private/
+
+# Catálogo maestro: respaldos automáticos locales
+backups/catalogo/products-*.js
+backups/catalogo/catalogo-*.csv
