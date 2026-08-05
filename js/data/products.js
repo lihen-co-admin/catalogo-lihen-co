@@ -1,5 +1,7 @@
 // Etapa 3 - Datos del catálogo real de LIHEN.CO
 // Este archivo solamente almacena información. No modifica el HTML.
+// GENERADO AUTOMÁTICAMENTE desde data/catalogo/catalogo_maestro.csv.
+// No editar manualmente: use npm run products:sync.
 
 export const products = [
   {
@@ -1690,6 +1692,137 @@ export const products = [
     "color": "Por confirmar",
     "tag": "Producto confirmado",
     "searchText": "vestido manga larga prenses suplex lihen.co ropa deportiva / vestido mujer style"
+  },
+  {
+    "id": "B86",
+    "line": "Beauty Care",
+    "category": "Cuidado facial / kit de skincare",
+    "name": "Kit Girly Aloe Vera",
+    "brand": "Girly",
+    "price": "$140.000",
+    "availability": "Disponible",
+    "desc": "Kit Girly Aloe Vera con una rutina completa para limpiar, hidratar y cuidar la piel diariamente. Incluye limpiador facial, tónico facial, sérum facial, contorno de ojos y gel hidratante. Su fórmula con aloe vera ayuda a mantener el rostro fresco, suave y con una apariencia saludable. Ideal para una rutina de skincare práctica y completa.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_facial/kit_girly_aloe_vera/kit_girly_aloe_vera_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_facial/kit_girly_aloe_vera/kit_girly_aloe_vera_1.webp"
+    ],
+    "size": "Kit de 5 productos",
+    "color": "No aplica",
+    "tag": "Nuevo ingreso",
+    "searchText": "kit girly aloe vera girly cuidado facial / kit de skincare beauty care"
+  },
+  {
+    "id": "B87",
+    "line": "Beauty Care",
+    "category": "Cuidado corporal / hidratación",
+    "name": "Gel Oil Vaseline Cocoa Radiant",
+    "brand": "Vaseline",
+    "price": "$66.000",
+    "availability": "Disponible",
+    "desc": "Gel Oil Vaseline Cocoa Radiant formulado con manteca de cacao para complementar la rutina diaria de cuidado corporal. Ayuda a suavizar la piel, aportar luminosidad y dejar una sensación ligera con un acabado radiante.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/gel_oil_vaseline_cocoa_radiant/gel_oil_vaseline_cocoa_radiant_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/gel_oil_vaseline_cocoa_radiant/gel_oil_vaseline_cocoa_radiant_1.webp"
+    ],
+    "size": "200 ml",
+    "color": "No aplica",
+    "tag": "Nuevo ingreso",
+    "searchText": "gel oil vaseline cocoa radiant vaseline cuidado corporal / hidratación beauty care"
+  },
+  {
+    "id": "B88",
+    "line": "Beauty Care",
+    "category": "Cuidado corporal / mantequilla corporal",
+    "name": "Mini Mantequilla Corporal Púrpure",
+    "brand": "Púrpure by Angie Bedoya",
+    "price": "$12.000",
+    "availability": "Disponible",
+    "desc": "Mini mantequilla corporal Púrpure con textura cremosa, ideal para complementar la rutina diaria de cuidado corporal. Ayuda a mantener la piel suave, hidratada y delicadamente perfumada. Su presentación práctica permite llevarla fácilmente en el bolso o la mochila. Disponible en diferentes aromas.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/mini_mantequilla_corporal_purpure/mini_mantequilla_corporal_purpure_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/mini_mantequilla_corporal_purpure/mini_mantequilla_corporal_purpure_1.webp"
+    ],
+    "size": "Presentación mini, contenido por confirmar",
+    "color": "Fresa, sandía, caramelo, chocolate, maracuyá y chicle",
+    "tag": "Nuevo ingreso",
+    "searchText": "mini mantequilla corporal púrpure púrpure by angie bedoya cuidado corporal / mantequilla corporal beauty care"
+  },
+  {
+    "id": "B89",
+    "line": "Beauty Care",
+    "category": "Maquillaje / labios",
+    "name": "Lip Gloss Destiny",
+    "brand": "Destiny by La Segura",
+    "price": "$29.000",
+    "availability": "Disponible",
+    "desc": "Lip Gloss Destiny by La Segura con brillo intenso y acabado luminoso. Su textura ligera ayuda a mantener los labios con una sensación cómoda e hidratante, sin acabado pesado. Puede usarse solo o sobre el labial favorito y está disponible en seis tonos.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_1.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_2.webp"
+    ],
+    "size": "Unidad",
+    "color": "Berry Fondue, Tropical Lust, Sangria Kiss, Velvet Cherry, Litchi Honey y Fairy Dust",
+    "tag": "Nuevo ingreso",
+    "searchText": "lip gloss destiny destiny by la segura maquillaje / labios beauty care"
+  },
+  {
+    "id": "B90",
+    "line": "Beauty Care",
+    "category": "Maquillaje / labios",
+    "name": "Dúo Lip Liner & Gloss Destiny",
+    "brand": "Destiny by La Segura",
+    "price": "$44.900",
+    "availability": "Disponible",
+    "desc": "Dúo Lip Liner & Gloss Destiny by La Segura, ideal para lograr un acabado definido y luminoso. Incluye lip gloss de textura ligera con brillo sutil y un delineador de aplicación precisa que ayuda a perfilar y complementar el maquillaje de labios. Disponible en seis tonos.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/duo_lip_liner_gloss_destiny/duo_lip_liner_gloss_destiny_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/duo_lip_liner_gloss_destiny/duo_lip_liner_gloss_destiny_1.webp"
+    ],
+    "size": "Dúo",
+    "color": "Fairy Dust, Berry Fondue, Litchi Honey, Sangria Kiss, Tropical Lust y Velvet Cherry",
+    "tag": "Nuevo ingreso",
+    "searchText": "dúo lip liner & gloss destiny destiny by la segura maquillaje / labios beauty care"
+  },
+  {
+    "id": "S66",
+    "line": "Style",
+    "category": "Ropa casual hombre / camiseta",
+    "name": "Camiseta clásica Polo en tela fría",
+    "brand": "Polo",
+    "price": "$40.000",
+    "availability": "Disponible",
+    "desc": "Camiseta clásica para hombre elaborada en tela fría, fresca y ligera. Cuenta con diseño de cuello redondo, manga corta y logo Polo bordado en el pecho. Su estilo versátil permite combinarla con jeans, joggers o shorts para crear un look casual y cómodo. Disponible en tallas S, M, L y XL, y en varios colores.",
+    "images": [
+      "./assets/productos/STYLE/ropa_casual_hombre/camiseta_clasica_polo_tela_fria/camiseta_clasica_polo_tela_fria_0.webp",
+      "./assets/productos/STYLE/ropa_casual_hombre/camiseta_clasica_polo_tela_fria/camiseta_clasica_polo_tela_fria_1.webp",
+      "./assets/productos/STYLE/ropa_casual_hombre/camiseta_clasica_polo_tela_fria/camiseta_clasica_polo_tela_fria_2.webp",
+      "./assets/productos/STYLE/ropa_casual_hombre/camiseta_clasica_polo_tela_fria/camiseta_clasica_polo_tela_fria_3.webp",
+      "./assets/productos/STYLE/ropa_casual_hombre/camiseta_clasica_polo_tela_fria/camiseta_clasica_polo_tela_fria_4.webp",
+      "./assets/productos/STYLE/ropa_casual_hombre/camiseta_clasica_polo_tela_fria/camiseta_clasica_polo_tela_fria_5.webp"
+    ],
+    "size": "S, M, L y XL",
+    "color": "Beige, rojo, blanco, gris, negro y rosado",
+    "tag": "Nuevo ingreso",
+    "searchText": "camiseta clásica polo en tela fría polo ropa casual hombre / camiseta style"
+  },
+  {
+    "id": "S67",
+    "line": "Style",
+    "category": "Ropa deportiva / licra",
+    "name": "Licra deportiva corta Nike",
+    "brand": "Nike",
+    "price": "$35.000",
+    "availability": "Disponible",
+    "desc": "Licra deportiva corta Nike elaborada en tela power, diseñada para brindar comodidad, soporte y libertad de movimiento durante el entrenamiento. Cuenta con ajuste cómodo y firme, diseño deportivo y un toque suave que favorece la silueta. Ideal para rutinas fitness y uso deportivo.",
+    "images": [
+      "./assets/productos/STYLE/ropa_deportiva/licra_deportiva_corta_nike/licra_deportiva_corta_nike_0.webp",
+      "./assets/productos/STYLE/ropa_deportiva/licra_deportiva_corta_nike/licra_deportiva_corta_nike_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Negro",
+    "tag": "Nuevo ingreso",
+    "searchText": "licra deportiva corta nike nike ropa deportiva / licra style"
   }
 ];
 
