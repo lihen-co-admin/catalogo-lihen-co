@@ -62,3 +62,21 @@ La ruta de lectura recomendada es:
 8. `docs/08_MANUAL_TECNICO.md`
 9. `docs/09_MANUAL_DE_USUARIO.md`
 10. `docs/10_MANTENIMIENTO_Y_MEJORAS.md`
+
+## Catálogo maestro y compatibilidad ADMIN ↔ WEB
+
+Desde la actualización 2026-08-07 el catálogo se maneja en dos capas:
+
+- `data-private/catalogo_maestro_interno.csv`: matriz administrativa completa, ignorada por Git.
+- `data/catalogo/catalogo_maestro.csv`: versión pública segura utilizada para generar la tienda.
+
+Flujo recomendado:
+
+```bash
+npm run products:update
+npm run check
+```
+
+El SKU es la llave recomendada para el futuro cruce con `LIHEN_ADMIN_PRO`. Proveedor, costo real unitario e ID interno no se exportan a `js/data/products.js`.
+
+Consulta `docs/INTEGRACION_ADMIN_WEB_CATALOGO.md` para el contrato de datos y la arquitectura futura.

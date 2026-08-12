@@ -1,0 +1,40 @@
+VALIDACIÓN FINAL · CATÁLOGO LIHEN · 2026-08-07
+
+RESULTADO GENERAL: APROBADO CON ADVERTENCIAS DE CONTENIDO NO BLOQUEANTES
+
+Catálogo interno: 178 registros
+Catálogo público: 178 registros
+Productos generados en js/data/products.js: 178
+Beauty Care: 111
+Style: 67
+SKU únicos: 85
+ID web únicos: 178
+ID interno suministrados: 85
+Productos con imágenes propias: 95
+Productos sin imágenes propias: 83 (fallback oficial LIHEN.CO)
+Productos con precio 0: 1 (BC-013; frontend muestra "Precio por confirmar")
+
+Cruce con LIHEN_ADMIN_PRO/data/inventario_inicial.json:
+- SKU en inventario integrado ADMIN: 78
+- SKU ADMIN encontrados en catálogo actualizado: 78/78
+- SKU nuevos respecto al inventario integrado: BC-075, BC-076, BC-077, BC-078, BC-079, BC-080, BC-081
+
+Privacidad:
+- data/catalogo/catalogo_maestro.csv NO contiene ID interno, Proveedor ni Costo real unitario.
+- js/data/products.js NO contiene UUID administrativos, proveedores ni costos reales.
+- data-private/catalogo_maestro_interno.csv conserva la matriz completa y está protegida por .gitignore.
+
+Pruebas automáticas ejecutadas:
+- npm run products:update: OK e idempotente (178 sin cambios en segunda ejecución)
+- npm run check:js: OK
+- npm run check: OK
+- node scripts/validate-release.mjs: OK
+- Servidor HTTP local: index.html, products.js y logo principal respondieron correctamente.
+- Referencias de imágenes existentes: 300 revisadas por validate-project.
+
+Advertencias conocidas:
+- 83 productos nuevos no incluyen fotografías en la fuente recibida. No se inventaron imágenes.
+- Varias filas históricas no tienen Subcategoría; se preservó el dato sin inventarlo.
+- BC-013 tiene precio fuente 0; se presenta como "Precio por confirmar".
+
+La integración automática ADMIN ↔ WEB mediante Supabase NO fue activada en esta fase, por instrucción del alcance. La arquitectura y contrato de datos quedaron documentados en docs/INTEGRACION_ADMIN_WEB_CATALOGO.md.

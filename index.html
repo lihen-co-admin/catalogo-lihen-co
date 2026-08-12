@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/storefront.css?v=20260801-fase5" />
-  <script type="module" src="./js/storefront.js?v=20260801-fase4"></script><script type="module" src="./js/components/stage30Enhancements.js"></script>
+  <link rel="stylesheet" href="./css/storefront.css?v=20260807-brand-logos-v2" />
+  <script type="module" src="./js/storefront.js?v=20260807-brand-logos-v2"></script><script type="module" src="./js/components/stage30Enhancements.js"></script>
   
   <link rel="stylesheet" href="./css/responsive.css?v=20260801-fase5" />
   
@@ -50,9 +50,41 @@
     <section class="category-strip section" id="novedades"><div class="section-heading"><p class="eyebrow">Descubre nuestras categorías</p><h2>Algo especial para cada ocasión</h2></div><div class="category-row shell" data-home-categories><a class="category" href="#beauty" data-category-image="beauty"><img src="./assets/images/lihen_logo_transparente.webp" alt="Beauty Care"><span>Beauty Care</span></a><a class="category" href="#beauty" data-category-image="care"><img src="./assets/images/lihen_logo_transparente.webp" alt="Cuidado personal"><span>Cuidado</span></a><a class="category" href="#style" data-category-image="style"><img src="./assets/images/lihen_logo_transparente.webp" alt="Style"><span>Style</span></a><a class="category" href="#style" data-category-image="style-alt"><img src="./assets/images/lihen_logo_transparente.webp" alt="Moda deportiva"><span>Moda deportiva</span></a><a class="category" href="#hogar" data-category-image="community"><img src="./assets/images/lihen_logo_transparente.webp" alt="Así se vive LIHEN.CO"><span>Así se vive LIHEN.CO</span></a><a class="category" href="#regalos" data-category-image="gift"><img src="./assets/images/lihen_logo_transparente.webp" alt="Regalos"><span>Regalos</span></a></div></section>
 
     <section class="campaign section shell" id="beauty"><div class="campaign-collage" data-campaign="beauty"><img class="main-photo" data-campaign-main src="./assets/images/lihen_logo_transparente.webp" alt="Producto actual de cuidado Beauty Care"><img class="detail-photo" data-campaign-detail src="./assets/images/lihen_logo_transparente.webp" alt="Producto actual de maquillaje Beauty Care"></div><div class="campaign-copy"><p class="eyebrow">Colección Beauty Care</p><h2>Cuidado que realza tu belleza natural</h2><p>Maquillaje y cuidado personal seleccionados para acompañar tu rutina con practicidad, intención y estilo.</p><h3>Lo que encontrarás</h3><ul><li>Maquillaje para diferentes momentos.</li><li>Opciones de cuidado facial y corporal.</li><li>Asesoría personalizada antes de comprar.</li></ul><a class="btn btn-lilac" href="#beauty-products">Ver Beauty Care</a></div></section>
+    <section class="section brand-browser-section" data-brand-browser="beauty" aria-labelledby="beauty-brand-title">
+      <div class="brand-browser shell">
+        <div class="brand-browser-heading">
+          <div><p class="eyebrow">Explora el catálogo</p><h2 id="beauty-brand-title">Compra por marcas</h2><p>Encuentra tus productos favoritos de Beauty Care según la marca que prefieras.</p></div>
+          <button type="button" class="brand-clear" data-brand-clear aria-pressed="true">Todas las marcas</button>
+        </div>
+        <div class="brand-carousel" data-brand-carousel>
+          <button type="button" class="brand-arrow prev" data-brand-prev aria-label="Ver marcas anteriores">‹</button>
+          <div class="brand-viewport" data-brand-viewport tabindex="0" aria-label="Marcas de Beauty Care">
+            <div class="brand-track" data-brand-track></div>
+          </div>
+          <button type="button" class="brand-arrow next" data-brand-next aria-label="Ver más marcas">›</button>
+        </div>
+        <p class="brand-filter-status" data-brand-status aria-live="polite">Mostrando todas las marcas de Beauty Care.</p>
+      </div>
+    </section>
     <section class="section products-section" id="beauty-products"><div class="section-heading"><p class="eyebrow">Todos los productos</p><h2>Beauty Care</h2><p>El carrusel avanza cada tres segundos. Pasa el mouse sobre una imagen para descubrir otra vista.</p></div><div class="carousel shell" data-carousel="beauty"><button type="button" class="carousel-arrow prev" aria-label="Productos anteriores">‹</button><div class="carousel-viewport"><div class="carousel-track" data-track></div></div><button type="button" class="carousel-arrow next" aria-label="Productos siguientes">›</button><div class="carousel-dots" data-dots aria-label="Páginas del carrusel"></div></div></section>
 
     <section class="campaign section shell" id="style"><div class="campaign-collage" data-campaign="style"><img class="main-photo" data-campaign-main src="./assets/images/lihen_logo_transparente.webp" alt="Producto actual de la colección Style"><img class="detail-photo" data-campaign-detail src="./assets/images/lihen_logo_transparente.webp" alt="Otra referencia actual de Style"></div><div class="campaign-copy"><p class="eyebrow">Colección Style</p><h2>Estilo cómodo para moverte con seguridad</h2><p>Conjuntos y prendas versátiles seleccionadas para acompañar tus días, tus entrenamientos y tu forma de expresarte.</p><h3>Lo que encontrarás</h3><ul><li>Opciones deportivas y casuales.</li><li>Referencias en diferentes tonos.</li><li>Atención personalizada antes de comprar.</li></ul><a class="btn btn-lilac" href="#style-products">Ver colección</a></div></section>
+    <section class="section brand-browser-section style-brand-browser" data-brand-browser="style" aria-labelledby="style-brand-title">
+      <div class="brand-browser shell">
+        <div class="brand-browser-heading">
+          <div><p class="eyebrow">Explora el catálogo</p><h2 id="style-brand-title">Compra por marcas</h2><p>Descubre las marcas disponibles en Style y encuentra prendas para tu forma de expresarte.</p></div>
+          <button type="button" class="brand-clear" data-brand-clear aria-pressed="true">Todas las marcas</button>
+        </div>
+        <div class="brand-carousel" data-brand-carousel>
+          <button type="button" class="brand-arrow prev" data-brand-prev aria-label="Ver marcas anteriores">‹</button>
+          <div class="brand-viewport" data-brand-viewport tabindex="0" aria-label="Marcas de Style">
+            <div class="brand-track" data-brand-track></div>
+          </div>
+          <button type="button" class="brand-arrow next" data-brand-next aria-label="Ver más marcas">›</button>
+        </div>
+        <p class="brand-filter-status" data-brand-status aria-live="polite">Mostrando todas las marcas de Style.</p>
+      </div>
+    </section>
     <section class="section products-section style-products" id="style-products"><div class="section-heading"><p class="eyebrow">Todos los productos</p><h2>Style</h2><p>Prendas y conjuntos organizados en un carrusel independiente.</p></div><div class="carousel shell" data-carousel="style"><button type="button" class="carousel-arrow prev" aria-label="Productos anteriores">‹</button><div class="carousel-viewport"><div class="carousel-track" data-track></div></div><button type="button" class="carousel-arrow next" aria-label="Productos siguientes">›</button><div class="carousel-dots" data-dots aria-label="Páginas del carrusel"></div></div></section>
 
     <section class="section restock" id="accesorios"><div class="section-heading"><p class="eyebrow">¿Los estabas esperando?</p><h2>De nuevo disponibles</h2><p>Referencias actuales para que encuentres opciones reales del catálogo.</p></div><div class="restock-grid shell" data-home-restock></div></section>

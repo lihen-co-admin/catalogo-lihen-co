@@ -34,7 +34,7 @@ const requiredFiles = [
   "404.html",
   "index.html",
   "admin.html",
-  "invitaciones/index.html",
+  "js/config/env.js",
   "js/config/env.example.js",
   "netlify.toml",
   "README.md"
@@ -76,10 +76,20 @@ for (const file of activeFiles) {
 notes.push(`${activeFiles.length} archivos activos revisados para publicación.`);
 
 const ignoredEnv = await readFile(path.join(root, ".gitignore"), "utf8");
-if (!/^js\/config\/env\.js$/m.test(ignoredEnv)) {
-  errors.push(".gitignore no protege js/config/env.js.");
+if (/^js\/config\/env\.js$/m.test(ignoredEnv)) {
+  errors.push("js/config/env.js está ignorado por Git; GitHub Pages quedaría sin configuración de Supabase.");
 }
-notes.push("Protección de configuración local revisada.");
+const envSource = await readFile(path.join(root, "js/config/env.js"), "utf8");
+if (!/SUPABASE_URL:\s*['"]https:\/\/[a-z0-9]+\.supabase\.co['"]/i.test(envSource)) {
+  errors.push("env.js no contiene una SUPABASE_URL publicable válida.");
+}
+if (!/SUPABASE_PUBLISHABLE_KEY:\s*['"]sb_publishable_[A-Za-z0-9_-]+['"]/.test(envSource)) {
+  errors.push("env.js no contiene una Publishable Key válida.");
+}
+if (/sb_secret_|service_role\s*[:=]|password\s*[:=]/i.test(envSource)) {
+  errors.push("env.js contiene una referencia potencialmente secreta.");
+}
+notes.push("Configuración pública versionable de Supabase revisada.");
 
 console.log("\nVALIDACIÓN DE PUBLICACIÓN LIHEN.CO");
 for (const note of notes) console.log(`✓ ${note}`);
