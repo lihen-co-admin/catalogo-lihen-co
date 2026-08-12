@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "updated_at": "2026-08-07",
+  "primary_cross_system_key": "sku",
+  "web_identity_key": "id",
+  "admin_identity_key": "internal_id",
+  "public_fields": [
+    "id",
+    "sku",
+    "line",
+    "category",
+    "subcategory",
+    "name",
+    "brand",
+    "price",
+    "availability",
+    "description",
+    "size",
+    "color",
+    "tag",
+    "images"
+  ],
+  "private_fields": [
+    "internal_id",
+    "supplier",
+    "current_cost",
+    "physical_stock",
+    "minimum_stock"
+  ],
+  "rules": {
+    "preserve_existing_web_ids": true,
+    "sku_must_be_unique_when_present": true,
+    "never_publish_current_cost": true,
+    "never_publish_supplier": true,
+    "missing_image_uses_storefront_fallback": true,
+    "zero_sale_price_displays_as": "Precio por confirmar"
+  }
+}

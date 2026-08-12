@@ -11,7 +11,7 @@ async function createClient() {
       "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm"
     );
 
-    return createSupabaseClient(config.url, config.anonKey, {
+    return createSupabaseClient(config.url, config.publishableKey, {
       auth: {
         persistSession: true,
         autoRefreshToken: true,

@@ -1,4 +1,5 @@
-import { products } from './data/products.js';
+import { loadPublicProducts } from './services/catalogService.js';
+const products = await loadPublicProducts();
 import { initCarousel } from './modules/carousel.js';
 import { initProductModal } from './modules/productModal.js';
 
@@ -91,7 +92,21 @@ function setQty(id,qty){const existed=Boolean(selection[id]);if(qty<=0)delete se
 function selectionRows(){return Object.entries(selection).map(([id,qty])=>({product:getProduct(id),qty})).filter(x=>x.product)}
 const OFFICIAL_WHATSAPP_URL='https://wa.me/message/2JDWBH57SQG4F1';
 function copyWhatsAppMessage(text){navigator.clipboard?.writeText(text).catch(()=>{});}
-function whatsappUrl(){const rows=selectionRows();const lines=rows.map(({product,qty})=>`• ${qty} × ${product.name} (${product.brand})`);const text=`Hola LIHEN.CO, quiero consultar disponibilidad, variantes y precio final de esta selección:\n\n${lines.join('\n')}\n\nTotal de unidades: ${totalUnits()}.`;copyWhatsAppMessage(text);return OFFICIAL_WHATSAPP_URL}
+function variantSummary(product){
+  const variants=Array.isArray(product?.variants)?product.variants:[];
+  if(!variants.length)return '';
+  const sizes=[...new Set(variants.map(v=>v?.size||v?.presentation).filter(Boolean))];
+  const colors=[...new Set(variants.map(v=>v?.color||v?.tone).filter(Boolean))];
+  const parts=[];
+  if(sizes.length)parts.push(`Tallas/presentaciones: ${sizes.join(', ')}`);
+  if(colors.length)parts.push(`Colores/tonos: ${colors.join(', ')}`);
+  return parts.length?` · ${parts.join(' · ')}`:'';
+}
+function whatsappUrl(){const rows=selectionRows();const lines=rows.map(({product,qty})=>`• ${qty} × ${product.name} (${product.brand})${product.sku?` · SKU ${product.sku}`:''}${variantSummary(product)}`);const text=`Hola LIHEN.CO, quiero consultar disponibilidad, variante y precio final de esta selección:
+
+${lines.join('\n')}
+
+Total de unidades: ${totalUnits()}.`;copyWhatsAppMessage(text);return OFFICIAL_WHATSAPP_URL}
 
 const menuToggle=$('.menu-toggle'), nav=$('.main-nav');
 if(menuToggle&&nav){menuToggle.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',o)});}
@@ -179,17 +194,158 @@ const giftProducts=products
   .filter(product=>{const price=priceNumber(product);return Number.isFinite(price)&&price>0&&price<=30000})
   .sort((a,b)=>priceNumber(a)-priceNumber(b));
 
-// Inicializo cada carrusel una sola vez.
+// Inicializo cada carrusel una sola vez y conservo su controlador para filtros por marca.
+const homeCarouselControllers=new Map();
+const homeLineProducts={
+  beauty:products.filter(product=>product.line==='Beauty Care'),
+  style:products.filter(product=>product.line==='Style')
+};
+
 $$('[data-carousel]').forEach(root=>{
   const kind=root.dataset.carousel;
   if(kind==='gifts')return;
-  const items=kind==='beauty'
-    ? products.filter(product=>product.line==='Beauty Care')
-    : kind==='style'
-      ? products.filter(product=>product.line==='Style')
-      : products.filter(product=>!selection[product.id]).slice(0,18);
-  initCarousel(root,items,productCard);
+  const items=homeLineProducts[kind]||products.filter(product=>!selection[product.id]).slice(0,18);
+  const controller=initCarousel(root,items,productCard);
+  if(controller)homeCarouselControllers.set(kind,controller);
 });
+
+function normalizedBrand(value=''){
+  return normalizeLabel(value).replace(/\s+/g,' ');
+}
+
+function brandInitials(label=''){
+  return label.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word[0]).join('').toUpperCase()||'LI';
+}
+
+const brandAssetByKey={
+  [normalizedBrand('Akarella')]:{src:'./assets/images/brands/akarella.webp'},
+  [normalizedBrand('Alissha Beauty')]:{src:'./assets/images/brands/alissha-beauty.webp'},
+  [normalizedBrand('Ani-K')]:{src:'./assets/images/brands/ani-k.webp'},
+  [normalizedBrand('Atenea')]:{src:'./assets/images/brands/atenea.webp'},
+  [normalizedBrand('Bioaqua')]:{src:'./assets/images/brands/bioaqua.webp'},
+  [normalizedBrand('Bloom')]:{src:'./assets/images/brands/bloomshell.webp'},
+  [normalizedBrand('Bloomshell')]:{src:'./assets/images/brands/bloomshell.webp'},
+  [normalizedBrand("D'Luchi")]:{src:'./assets/images/brands/d-luchi.webp'},
+  [normalizedBrand('Destiny by La Segura')]:{src:'./assets/images/brands/destiny-by-la-segura.webp'},
+  [normalizedBrand('Destiny')]:{src:'./assets/images/brands/destiny-by-la-segura.webp'},
+  [normalizedBrand('Girly')]:{src:'./assets/images/brands/girly.webp'},
+  [normalizedBrand('Girly by Luisa Palacio')]:{src:'./assets/images/brands/girly.webp'},
+  [normalizedBrand('Kaba')]:{src:'./assets/images/brands/kaba.webp'},
+  [normalizedBrand('Karité')]:{src:'./assets/images/brands/karite.webp'},
+  [normalizedBrand('KOEC')]:{src:'./assets/images/brands/koec.webp'},
+  [normalizedBrand('La Receta CBD')]:{src:'./assets/images/brands/la-receta-cbd.webp'},
+  [normalizedBrand('Lampiña')]:{src:'./assets/images/brands/lampina.webp'},
+  [normalizedBrand('Madagascar Centella')]:{src:'./assets/images/brands/madagascar-centella.webp'},
+  [normalizedBrand('Prosa')]:{src:'./assets/images/brands/prosa.webp'},
+  [normalizedBrand('Púrpure by Angie Bedoya')]:{src:'./assets/images/brands/purpure-by-angie-bedoya.webp'},
+  [normalizedBrand('Purpure')]:{src:'./assets/images/brands/purpure-by-angie-bedoya.webp'},
+  [normalizedBrand('Rayitos de Sol')]:{src:'./assets/images/brands/rayitos-de-sol.webp'},
+  [normalizedBrand('Ruby Rose')]:{src:'./assets/images/brands/ruby-rose.webp'},
+  [normalizedBrand('Samy')]:{src:'./assets/images/brands/samy.webp'},
+  [normalizedBrand('SAS')]:{src:'./assets/images/brands/sas.webp'},
+  [normalizedBrand('Star Charming')]:{src:'./assets/images/brands/star-charming.webp'},
+  [normalizedBrand('Ushas')]:{src:'./assets/images/brands/ushas.webp'},
+  [normalizedBrand('Vaseline')]:{src:'./assets/images/brands/vaseline.webp'},
+  [normalizedBrand('Vidan Dreams')]:{src:'./assets/images/brands/vidan-dreams.webp'},
+  [normalizedBrand('Vive Beauty')]:{src:'./assets/images/brands/vive-beauty.webp'},
+  [normalizedBrand('Vogue')]:{src:'./assets/images/brands/vogue.webp'},
+  [normalizedBrand('LIHEN.CO')]:{src:'./assets/images/brands/lihen-co.webp'},
+  [normalizedBrand('Nike')]:{src:'./assets/images/brands/nike.webp'},
+  [normalizedBrand('Polo')]:{src:'./assets/images/brands/polo.webp'}
+};
+
+function brandMediaHTML(brand){
+  const asset=brandAssetByKey[brand.key];
+  if(asset?.src){
+    return `<span class="brand-media" aria-hidden="true"><img class="brand-logo" src="${asset.src}" alt="" loading="lazy" decoding="async"></span>`;
+  }
+  return `<span class="brand-media brand-media-fallback" aria-hidden="true"><span class="brand-monogram">${safe(brandInitials(brand.label))}</span></span>`;
+}
+
+function uniqueBrands(items=[]){
+  const map=new Map();
+  items.forEach(product=>{
+    const display=String(product?.brand||'').trim().replace(/\s+/g,' ');
+    const key=normalizedBrand(display);
+    if(!key)return;
+    const current=map.get(key);
+    if(current){
+      current.count+=1;
+    }else{
+      map.set(key,{key,label:display,count:1});
+    }
+  });
+  return [...map.values()].sort((a,b)=>a.label.localeCompare(b.label,'es',{sensitivity:'base'}));
+}
+
+function initBrandBrowser(root){
+  const kind=root?.dataset.brandBrowser;
+  const line=kind==='beauty'?'Beauty Care':kind==='style'?'Style':'';
+  const lineItems=homeLineProducts[kind]||[];
+  const controller=homeCarouselControllers.get(kind);
+  const track=$('[data-brand-track]',root);
+  const viewport=$('[data-brand-viewport]',root);
+  const previous=$('[data-brand-prev]',root);
+  const next=$('[data-brand-next]',root);
+  const clear=$('[data-brand-clear]',root);
+  const status=$('[data-brand-status]',root);
+  const productSection=$(`#${kind}-products`);
+  const heading=$('.section-heading h2',productSection);
+  const brands=uniqueBrands(lineItems);
+  if(!line||!controller||!track||!viewport||!brands.length){root?.setAttribute('hidden','');return;}
+
+  track.innerHTML=brands.map(brand=>`<button type="button" class="brand-card" data-brand-key="${safe(brand.key)}" aria-pressed="false" aria-label="${safe(`${brand.label}, ${brand.count} producto${brand.count===1?'':'s'}`)}">${brandMediaHTML(brand)}<span class="brand-name">${safe(brand.label)}</span></button>`).join('');
+
+  const cards=$$('[data-brand-key]',track);
+  $$('.brand-logo',track).forEach(image=>image.addEventListener('error',()=>{
+    const card=image.closest('[data-brand-key]');
+    const media=image.closest('.brand-media');
+    const label=$('.brand-name',card)?.textContent||'';
+    if(!media)return;
+    media.classList.add('brand-media-fallback');
+    media.innerHTML=`<span class="brand-monogram" aria-hidden="true">${safe(brandInitials(label))}</span>`;
+  },{once:true}));
+  const reducedMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const updateArrows=()=>{
+    const max=Math.max(0,viewport.scrollWidth-viewport.clientWidth-2);
+    if(previous)previous.disabled=viewport.scrollLeft<=2;
+    if(next)next.disabled=viewport.scrollLeft>=max;
+    root.classList.toggle('has-overflow',max>2);
+  };
+  const setActive=(key='',label='')=>{
+    const filtered=key?lineItems.filter(product=>normalizedBrand(product.brand)===key):lineItems;
+    controller.update(filtered);
+    cards.forEach(card=>card.setAttribute('aria-pressed',String(card.dataset.brandKey===key)));
+    clear?.setAttribute('aria-pressed',String(!key));
+    productSection?.classList.toggle('is-brand-filtered',Boolean(key));
+    if(heading){
+      if(label)heading.dataset.activeBrand=label;else heading.removeAttribute('data-active-brand');
+    }
+    if(status)status.textContent=key?`Mostrando ${filtered.length} producto${filtered.length===1?'':'s'} de ${label} en ${line}.`:`Mostrando todas las marcas de ${line}.`;
+    productSection?.scrollIntoView({behavior:reducedMotion?'auto':'smooth',block:'start'});
+  };
+  const scrollByPage=direction=>viewport.scrollBy({left:direction*Math.max(viewport.clientWidth*.82,180),behavior:reducedMotion?'auto':'smooth'});
+
+  track.addEventListener('click',event=>{
+    const card=event.target.closest('[data-brand-key]');
+    if(!card)return;
+    setActive(card.dataset.brandKey,$('.brand-name',card)?.textContent||'');
+  });
+  clear?.addEventListener('click',()=>setActive());
+  previous?.addEventListener('click',()=>scrollByPage(-1));
+  next?.addEventListener('click',()=>scrollByPage(1));
+  viewport.addEventListener('scroll',()=>requestAnimationFrame(updateArrows),{passive:true});
+  viewport.addEventListener('keydown',event=>{
+    if(event.key==='ArrowRight'){event.preventDefault();scrollByPage(1)}
+    if(event.key==='ArrowLeft'){event.preventDefault();scrollByPage(-1)}
+    if(event.key==='Home'){event.preventDefault();viewport.scrollTo({left:0,behavior:reducedMotion?'auto':'smooth'})}
+    if(event.key==='End'){event.preventDefault();viewport.scrollTo({left:viewport.scrollWidth,behavior:reducedMotion?'auto':'smooth'})}
+  });
+  window.addEventListener('resize',updateArrows,{passive:true});
+  requestAnimationFrame(updateArrows);
+}
+
+$$('[data-brand-browser]').forEach(initBrandBrowser);
 
 // Ideas para regalar usa la misma fuente de productos y una sola instancia controlada.
 (function initGiftCatalog(){
@@ -243,7 +399,7 @@ document.addEventListener('click', function (event) {
   }, 1100);
 });
 
-function drawerItemsHTML(rows){return rows.length?`<div class="drawer-items">${rows.map(({product,qty})=>`<article data-selection-item="${product.id}"><img src="${img(product)}" alt="${safe(product.name)}" loading="lazy" decoding="async"><div><h3>${safe(product.name)}</h3><small>${safe(product.brand)}</small><div class="qty-control"><button data-dec="${product.id}">−</button><span data-selection-qty="${product.id}">${qty}</span><button data-inc="${product.id}">+</button></div></div><button class="remove" data-remove="${product.id}">Eliminar</button></article>`).join('')}</div>`:`<div class="empty-selection"><h3>Aún no has agregado productos.</h3><p>Explora el catálogo y crea una consulta organizada.</p></div>`}
+function drawerItemsHTML(rows){return rows.length?`<div class="drawer-items">${rows.map(({product,qty})=>`<article data-selection-item="${product.id}"><img src="${img(product)}" alt="${safe(product.name)}" loading="lazy" decoding="async"><div><h3>${safe(product.name)}</h3><small>${safe(product.brand)}${product.sku?` · SKU ${safe(product.sku)}`:''}</small><div class="qty-control"><button data-dec="${product.id}">−</button><span data-selection-qty="${product.id}">${qty}</span><button data-inc="${product.id}">+</button></div></div><button class="remove" data-remove="${product.id}">Eliminar</button></article>`).join('')}</div>`:`<div class="empty-selection"><h3>Aún no has agregado productos.</h3><p>Explora el catálogo y crea una consulta organizada.</p></div>`}
 function drawerSuggestionsHTML(rows){const suggested=products.filter(p=>!selection[p.id]&&(!rows[0]||p.line===rows[0].product.line)).slice(0,10);return `<section class="drawer-suggestions"><div class="suggest-title"><h3>¡Esto te va a interesar!</h3><div><button type="button" data-drawer-suggest-prev aria-label="Anterior">‹</button><button type="button" data-drawer-suggest-next aria-label="Siguiente">›</button></div></div><div class="mini-suggestions-viewport"><div class="mini-suggestions" data-drawer-suggest-track>${suggested.map(p=>`<article><img src="${img(p)}" alt="${safe(p.name)}" loading="lazy" decoding="async"><div><strong>${safe(p.name)}</strong><button data-add="${p.id}">+ Agregar</button></div></article>`).join('')}</div></div></section>`}
 function drawerFooterHTML(rows){return `<p><strong data-drawer-total>${totalUnits()}</strong> unidades seleccionadas</p><small>Esta selección no es una compra final. Confirmaremos disponibilidad, variantes y precio.</small><div><a class="btn btn-light" href="./mi-seleccion.html">Ver mi selección</a><button class="btn btn-lilac ${rows.length?'':'disabled'}" type="button" data-whatsapp-selection ${rows.length?'':'disabled'}>Consultar por WhatsApp</button></div>`}
 function drawerHTML(){const rows=selectionRows();return `<div class="drawer-head"><div><small>Consulta por WhatsApp</small><h2>Mi selección <span data-drawer-count>(${totalUnits()})</span></h2></div><button data-drawer-close>×</button></div><div class="drawer-body"><div data-drawer-items-host>${drawerItemsHTML(rows)}</div>${drawerSuggestionsHTML(rows)}</div><div class="drawer-footer" data-drawer-footer>${drawerFooterHTML(rows)}</div>`}
@@ -270,7 +426,7 @@ document.addEventListener('click',e=>{if(e.target.closest('[data-drawer-close]')
 // Envío la selección al canal oficial de WhatsApp sin depender de la inauguración.
 document.addEventListener('click',event=>{const trigger=event.target.closest('[data-whatsapp-selection]');if(!trigger||trigger.disabled)return;event.preventDefault();window.open(whatsappUrl(),'_blank','noopener,noreferrer')});
 
-function selectionListHTML(rows){return rows.length?`<div class="selection-table"><div class="selection-table-head"><span>Producto</span><span>Cantidad</span><span>Estado</span></div>${rows.map(({product,qty})=>`<article data-selection-item="${product.id}"><img src="${img(product)}" alt="${safe(product.name)}" loading="lazy" decoding="async"><div><h3>${safe(product.name)}</h3><p>${safe(product.brand)} · ${safe(product.line)}</p><button data-remove="${product.id}">Quitar</button></div><div class="qty-control"><button data-dec="${product.id}">−</button><span data-selection-qty="${product.id}">${qty}</span><button data-inc="${product.id}">+</button></div>${priceDisclosure(product)}</article>`).join('')}</div>`:`<div class="empty-selection page-empty"><h2>Tu selección está vacía</h2><p>Agrega productos desde el inicio o Ideas para regalar.</p><a class="btn btn-lilac" href="./index.html#beauty">Explorar productos</a></div>`}
+function selectionListHTML(rows){return rows.length?`<div class="selection-table"><div class="selection-table-head"><span>Producto</span><span>Cantidad</span><span>Estado</span></div>${rows.map(({product,qty})=>`<article data-selection-item="${product.id}"><img src="${img(product)}" alt="${safe(product.name)}" loading="lazy" decoding="async"><div><h3>${safe(product.name)}</h3><p>${safe(product.brand)} · ${safe(product.line)}${product.sku?` · SKU ${safe(product.sku)}`:''}</p><button data-remove="${product.id}">Quitar</button></div><div class="qty-control"><button data-dec="${product.id}">−</button><span data-selection-qty="${product.id}">${qty}</span><button data-inc="${product.id}">+</button></div>${priceDisclosure(product)}</article>`).join('')}</div>`:`<div class="empty-selection page-empty"><h2>Tu selección está vacía</h2><p>Agrega productos desde el inicio o Ideas para regalar.</p><a class="btn btn-lilac" href="./index.html#beauty">Explorar productos</a></div>`}
 function selectionSummaryHTML(rows){return `<h2>Resumen</h2><div><span>Referencias</span><strong data-summary-references>${rows.length}</strong></div><div><span>Total de unidades</span><strong data-summary-units>${totalUnits()}</strong></div><p>Los precios, variantes y disponibilidad se confirman por WhatsApp antes de cualquier pago.</p><button class="btn btn-lilac ${rows.length?'':'disabled'}" type="button" data-whatsapp-selection ${rows.length?'':'disabled'}>Enviar selección por WhatsApp</button><a class="btn btn-light" href="./index.html">Seguir explorando</a>`}
 function updateSelectionUI(change={}){$$('[data-selection-count]').forEach(x=>x.textContent=`(${totalUnits()})`);renderSelectionPage(change);updateOpenDrawer(change)}
 function renderSelectionPage(change={}){const list=$('[data-selection-page-list]'),summary=$('[data-selection-summary]');if(!list||!summary)return;const rows=selectionRows();if(!change.id||change.structural||!$(`[data-selection-item="${change.id}"]`,list)){list.innerHTML=selectionListHTML(rows);summary.innerHTML=selectionSummaryHTML(rows);return;}$$(`[data-selection-qty="${change.id}"]`,list).forEach(element=>element.textContent=selection[change.id]||0);const units=$('[data-summary-units]',summary);if(units)units.textContent=totalUnits();const references=$('[data-summary-references]',summary);if(references)references.textContent=rows.length}

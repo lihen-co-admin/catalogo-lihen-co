@@ -1,4 +1,5 @@
-import { products } from './data/products.js';
+import { loadPublicProducts } from './services/catalogService.js';
+const products = await loadPublicProducts();
 import { normalizeText } from './utils/normalizeText.js';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const fallback='./assets/images/lihen_logo_transparente.webp';
@@ -9,8 +10,8 @@ const state={q:params.get('q')||'',line:params.get('line')||'all',category:param
 const activeFilter=$('[data-active-filter]');
 const form=$('[data-search-form]'),input=$('#product-search'),grid=$('[data-search-grid]'),empty=$('[data-search-empty]'),count=$('[data-search-count]'),pagination=$('[data-search-pagination]');
 if(input)input.value=state.q;
-const priceNumber=p=>{const raw=String(p.price||'').replace(/[^0-9]/g,'');return raw?Number(raw):Number.MAX_SAFE_INTEGER};
-const text=p=>normalizeText([p.name,p.brand,p.line,p.category,p.desc,p.color,p.availability,p.tag,p.searchText].filter(Boolean).join(' '));
+const priceNumber=p=>Number.isFinite(Number(p.priceValue))&&Number(p.priceValue)>0?Number(p.priceValue):(()=>{const raw=String(p.price||'').replace(/[^0-9]/g,'');return raw?Number(raw):Number.MAX_SAFE_INTEGER})();
+const text=p=>normalizeText([p.sku,p.name,p.brand,p.line,p.category,p.subcategory,p.desc,p.color,p.availability,p.tag,p.searchText].filter(Boolean).join(' '));
 const categoryAliases={labios:['labio','gloss','labial','tinta hidratante'],rostro:['rostro','facial','corrector','polvo compacto','papel matificante'],ojos:['ojos','pestanina','rizado'], 'cejas y pestanas':['cejas','pestanas','laminador'], 'cuidado facial':['cuidado facial','facial'], 'proteccion solar':['proteccion solar','protector solar','solar'],mascarillas:['mascarilla'], 'cuidado capilar':['cuidado capilar','shampoo','acondicionador','tonico','tratamiento capilar'],conjunto:['conjunto'],camiseta:['camiseta'],short:['short','pantaloneta'],casual:['vestido','casual'],tono:['tono','color'],accesorio:['accesorio','brocha','cosmetiquera','herramienta'],cosmetiquera:['cosmetiquera'], 'brocha herramienta':['brocha','herramienta'],rutina:['cuidado','rutina']};
 function categoryMatches(product,category){if(!category)return true;const key=normalizeText(category);const haystack=text(product);const aliases=categoryAliases[key]||[key];return aliases.some(alias=>haystack.includes(normalizeText(alias)))}
 function statusMatches(product,status){if(!status)return true;const haystack=text(product);if(status==='nuevo')return /nuevo|nuevo ingreso|reciente/.test(haystack);if(status==='restock')return /de nuevo|regres|restock/.test(haystack);if(status==='temporada')return /temporada|coleccion/.test(haystack);return haystack.includes(normalizeText(status))}

@@ -1,216 +1,402 @@
-// Etapa 3 - Datos del catálogo real de LIHEN.CO
-// Este archivo solamente almacena información. No modifica el HTML.
+// Etapa 3 - Datos públicos del catálogo real de LIHEN.CO
+// Este archivo solamente almacena información comercial autorizada.
 // GENERADO AUTOMÁTICAMENTE desde data/catalogo/catalogo_maestro.csv.
+// No contiene proveedor, costo real unitario ni ID interno.
 // No editar manualmente: use npm run products:sync.
 
 export const products = [
   {
-    "id": "B50",
+    "id": "B77",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Cuidado capilar / acondicionador",
-    "name": "Acondicionador Kaba",
-    "brand": "Kaba",
-    "price": "$40.000",
+    "category": "Maquillaje / producto por confirmar",
+    "subcategory": "",
+    "name": "Bloom Capuchic",
+    "brand": "Bloomshell",
+    "price": "$18.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Acondicionador Kaba de Kaba. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / acondicionador. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Bloom Capuchic de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje / producto por confirmar. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_acondicionador_kaba/kaba_acondicionador_kaba_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_acondicionador_kaba/kaba_acondicionador_kaba_1.webp"
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_capuchic/bloom_bloom_capuchic_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_capuchic/bloom_bloom_capuchic_1.webp"
     ],
     "size": "Por confirmar",
     "color": "Por confirmar",
     "tag": "Producto confirmado",
-    "searchText": "acondicionador kaba kaba cuidado capilar / acondicionador beauty care"
+    "searchText": "bloom capuchic bloomshell maquillaje / producto por confirmar beauty care"
   },
   {
-    "id": "B51",
+    "id": "B71",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Cuidado capilar / mascarilla",
-    "name": "Biomascarilla Kaba",
-    "brand": "Kaba",
+    "category": "Maquillaje / producto por confirmar",
+    "subcategory": "",
+    "name": "Bloom Cosmic",
+    "brand": "Bloomshell",
+    "price": "$34.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Cosmic de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje / producto por confirmar. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_cosmic/bloom_bloom_cosmic_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_cosmic/bloom_bloom_cosmic_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom cosmic bloomshell maquillaje / producto por confirmar beauty care"
+  },
+  {
+    "id": "B76",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje / producto con brillo",
+    "subcategory": "",
+    "name": "Bloom Dolce Destello",
+    "brand": "Bloomshell",
+    "price": "$25.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Dolce Destello de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje / producto con brillo. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_dolce_destello/bloom_bloom_dolce_destello_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_dolce_destello/bloom_bloom_dolce_destello_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom dolce destello bloomshell maquillaje / producto con brillo beauty care"
+  },
+  {
+    "id": "B84",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje / jelly",
+    "subcategory": "",
+    "name": "Bloom Jelly Fusion",
+    "brand": "Bloomshell",
+    "price": "$32.900",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Jelly Fusion de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje / jelly. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_jelly_fusion/bloom_bloom_jelly_fusion_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_jelly_fusion/bloom_bloom_jelly_fusion_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom jelly fusion bloomshell maquillaje / jelly beauty care"
+  },
+  {
+    "id": "B80",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje / producto por confirmar",
+    "subcategory": "",
+    "name": "Bloom Pop Mimosa",
+    "brand": "Bloomshell",
+    "price": "$25.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Pop Mimosa de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje / producto por confirmar. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_pop_mimosa/bloom_bloom_pop_mimosa_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_pop_mimosa/bloom_bloom_pop_mimosa_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom pop mimosa bloomshell maquillaje / producto por confirmar beauty care"
+  },
+  {
+    "id": "B72",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje / producto por confirmar",
+    "subcategory": "",
+    "name": "Bloom Ultra Blendi",
+    "brand": "Bloomshell",
+    "price": "$13.500",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Ultra Blendi de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje / producto por confirmar. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_ultra_blendi/bloom_bloom_ultra_blendi_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_ultra_blendi/bloom_bloom_ultra_blendi_10.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom ultra blendi bloomshell maquillaje / producto por confirmar beauty care"
+  },
+  {
+    "id": "B81",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje / paleta o producto multiuso",
+    "subcategory": "",
+    "name": "Bloom Vibes",
+    "brand": "Bloomshell",
+    "price": "$43.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Vibes de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje / paleta o producto multiuso. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_vibes/bloom_bloom_vibes_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_vibes/bloom_bloom_vibes_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom vibes bloomshell maquillaje / paleta o producto multiuso beauty care"
+  },
+  {
+    "id": "B78",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje de cejas / laminador",
+    "subcategory": "",
+    "name": "Bloom Lamination XL",
+    "brand": "Bloomshell",
+    "price": "$25.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Lamination XL de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje de cejas / laminador. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_cejas/bloom_bloom_lamination_xl/bloom_bloom_lamination_xl_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_cejas/bloom_bloom_lamination_xl/bloom_bloom_lamination_xl_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom lamination xl bloomshell maquillaje de cejas / laminador beauty care"
+  },
+  {
+    "id": "B79",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje de labios / producto labial",
+    "subcategory": "",
+    "name": "Bloom Latte Kiss",
+    "brand": "Bloomshell",
+    "price": "$22.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Latte Kiss de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje de labios / producto labial. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_latte_kiss/bloom_bloom_latte_kiss_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_latte_kiss/bloom_bloom_latte_kiss_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom latte kiss bloomshell maquillaje de labios / producto labial beauty care"
+  },
+  {
+    "id": "B75",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje de labios / gloss",
+    "subcategory": "",
+    "name": "Bloom Lumi Gloss",
+    "brand": "Bloomshell",
+    "price": "$18.500",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Lumi Gloss de Bloomshell, producto para labios pensado para aportar color, brillo o definición según su formato específico. Puede integrarse fácilmente a un maquillaje diario o utilizarse como detalle final del look. Confirma con LIHEN.CO el tono, acabado y disponibilidad de esta referencia.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_lumi_gloss/bloom_bloom_lumi_gloss_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_lumi_gloss/bloom_bloom_lumi_gloss_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom lumi gloss bloomshell maquillaje de labios / gloss beauty care"
+  },
+  {
+    "id": "B73",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje de labios y mejillas / tinta hidratante",
+    "subcategory": "",
+    "name": "Bloom Hydratint",
+    "brand": "Bloomshell",
+    "price": "$18.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Hydratint de Bloomshell, producto para labios pensado para aportar color, brillo o definición según su formato específico. Puede integrarse fácilmente a un maquillaje diario o utilizarse como detalle final del look. Confirma con LIHEN.CO el tono, acabado y disponibilidad de esta referencia.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios_y_mejillas/bloom_bloom_hydratint/bloom_bloom_hydratint_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios_y_mejillas/bloom_bloom_hydratint/bloom_bloom_hydratint_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom hydratint bloomshell maquillaje de labios y mejillas / tinta hidratante beauty care"
+  },
+  {
+    "id": "B85",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje de ojos / pestañina o producto de rizado",
+    "subcategory": "",
+    "name": "Bloom Amore Curl",
+    "brand": "Bloomshell",
+    "price": "$15.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Amore Curl de Bloomshell, pestañina para destacar la mirada y complementar el maquillaje de ojos. Está pensada para definir visualmente las pestañas y acompañar distintos estilos de maquillaje, desde un acabado cotidiano hasta uno más intenso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_bloom_amore_curl/bloom_bloom_amore_curl_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_bloom_amore_curl/bloom_bloom_amore_curl_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom amore curl bloomshell maquillaje de ojos / pestañina o producto de rizado beauty care"
+  },
+  {
+    "id": "B70",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje de ojos / pestañina",
+    "subcategory": "",
+    "name": "Pestañina Lash Waterproof",
+    "brand": "Bloomshell",
+    "price": "$25.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Pestañina Lash Waterproof de Bloomshell, pestañina para destacar la mirada y complementar el maquillaje de ojos. Está pensada para definir visualmente las pestañas y acompañar distintos estilos de maquillaje, desde un acabado cotidiano hasta uno más intenso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_pestanina_lash_waterproof/bloom_pestanina_lash_waterproof_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_pestanina_lash_waterproof/bloom_pestanina_lash_waterproof_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "pestañina lash waterproof bloomshell maquillaje de ojos / pestañina beauty care"
+  },
+  {
+    "id": "B82",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje facial / papel matificante o polvo",
+    "subcategory": "",
+    "name": "Bloom Powder Paper",
+    "brand": "Bloomshell",
+    "price": "$25.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Powder Paper de Bloomshell, producto de maquillaje para aportar dimensión, color o acabado al rostro según su función dentro de la rutina. Permite complementar diferentes estilos de maquillaje sin necesidad de atribuirle beneficios ajenos a su categoría. Confirma tono, presentación y disponibilidad con LIHEN.CO.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_bloom_powder_paper/bloom_bloom_powder_paper_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_bloom_powder_paper/bloom_bloom_powder_paper_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom powder paper bloomshell maquillaje facial / papel matificante o polvo beauty care"
+  },
+  {
+    "id": "B69",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje facial / corrector",
+    "subcategory": "",
+    "name": "Corrector Neutralizante Bloom",
+    "brand": "Bloomshell",
+    "price": "$25.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Corrector Neutralizante Bloom de Bloomshell, corrector de maquillaje para complementar la preparación del rostro y trabajar un acabado más uniforme según la técnica de aplicación. Combínalo con el resto de tu rutina de maquillaje y confirma con LIHEN.CO que el tono disponible corresponda a lo que buscas.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_corrector_neutralizante_bloom/bloom_corrector_neutralizante_bloom_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_corrector_neutralizante_bloom/bloom_corrector_neutralizante_bloom_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "corrector neutralizante bloom bloomshell maquillaje facial / corrector beauty care"
+  },
+  {
+    "id": "B74",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje facial / polvo compacto",
+    "subcategory": "",
+    "name": "Polvo Compacto Bloom",
+    "brand": "Bloomshell",
+    "price": "$32.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Polvo Compacto Bloom de Bloomshell, producto de maquillaje para aportar dimensión, color o acabado al rostro según su función dentro de la rutina. Permite complementar diferentes estilos de maquillaje sin necesidad de atribuirle beneficios ajenos a su categoría. Confirma tono, presentación y disponibilidad con LIHEN.CO.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_polvo_compacto_bloom/bloom_polvo_compacto_bloom_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_polvo_compacto_bloom/bloom_polvo_compacto_bloom_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "polvo compacto bloom bloomshell maquillaje facial / polvo compacto beauty care"
+  },
+  {
+    "id": "B83",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Maquillaje o cuidado de labios / producto por confirmar",
+    "subcategory": "",
+    "name": "Bloom Aqua Fruit",
+    "brand": "Bloomshell",
+    "price": "$19.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Bloom Aqua Fruit de Bloomshell, referencia disponible en el catálogo de LIHEN.CO dentro de Maquillaje o cuidado de labios / producto por confirmar. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/maquillaje_o_cuidado_de_labios/bloom_bloom_aqua_fruit/bloom_bloom_aqua_fruit_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_o_cuidado_de_labios/bloom_bloom_aqua_fruit/bloom_bloom_aqua_fruit_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "bloom aqua fruit bloomshell maquillaje o cuidado de labios / producto por confirmar beauty care"
+  },
+  {
+    "id": "B90",
+    "sku": "BC-043",
+    "line": "Beauty Care",
+    "category": "Maquillaje / labios",
+    "subcategory": "Lip",
+    "name": "Lip duo tono SANGRIA",
+    "brand": "Destiny by La Segura",
     "price": "$45.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Biomascarilla Kaba de Kaba. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / mascarilla. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "availability": "Disponible",
+    "desc": "Dúo Lip Liner & Gloss Destiny by La Segura, ideal para lograr un acabado definido y luminoso. Incluye lip gloss de textura ligera con brillo sutil y un delineador de aplicación precisa que ayuda a perfilar y complementar el maquillaje de labios. Disponible en seis tonos.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_biomascarilla_kaba/kaba_biomascarilla_kaba_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_biomascarilla_kaba/kaba_biomascarilla_kaba_1.webp"
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/duo_lip_liner_gloss_destiny/duo_lip_liner_gloss_destiny_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/duo_lip_liner_gloss_destiny/duo_lip_liner_gloss_destiny_1.webp"
     ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "biomascarilla kaba kaba cuidado capilar / mascarilla beauty care"
+    "size": "Dúo",
+    "color": "Fairy Dust, Berry Fondue, Litchi Honey, Sangria Kiss, Tropical Lust y Velvet Cherry",
+    "tag": "Nuevo ingreso",
+    "searchText": "bc-043 lip duo tono sangria destiny by la segura maquillaje / labios lip beauty care"
   },
   {
-    "id": "B52",
+    "id": "B89",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Cuidado capilar / tratamiento",
-    "name": "Repolarizador Kaba",
-    "brand": "Kaba",
-    "price": "$50.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Repolarizador Kaba de Kaba. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / tratamiento. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "category": "Maquillaje / labios",
+    "subcategory": "",
+    "name": "Lip Gloss Destiny",
+    "brand": "Destiny by La Segura",
+    "price": "$29.000",
+    "availability": "Disponible",
+    "desc": "Lip Gloss Destiny by La Segura con brillo intenso y acabado luminoso. Su textura ligera ayuda a mantener los labios con una sensación cómoda e hidratante, sin acabado pesado. Puede usarse solo o sobre el labial favorito y está disponible en seis tonos.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_repolarizador_kaba/kaba_repolarizador_kaba_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_repolarizador_kaba/kaba_repolarizador_kaba_1.webp"
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_0.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_1.webp",
+      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_2.webp"
     ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "repolarizador kaba kaba cuidado capilar / tratamiento beauty care"
-  },
-  {
-    "id": "B49",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / shampoo",
-    "name": "Shampoo Kaba",
-    "brand": "Kaba",
-    "price": "$45.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Shampoo Kaba de Kaba. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / shampoo. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_shampoo_kaba/kaba_shampoo_kaba_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_shampoo_kaba/kaba_shampoo_kaba_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "shampoo kaba kaba cuidado capilar / shampoo beauty care"
-  },
-  {
-    "id": "B53",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / tónico",
-    "name": "Tónico de Crecimiento Kaba",
-    "brand": "Kaba",
-    "price": "$45.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Tónico de Crecimiento Kaba de Kaba. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / tónico. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_tonico_de_crecimiento_kaba/kaba_tonico_de_crecimiento_kaba_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_tonico_de_crecimiento_kaba/kaba_tonico_de_crecimiento_kaba_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "tónico de crecimiento kaba kaba cuidado capilar / tónico beauty care"
-  },
-  {
-    "id": "B57",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / acondicionador",
-    "name": "Shampoo de Romero Para Cabello Graso",
-    "brand": "La Receta CBD",
-    "price": "$50.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Shampoo de Romero Para Cabello Graso de La Receta CBD. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / acondicionador. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_acondicionador_nuevo/la_receta_cbd_acondicionador_nuevo_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_acondicionador_nuevo/la_receta_cbd_acondicionador_nuevo_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "shampoo de romero para cabello graso la receta cbd cuidado capilar / acondicionador beauty care"
-  },
-  {
-    "id": "B59",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / gotas",
-    "name": "Gotas Aceite reparador de puntas",
-    "brand": "La Receta CBD",
-    "price": "$35.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Gotas Aceite reparador de puntas de La Receta CBD. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / gotas. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_gotas_cbd/la_receta_cbd_gotas_cbd_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_gotas_cbd/la_receta_cbd_gotas_cbd_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "gotas aceite reparador de puntas la receta cbd cuidado capilar / gotas beauty care"
-  },
-  {
-    "id": "B58",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / shampoo",
-    "name": "Shampoo Anticaspa",
-    "brand": "La Receta CBD",
-    "price": "$50.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Shampoo Anticaspa de La Receta CBD. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / shampoo. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_anticaspa/la_receta_cbd_shampoo_anticaspa_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_anticaspa/la_receta_cbd_shampoo_anticaspa_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "shampoo anticaspa la receta cbd cuidado capilar / shampoo beauty care"
-  },
-  {
-    "id": "B56",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / shampoo",
-    "name": "Shampoo Argán",
-    "brand": "La Receta CBD",
-    "price": "$40.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Shampoo Argán de La Receta CBD. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / shampoo. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_argan/la_receta_cbd_shampoo_argan_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_argan/la_receta_cbd_shampoo_argan_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "shampoo argán la receta cbd cuidado capilar / shampoo beauty care"
-  },
-  {
-    "id": "B55",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / shampoo",
-    "name": "Shampoo Romero",
-    "brand": "La Receta CBD",
-    "price": "$50.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Shampoo Romero de La Receta CBD. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / shampoo. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_romero/la_receta_cbd_shampoo_romero_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_romero/la_receta_cbd_shampoo_romero_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "shampoo romero la receta cbd cuidado capilar / shampoo beauty care"
-  },
-  {
-    "id": "B60",
-    "line": "Beauty Care",
-    "category": "Cuidado capilar / tónico",
-    "name": "Tónico Anticaída",
-    "brand": "La Receta CBD",
-    "price": "$50.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Tónico Anticaída de La Receta CBD. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado capilar / tónico. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_tonico_anticaida/la_receta_cbd_tonico_anticaida_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_tonico_anticaida/la_receta_cbd_tonico_anticaida_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "tónico anticaída la receta cbd cuidado capilar / tónico beauty care"
+    "size": "Unidad",
+    "color": "Berry Fondue, Tropical Lust, Sangria Kiss, Velvet Cherry, Litchi Honey y Fairy Dust",
+    "tag": "Nuevo ingreso",
+    "searchText": "lip gloss destiny destiny by la segura maquillaje / labios beauty care"
   },
   {
     "id": "B62",
+    "sku": "",
     "line": "Beauty Care",
     "category": "Cuidado corporal / bronceador",
+    "subcategory": "",
     "name": "Bronceador Coco",
     "brand": "D'Luchi",
     "price": "$45.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bronceador Coco de D'Luchi. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / bronceador. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Bronceador Coco de D'Luchi, producto de maquillaje para aportar dimensión, color o acabado al rostro según su función dentro de la rutina. Permite complementar diferentes estilos de maquillaje sin necesidad de atribuirle beneficios ajenos a su categoría. Confirma tono, presentación y disponibilidad con LIHEN.CO.",
     "images": [
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_bronceador_coco/d_luchi_bronceador_coco_0.webp",
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_bronceador_coco/d_luchi_bronceador_coco_1.webp"
@@ -222,13 +408,15 @@ export const products = [
   },
   {
     "id": "B66",
+    "sku": "",
     "line": "Beauty Care",
     "category": "Cuidado corporal / bronceador",
+    "subcategory": "",
     "name": "Bronceador en Gel",
     "brand": "D'Luchi",
     "price": "$50.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bronceador en Gel de D'Luchi. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / bronceador. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Bronceador en Gel de D'Luchi, producto de maquillaje para aportar dimensión, color o acabado al rostro según su función dentro de la rutina. Permite complementar diferentes estilos de maquillaje sin necesidad de atribuirle beneficios ajenos a su categoría. Confirma tono, presentación y disponibilidad con LIHEN.CO.",
     "images": [
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_bronceador_en_gel/d_luchi_bronceador_en_gel_0.webp",
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_bronceador_en_gel/d_luchi_bronceador_en_gel_1.webp"
@@ -240,13 +428,15 @@ export const products = [
   },
   {
     "id": "B61",
+    "sku": "",
     "line": "Beauty Care",
     "category": "Cuidado corporal / bronceador",
+    "subcategory": "",
     "name": "Bronceador Zanahoria",
     "brand": "D'Luchi",
     "price": "$45.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bronceador Zanahoria de D'Luchi. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / bronceador. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Bronceador Zanahoria de D'Luchi, producto de maquillaje para aportar dimensión, color o acabado al rostro según su función dentro de la rutina. Permite complementar diferentes estilos de maquillaje sin necesidad de atribuirle beneficios ajenos a su categoría. Confirma tono, presentación y disponibilidad con LIHEN.CO.",
     "images": [
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_bronceador_zanahoria/d_luchi_bronceador_zanahoria_0.webp",
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_bronceador_zanahoria/d_luchi_bronceador_zanahoria_1.webp"
@@ -258,13 +448,15 @@ export const products = [
   },
   {
     "id": "B65",
+    "sku": "",
     "line": "Beauty Care",
     "category": "Cuidado corporal / gel",
+    "subcategory": "",
     "name": "Gel de Aloe Vera",
     "brand": "D'Luchi",
     "price": "$50.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Gel de Aloe Vera de D'Luchi. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / gel. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Gel de Aloe Vera de D'Luchi, producto de cuidado personal pensado para integrarse de forma práctica a la rutina según su categoría y presentación. La experiencia y función específica dependen de la fórmula de esta referencia, por lo que conviene revisar el envase y seguir las indicaciones del fabricante. Confirma disponibilidad con LIHEN.CO.",
     "images": [
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_gel_de_aloe_vera/d_luchi_gel_de_aloe_vera_0.webp",
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_gel_de_aloe_vera/d_luchi_gel_de_aloe_vera_1.webp"
@@ -276,13 +468,15 @@ export const products = [
   },
   {
     "id": "B63",
+    "sku": "",
     "line": "Beauty Care",
     "category": "Cuidado corporal / loción",
+    "subcategory": "",
     "name": "Loción de Oro",
     "brand": "D'Luchi",
     "price": "$15.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Loción de Oro de D'Luchi. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / loción. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Loción de Oro de D'Luchi, referencia disponible en el catálogo de LIHEN.CO dentro de Cuidado corporal / loción. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
     "images": [
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_locion_de_oro/d_luchi_locion_de_oro_0.webp",
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_locion_de_oro/d_luchi_locion_de_oro_1.webp"
@@ -294,13 +488,15 @@ export const products = [
   },
   {
     "id": "B64",
+    "sku": "",
     "line": "Beauty Care",
     "category": "Cuidado corporal / mantequilla",
+    "subcategory": "",
     "name": "Mantequilla Corporal",
     "brand": "D'Luchi",
     "price": "$50.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Mantequilla Corporal de D'Luchi. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / mantequilla. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Mantequilla Corporal de D'Luchi, producto de cuidado personal pensado para integrarse de forma práctica a la rutina según su categoría y presentación. La experiencia y función específica dependen de la fórmula de esta referencia, por lo que conviene revisar el envase y seguir las indicaciones del fabricante. Confirma disponibilidad con LIHEN.CO.",
     "images": [
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_mantequilla_corporal/d_luchi_mantequilla_corporal_0.webp",
       "./assets/productos/BEAUTY_CARE/cuidado_corporal/d_luchi_mantequilla_corporal/d_luchi_mantequilla_corporal_1.webp"
@@ -311,50 +507,136 @@ export const products = [
     "searchText": "mantequilla corporal d'luchi cuidado corporal / mantequilla beauty care"
   },
   {
-    "id": "B68",
+    "id": "B86",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Cuidado corporal / brillo corporal",
-    "name": "Chispita de Luna",
-    "brand": "Vive Beauty",
-    "price": "$25.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Chispita de Luna de Vive Beauty. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / brillo corporal. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "category": "Cuidado facial / kit de skincare",
+    "subcategory": "",
+    "name": "Kit Girly Aloe Vera",
+    "brand": "Girly by Luisa Palacio",
+    "price": "$140.000",
+    "availability": "Disponible",
+    "desc": "Kit Girly Aloe Vera con una rutina completa para limpiar, hidratar y cuidar la piel diariamente. Incluye limpiador facial, tónico facial, sérum facial, contorno de ojos y gel hidratante. Su fórmula con aloe vera ayuda a mantener el rostro fresco, suave y con una apariencia saludable. Ideal para una rutina de skincare práctica y completa.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_chispita_de_luna/vive_beauty_chispita_de_luna_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_chispita_de_luna/vive_beauty_chispita_de_luna_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_facial/kit_girly_aloe_vera/kit_girly_aloe_vera_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_facial/kit_girly_aloe_vera/kit_girly_aloe_vera_1.webp"
     ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "chispita de luna vive beauty cuidado corporal / brillo corporal beauty care"
+    "size": "Kit de 5 productos",
+    "color": "No aplica",
+    "tag": "Nuevo ingreso",
+    "searchText": "kit girly aloe vera girly by luisa palacio cuidado facial / kit de skincare beauty care"
   },
   {
-    "id": "B67",
+    "id": "B50",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Cuidado corporal / gel de ducha",
-    "name": "Gel de Ducha",
-    "brand": "Vive Beauty",
-    "price": "$28.000",
+    "category": "Cuidado capilar / acondicionador",
+    "subcategory": "",
+    "name": "Acondicionador Kaba",
+    "brand": "Kaba",
+    "price": "$40.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Gel de Ducha de Vive Beauty. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado corporal / gel de ducha. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Acondicionador Kaba de Kaba, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_gel_de_ducha/vive_beauty_gel_de_ducha_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_gel_de_ducha/vive_beauty_gel_de_ducha_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_acondicionador_kaba/kaba_acondicionador_kaba_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_acondicionador_kaba/kaba_acondicionador_kaba_1.webp"
     ],
     "size": "Por confirmar",
     "color": "Por confirmar",
     "tag": "Producto confirmado",
-    "searchText": "gel de ducha vive beauty cuidado corporal / gel de ducha beauty care"
+    "searchText": "acondicionador kaba kaba cuidado capilar / acondicionador beauty care"
+  },
+  {
+    "id": "B51",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Cuidado capilar / mascarilla",
+    "subcategory": "",
+    "name": "Biomascarilla Kaba",
+    "brand": "Kaba",
+    "price": "$45.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Biomascarilla Kaba de Kaba, mascarilla para complementar la rutina de cuidado según la fórmula y presentación específica de la referencia. Es una opción práctica para dedicar un paso adicional al cuidado personal. Como los beneficios pueden variar entre versiones, confirma con LIHEN.CO la variante disponible y revisa las indicaciones del fabricante.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_biomascarilla_kaba/kaba_biomascarilla_kaba_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_biomascarilla_kaba/kaba_biomascarilla_kaba_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "biomascarilla kaba kaba cuidado capilar / mascarilla beauty care"
+  },
+  {
+    "id": "B52",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Cuidado capilar / tratamiento",
+    "subcategory": "",
+    "name": "Repolarizador Kaba",
+    "brand": "Kaba",
+    "price": "$50.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Repolarizador Kaba de Kaba, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_repolarizador_kaba/kaba_repolarizador_kaba_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_repolarizador_kaba/kaba_repolarizador_kaba_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "repolarizador kaba kaba cuidado capilar / tratamiento beauty care"
+  },
+  {
+    "id": "B49",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Cuidado capilar / shampoo",
+    "subcategory": "",
+    "name": "Shampoo Kaba",
+    "brand": "Kaba",
+    "price": "$45.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Shampoo Kaba de Kaba, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_shampoo_kaba/kaba_shampoo_kaba_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_shampoo_kaba/kaba_shampoo_kaba_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "shampoo kaba kaba cuidado capilar / shampoo beauty care"
+  },
+  {
+    "id": "B53",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Cuidado capilar / tónico",
+    "subcategory": "",
+    "name": "Tónico de Crecimiento Kaba",
+    "brand": "Kaba",
+    "price": "$45.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Tónico de Crecimiento Kaba de Kaba, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_tonico_de_crecimiento_kaba/kaba_tonico_de_crecimiento_kaba_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/kaba_tonico_de_crecimiento_kaba/kaba_tonico_de_crecimiento_kaba_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "tónico de crecimiento kaba kaba cuidado capilar / tónico beauty care"
   },
   {
     "id": "B54",
+    "sku": "",
     "line": "Beauty Care",
     "category": "Cuidado facial / loción",
+    "subcategory": "",
     "name": "Loción Astringente Kaba",
     "brand": "Kaba",
     "price": "$60.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Loción Astringente Kaba de Kaba. Producto confirmado para el catálogo de LIHEN.CO en la categoría Cuidado facial / loción. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Loción Astringente Kaba de Kaba, referencia disponible en el catálogo de LIHEN.CO dentro de Cuidado facial / loción. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
     "images": [
       "./assets/productos/BEAUTY_CARE/cuidado_facial/kaba_locion_astringente_kaba/kaba_locion_astringente_kaba_0.webp",
       "./assets/productos/BEAUTY_CARE/cuidado_facial/kaba_locion_astringente_kaba/kaba_locion_astringente_kaba_1.webp"
@@ -365,320 +647,116 @@ export const products = [
     "searchText": "loción astringente kaba kaba cuidado facial / loción beauty care"
   },
   {
-    "id": "B77",
+    "id": "B59",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Maquillaje / producto por confirmar",
-    "name": "Bloom Capuchic",
-    "brand": "Bloom",
-    "price": "$18.000",
+    "category": "Cuidado capilar / gotas",
+    "subcategory": "",
+    "name": "Gotas Aceite reparador de puntas",
+    "brand": "La Receta CBD",
+    "price": "$35.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bloom Capuchic de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje / producto por confirmar. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Gotas Aceite reparador de puntas de La Receta CBD, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_capuchic/bloom_bloom_capuchic_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_capuchic/bloom_bloom_capuchic_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_gotas_cbd/la_receta_cbd_gotas_cbd_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_gotas_cbd/la_receta_cbd_gotas_cbd_1.webp"
     ],
     "size": "Por confirmar",
     "color": "Por confirmar",
     "tag": "Producto confirmado",
-    "searchText": "bloom capuchic bloom maquillaje / producto por confirmar beauty care"
+    "searchText": "gotas aceite reparador de puntas la receta cbd cuidado capilar / gotas beauty care"
   },
   {
-    "id": "B71",
+    "id": "B58",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Maquillaje / producto por confirmar",
-    "name": "Bloom Cosmic",
-    "brand": "Bloom",
-    "price": "$34.000",
+    "category": "Cuidado capilar / shampoo",
+    "subcategory": "",
+    "name": "Shampoo Anticaspa",
+    "brand": "La Receta CBD",
+    "price": "$50.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bloom Cosmic de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje / producto por confirmar. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Shampoo Anticaspa de La Receta CBD, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_cosmic/bloom_bloom_cosmic_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_cosmic/bloom_bloom_cosmic_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_anticaspa/la_receta_cbd_shampoo_anticaspa_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_anticaspa/la_receta_cbd_shampoo_anticaspa_1.webp"
     ],
     "size": "Por confirmar",
     "color": "Por confirmar",
     "tag": "Producto confirmado",
-    "searchText": "bloom cosmic bloom maquillaje / producto por confirmar beauty care"
+    "searchText": "shampoo anticaspa la receta cbd cuidado capilar / shampoo beauty care"
   },
   {
-    "id": "B76",
+    "id": "B56",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Maquillaje / producto con brillo",
-    "name": "Bloom Dolce Destello",
-    "brand": "Bloom",
-    "price": "$25.000",
+    "category": "Cuidado capilar / shampoo",
+    "subcategory": "",
+    "name": "Shampoo Argán",
+    "brand": "La Receta CBD",
+    "price": "$40.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bloom Dolce Destello de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje / producto con brillo. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Shampoo Argán de La Receta CBD, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_dolce_destello/bloom_bloom_dolce_destello_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_dolce_destello/bloom_bloom_dolce_destello_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_argan/la_receta_cbd_shampoo_argan_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_argan/la_receta_cbd_shampoo_argan_1.webp"
     ],
     "size": "Por confirmar",
     "color": "Por confirmar",
     "tag": "Producto confirmado",
-    "searchText": "bloom dolce destello bloom maquillaje / producto con brillo beauty care"
+    "searchText": "shampoo argán la receta cbd cuidado capilar / shampoo beauty care"
   },
   {
-    "id": "B84",
+    "id": "B55",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Maquillaje / jelly",
-    "name": "Bloom Jelly Fusion",
-    "brand": "Bloom",
-    "price": "$32.900",
+    "category": "Cuidado capilar / shampoo",
+    "subcategory": "",
+    "name": "Shampoo Romero",
+    "brand": "La Receta CBD",
+    "price": "$50.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bloom Jelly Fusion de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje / jelly. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Shampoo Romero de La Receta CBD, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_jelly_fusion/bloom_bloom_jelly_fusion_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_jelly_fusion/bloom_bloom_jelly_fusion_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_romero/la_receta_cbd_shampoo_romero_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_shampoo_romero/la_receta_cbd_shampoo_romero_1.webp"
     ],
     "size": "Por confirmar",
     "color": "Por confirmar",
     "tag": "Producto confirmado",
-    "searchText": "bloom jelly fusion bloom maquillaje / jelly beauty care"
+    "searchText": "shampoo romero la receta cbd cuidado capilar / shampoo beauty care"
   },
   {
-    "id": "B80",
+    "id": "B60",
+    "sku": "",
     "line": "Beauty Care",
-    "category": "Maquillaje / producto por confirmar",
-    "name": "Bloom Pop Mimosa",
-    "brand": "Bloom",
-    "price": "$25.000",
+    "category": "Cuidado capilar / tónico",
+    "subcategory": "",
+    "name": "Tónico Anticaída",
+    "brand": "La Receta CBD",
+    "price": "$50.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Bloom Pop Mimosa de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje / producto por confirmar. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
+    "desc": "Tónico Anticaída de La Receta CBD, producto de cuidado capilar para complementar la rutina según su tipo y presentación específica. La función concreta depende de la fórmula indicada por la marca; revisa el envase y sigue sus instrucciones de uso. Confirma con LIHEN.CO la referencia disponible antes de realizar tu pedido.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_pop_mimosa/bloom_bloom_pop_mimosa_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_pop_mimosa/bloom_bloom_pop_mimosa_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_tonico_anticaida/la_receta_cbd_tonico_anticaida_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_capilar/la_receta_cbd_tonico_anticaida/la_receta_cbd_tonico_anticaida_1.webp"
     ],
     "size": "Por confirmar",
     "color": "Por confirmar",
     "tag": "Producto confirmado",
-    "searchText": "bloom pop mimosa bloom maquillaje / producto por confirmar beauty care"
-  },
-  {
-    "id": "B72",
-    "line": "Beauty Care",
-    "category": "Maquillaje / producto por confirmar",
-    "name": "Bloom Ultra Blendi",
-    "brand": "Bloom",
-    "price": "$13.500",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Ultra Blendi de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje / producto por confirmar. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_ultra_blendi/bloom_bloom_ultra_blendi_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_ultra_blendi/bloom_bloom_ultra_blendi_10.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom ultra blendi bloom maquillaje / producto por confirmar beauty care"
-  },
-  {
-    "id": "B81",
-    "line": "Beauty Care",
-    "category": "Maquillaje / paleta o producto multiuso",
-    "name": "Bloom Vibes",
-    "brand": "Bloom",
-    "price": "$43.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Vibes de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje / paleta o producto multiuso. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_vibes/bloom_bloom_vibes_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje/bloom_bloom_vibes/bloom_bloom_vibes_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom vibes bloom maquillaje / paleta o producto multiuso beauty care"
-  },
-  {
-    "id": "B78",
-    "line": "Beauty Care",
-    "category": "Maquillaje de cejas / laminador",
-    "name": "Bloom Lamination XL",
-    "brand": "Bloom",
-    "price": "$25.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Lamination XL de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje de cejas / laminador. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_cejas/bloom_bloom_lamination_xl/bloom_bloom_lamination_xl_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_cejas/bloom_bloom_lamination_xl/bloom_bloom_lamination_xl_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom lamination xl bloom maquillaje de cejas / laminador beauty care"
-  },
-  {
-    "id": "B79",
-    "line": "Beauty Care",
-    "category": "Maquillaje de labios / producto labial",
-    "name": "Bloom Latte Kiss",
-    "brand": "Bloom",
-    "price": "$22.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Latte Kiss de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje de labios / producto labial. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_latte_kiss/bloom_bloom_latte_kiss_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_latte_kiss/bloom_bloom_latte_kiss_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom latte kiss bloom maquillaje de labios / producto labial beauty care"
-  },
-  {
-    "id": "B75",
-    "line": "Beauty Care",
-    "category": "Maquillaje de labios / gloss",
-    "name": "Bloom Lumi Gloss",
-    "brand": "Bloom",
-    "price": "$18.500",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Lumi Gloss de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje de labios / gloss. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_lumi_gloss/bloom_bloom_lumi_gloss_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_bloom_lumi_gloss/bloom_bloom_lumi_gloss_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom lumi gloss bloom maquillaje de labios / gloss beauty care"
-  },
-  {
-    "id": "B73",
-    "line": "Beauty Care",
-    "category": "Maquillaje de labios y mejillas / tinta hidratante",
-    "name": "Bloom Hydratint",
-    "brand": "Bloom",
-    "price": "$18.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Hydratint de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje de labios y mejillas / tinta hidratante. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios_y_mejillas/bloom_bloom_hydratint/bloom_bloom_hydratint_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios_y_mejillas/bloom_bloom_hydratint/bloom_bloom_hydratint_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom hydratint bloom maquillaje de labios y mejillas / tinta hidratante beauty care"
-  },
-  {
-    "id": "B85",
-    "line": "Beauty Care",
-    "category": "Maquillaje de ojos / pestañina o producto de rizado",
-    "name": "Bloom Amore Curl",
-    "brand": "Bloom",
-    "price": "$15.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Amore Curl de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje de ojos / pestañina o producto de rizado. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_bloom_amore_curl/bloom_bloom_amore_curl_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_bloom_amore_curl/bloom_bloom_amore_curl_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom amore curl bloom maquillaje de ojos / pestañina o producto de rizado beauty care"
-  },
-  {
-    "id": "B70",
-    "line": "Beauty Care",
-    "category": "Maquillaje de ojos / pestañina",
-    "name": "Pestañina Lash Waterproof",
-    "brand": "Bloom",
-    "price": "$25.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Pestañina Lash Waterproof de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje de ojos / pestañina. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_pestanina_lash_waterproof/bloom_pestanina_lash_waterproof_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_ojos/bloom_pestanina_lash_waterproof/bloom_pestanina_lash_waterproof_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "pestañina lash waterproof bloom maquillaje de ojos / pestañina beauty care"
-  },
-  {
-    "id": "B82",
-    "line": "Beauty Care",
-    "category": "Maquillaje facial / papel matificante o polvo",
-    "name": "Bloom Powder Paper",
-    "brand": "Bloom",
-    "price": "$25.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Powder Paper de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje facial / papel matificante o polvo. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_bloom_powder_paper/bloom_bloom_powder_paper_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_bloom_powder_paper/bloom_bloom_powder_paper_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom powder paper bloom maquillaje facial / papel matificante o polvo beauty care"
-  },
-  {
-    "id": "B69",
-    "line": "Beauty Care",
-    "category": "Maquillaje facial / corrector",
-    "name": "Corrector Neutralizante Bloom",
-    "brand": "Bloom",
-    "price": "$25.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Corrector Neutralizante Bloom de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje facial / corrector. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_corrector_neutralizante_bloom/bloom_corrector_neutralizante_bloom_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_corrector_neutralizante_bloom/bloom_corrector_neutralizante_bloom_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "corrector neutralizante bloom bloom maquillaje facial / corrector beauty care"
-  },
-  {
-    "id": "B74",
-    "line": "Beauty Care",
-    "category": "Maquillaje facial / polvo compacto",
-    "name": "Polvo Compacto Bloom",
-    "brand": "Bloom",
-    "price": "$32.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Polvo Compacto Bloom de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje facial / polvo compacto. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_polvo_compacto_bloom/bloom_polvo_compacto_bloom_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_facial/bloom_polvo_compacto_bloom/bloom_polvo_compacto_bloom_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "polvo compacto bloom bloom maquillaje facial / polvo compacto beauty care"
-  },
-  {
-    "id": "B83",
-    "line": "Beauty Care",
-    "category": "Maquillaje o cuidado de labios / producto por confirmar",
-    "name": "Bloom Aqua Fruit",
-    "brand": "Bloom",
-    "price": "$19.000",
-    "availability": "Disponible / por confirmar",
-    "desc": "Bloom Aqua Fruit de Bloom. Producto confirmado para el catálogo de LIHEN.CO en la categoría Maquillaje o cuidado de labios / producto por confirmar. Consulta por WhatsApp para confirmar disponibilidad, presentación, tono o referencia aplicable antes de realizar el pedido.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_o_cuidado_de_labios/bloom_bloom_aqua_fruit/bloom_bloom_aqua_fruit_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_o_cuidado_de_labios/bloom_bloom_aqua_fruit/bloom_bloom_aqua_fruit_1.webp"
-    ],
-    "size": "Por confirmar",
-    "color": "Por confirmar",
-    "tag": "Producto confirmado",
-    "searchText": "bloom aqua fruit bloom maquillaje o cuidado de labios / producto por confirmar beauty care"
+    "searchText": "tónico anticaída la receta cbd cuidado capilar / tónico beauty care"
   },
   {
     "id": "S50",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / faja",
+    "subcategory": "",
     "name": "Chaleco Extremo",
     "brand": "LIHEN.CO",
     "price": "$114.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Chaleco Extremo de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / faja. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Chaleco Extremo de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/cinturillas/chaleco_extremo/chaleco_extremo_0.webp",
       "./assets/productos/STYLE/cinturillas/chaleco_extremo/chaleco_extremo_1.webp"
@@ -690,13 +768,15 @@ export const products = [
   },
   {
     "id": "S48",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / faja",
+    "subcategory": "",
     "name": "Chaleco tira brasier Látex",
     "brand": "LIHEN.CO",
     "price": "$84.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Chaleco tira brasier Látex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / faja. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Chaleco tira brasier Látex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/cinturillas/chaleco_tira_brasier_latex/chaleco_tira_brasier_latex_0.webp",
       "./assets/productos/STYLE/cinturillas/chaleco_tira_brasier_latex/chaleco_tira_brasier_latex_1.webp"
@@ -708,13 +788,15 @@ export const products = [
   },
   {
     "id": "S49",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / faja",
+    "subcategory": "",
     "name": "Cinturilla Extrema",
     "brand": "LIHEN.CO",
     "price": "$91.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Cinturilla Extrema de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / faja. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Cinturilla Extrema de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/cinturillas/cinturilla_extrema/cinturilla_extrema_0.webp",
       "./assets/productos/STYLE/cinturillas/cinturilla_extrema/cinturilla_extrema_1.webp"
@@ -726,13 +808,15 @@ export const products = [
   },
   {
     "id": "S46",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / faja",
+    "subcategory": "",
     "name": "Cinturilla Látex",
     "brand": "LIHEN.CO",
     "price": "$61.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Cinturilla Látex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / faja. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Cinturilla Látex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/cinturillas/cinturilla_latex/cinturilla_latex_0.webp",
       "./assets/productos/STYLE/cinturillas/cinturilla_latex/cinturilla_latex_1.webp"
@@ -744,13 +828,15 @@ export const products = [
   },
   {
     "id": "S47",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / faja",
+    "subcategory": "",
     "name": "Cinturilla Magic Látex",
     "brand": "LIHEN.CO",
     "price": "$61.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Cinturilla Magic Látex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / faja. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Cinturilla Magic Látex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/cinturillas/cinturilla_magic_latex/cinturilla_magic_latex_0.webp",
       "./assets/productos/STYLE/cinturillas/cinturilla_magic_latex/cinturilla_magic_latex_1.webp"
@@ -762,13 +848,15 @@ export const products = [
   },
   {
     "id": "S27",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo Any 2 largo suplex",
     "brand": "LIHEN.CO",
     "price": "$72.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Any 2 largo suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Any 2 largo suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_any_2_largo_suplex/enterizo_any_2_largo_suplex_0.webp"
     ],
@@ -779,13 +867,15 @@ export const products = [
   },
   {
     "id": "S25",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo corto",
+    "subcategory": "",
     "name": "Enterizo Any push up corto suplex",
     "brand": "LIHEN.CO",
     "price": "$61.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Any push up corto suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo corto. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Any push up corto suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_any_push_up_corto_suplex/enterizo_any_push_up_corto_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_any_push_up_corto_suplex/enterizo_any_push_up_corto_suplex_1.webp",
@@ -799,13 +889,15 @@ export const products = [
   },
   {
     "id": "S23",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo corto",
+    "subcategory": "",
     "name": "Enterizo Danna push up corto suplex",
     "brand": "LIHEN.CO",
     "price": "$61.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Danna push up corto suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo corto. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Danna push up corto suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_danna_push_up_corto_suplex/enterizo_danna_push_up_corto_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_danna_push_up_corto_suplex/enterizo_danna_push_up_corto_suplex_1.webp",
@@ -820,13 +912,15 @@ export const products = [
   },
   {
     "id": "S28",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo Frida 2 push up largo suplex",
     "brand": "LIHEN.CO",
     "price": "$75.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Frida 2 push up largo suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Frida 2 push up largo suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_frida_2_push_up_largo_suplex/enterizo_frida_2_push_up_largo_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_frida_2_push_up_largo_suplex/enterizo_frida_2_push_up_largo_suplex_1.webp",
@@ -843,13 +937,15 @@ export const products = [
   },
   {
     "id": "S26",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo corto",
+    "subcategory": "",
     "name": "Enterizo Fryda corto suplex",
     "brand": "LIHEN.CO",
     "price": "$61.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Fryda corto suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo corto. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Fryda corto suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_fryda_corto_suplex/enterizo_fryda_corto_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_fryda_corto_suplex/enterizo_fryda_corto_suplex_1.webp"
@@ -861,13 +957,15 @@ export const products = [
   },
   {
     "id": "S34",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo Jenny largo suplex",
     "brand": "LIHEN.CO",
     "price": "$64.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Jenny largo suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Jenny largo suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_jenny_largo_suplex/enterizo_jenny_largo_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_jenny_largo_suplex/enterizo_jenny_largo_suplex_1.webp"
@@ -879,13 +977,15 @@ export const products = [
   },
   {
     "id": "S33",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo largo bota campana suplex",
     "brand": "LIHEN.CO",
     "price": "$112.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo largo bota campana suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo largo bota campana suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_largo_bota_campana_suplex/enterizo_largo_bota_campana_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_largo_bota_campana_suplex/enterizo_largo_bota_campana_suplex_1.webp"
@@ -897,13 +997,15 @@ export const products = [
   },
   {
     "id": "S29",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo Lina push up largo suplex",
     "brand": "LIHEN.CO",
     "price": "$72.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Lina push up largo suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Lina push up largo suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_lina_push_up_largo_suplex/enterizo_lina_push_up_largo_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_lina_push_up_largo_suplex/enterizo_lina_push_up_largo_suplex_1.webp"
@@ -915,13 +1017,15 @@ export const products = [
   },
   {
     "id": "S31",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo Lupita push up largo",
     "brand": "LIHEN.CO",
     "price": "$67.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Lupita push up largo de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Lupita push up largo de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_lupita_push_up_largo/enterizo_lupita_push_up_largo_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_lupita_push_up_largo/enterizo_lupita_push_up_largo_1.webp"
@@ -933,13 +1037,15 @@ export const products = [
   },
   {
     "id": "S30",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo Lupita push up largo bota ancha",
     "brand": "LIHEN.CO",
     "price": "$72.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Lupita push up largo bota ancha de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Lupita push up largo bota ancha de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_lupita_push_up_largo_bota_ancha/enterizo_lupita_push_up_largo_bota_ancha_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_lupita_push_up_largo_bota_ancha/enterizo_lupita_push_up_largo_bota_ancha_1.webp"
@@ -951,13 +1057,15 @@ export const products = [
   },
   {
     "id": "S24",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo corto",
+    "subcategory": "",
     "name": "Enterizo Roma push up corto suplex",
     "brand": "LIHEN.CO",
     "price": "$61.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Roma push up corto suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo corto. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Roma push up corto suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_roma_push_up_corto_suplex/enterizo_roma_push_up_corto_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_roma_push_up_corto_suplex/enterizo_roma_push_up_corto_suplex_1.webp"
@@ -969,13 +1077,15 @@ export const products = [
   },
   {
     "id": "S32",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo largo",
+    "subcategory": "",
     "name": "Enterizo Roma push up largo bota ancha suplex",
     "brand": "LIHEN.CO",
     "price": "$72.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Roma push up largo bota ancha suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo largo. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Roma push up largo bota ancha suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_roma_push_up_largo_bota_ancha_suplex/enterizo_roma_push_up_largo_bota_ancha_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_roma_push_up_largo_bota_ancha_suplex/enterizo_roma_push_up_largo_bota_ancha_suplex_1.webp"
@@ -987,13 +1097,15 @@ export const products = [
   },
   {
     "id": "S22",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / enterizo corto",
+    "subcategory": "",
     "name": "Enterizo Sandy corto suplex",
     "brand": "LIHEN.CO",
     "price": "$78.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Enterizo Sandy corto suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / enterizo corto. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Enterizo Sandy corto suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/enterizos/enterizo_sandy_corto_suplex/enterizo_sandy_corto_suplex_0.webp",
       "./assets/productos/STYLE/enterizos/enterizo_sandy_corto_suplex/enterizo_sandy_corto_suplex_1.webp"
@@ -1005,13 +1117,15 @@ export const products = [
   },
   {
     "id": "S45",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / chaqueta mujer",
+    "subcategory": "",
     "name": "Chaqueta importada dama sin capucha",
     "brand": "LIHEN.CO",
     "price": "$87.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Chaqueta importada dama sin capucha de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / chaqueta mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Chaqueta importada dama sin capucha de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/chaqueta_importada_dama_sin_capucha/chaqueta_importada_dama_sin_capucha_0.webp"
     ],
@@ -1022,13 +1136,15 @@ export const products = [
   },
   {
     "id": "S43",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / chaqueta mujer",
+    "subcategory": "",
     "name": "Chaqueta manga larga Capriati",
     "brand": "LIHEN.CO",
     "price": "$28.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Chaqueta manga larga Capriati de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / chaqueta mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Chaqueta manga larga Capriati de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/chaqueta_manga_larga_capriati/chaqueta_manga_larga_capriati_0.webp"
     ],
@@ -1039,13 +1155,15 @@ export const products = [
   },
   {
     "id": "S08",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Conjunto 3 piezas",
     "brand": "LIHEN.CO",
     "price": "$82.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Conjunto 3 piezas de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Conjunto 3 piezas de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/conjunto_3_piezas/conjunto_3_piezas_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/conjunto_3_piezas/conjunto_3_piezas_1.webp",
@@ -1061,13 +1179,15 @@ export const products = [
   },
   {
     "id": "S16",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Conjunto Danny",
     "brand": "LIHEN.CO",
     "price": "$69.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Conjunto Danny de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Conjunto Danny de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/conjunto_danny/conjunto_danny_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/conjunto_danny/conjunto_danny_1.webp",
@@ -1083,13 +1203,15 @@ export const products = [
   },
   {
     "id": "S52",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Conjunto Natzuki",
     "brand": "LIHEN.CO",
     "price": "$82.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Conjunto Natzuki de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Conjunto Natzuki de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/conjunto_natzuki/conjunto_natzuki_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/conjunto_natzuki/conjunto_natzuki_1.webp",
@@ -1102,13 +1224,15 @@ export const products = [
   },
   {
     "id": "S07",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Conjunto Yoga",
     "brand": "LIHEN.CO",
     "price": "$108.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Conjunto Yoga de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Conjunto Yoga de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/conjunto_yoga/conjunto_yoga_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/conjunto_yoga/conjunto_yoga_1.webp",
@@ -1128,13 +1252,15 @@ export const products = [
   },
   {
     "id": "S15",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Falda prenses + top unicolor",
     "brand": "LIHEN.CO",
     "price": "$63.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Falda prenses + top unicolor de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Falda prenses + top unicolor de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/falda_prenses_top_unicolor/falda_prenses_top_unicolor_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/falda_prenses_top_unicolor/falda_prenses_top_unicolor_1.webp"
@@ -1146,13 +1272,15 @@ export const products = [
   },
   {
     "id": "S17",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Falda suplex + top cuello",
     "brand": "LIHEN.CO",
     "price": "$57.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Falda suplex + top cuello de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Falda suplex + top cuello de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/falda_suplex_top_cuello/falda_suplex_top_cuello_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/falda_suplex_top_cuello/falda_suplex_top_cuello_1.webp",
@@ -1165,13 +1293,15 @@ export const products = [
   },
   {
     "id": "S14",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Falda unicolor + top",
     "brand": "LIHEN.CO",
     "price": "$48.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Falda unicolor + top de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Falda unicolor + top de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/falda_unicolor_top/falda_unicolor_top_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/falda_unicolor_top/falda_unicolor_top_1.webp",
@@ -1189,13 +1319,15 @@ export const products = [
   },
   {
     "id": "S06",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / licra mujer",
+    "subcategory": "",
     "name": "Licra bota ancha suplex cierre",
     "brand": "LIHEN.CO",
     "price": "$57.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Licra bota ancha suplex cierre de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / licra mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Licra bota ancha suplex cierre de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/licra_bota_ancha_suplex_cierre/licra_bota_ancha_suplex_cierre_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/licra_bota_ancha_suplex_cierre/licra_bota_ancha_suplex_cierre_1.webp",
@@ -1210,13 +1342,15 @@ export const products = [
   },
   {
     "id": "S04",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Licra bota ancha suplex + top",
     "brand": "LIHEN.CO",
     "price": "$63.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Licra bota ancha suplex + top de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Licra bota ancha suplex + top de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/licra_bota_ancha_suplex_top/licra_bota_ancha_suplex_top_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/licra_bota_ancha_suplex_top/licra_bota_ancha_suplex_top_1.webp",
@@ -1232,13 +1366,15 @@ export const products = [
   },
   {
     "id": "S01",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Licra bota ancha unicolor con vivo + top",
     "brand": "LIHEN.CO",
     "price": "$82.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Licra bota ancha unicolor con vivo + top de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Licra bota ancha unicolor con vivo + top de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/licra_bota_ancha_unicolor_con_vivo_top/licra_bota_ancha_unicolor_con_vivo_top_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/licra_bota_ancha_unicolor_con_vivo_top/licra_bota_ancha_unicolor_con_vivo_top_1.webp"
@@ -1250,13 +1386,15 @@ export const products = [
   },
   {
     "id": "S05",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / licra mujer",
+    "subcategory": "",
     "name": "Licra sirena bota ancha suplex",
     "brand": "LIHEN.CO",
     "price": "$57.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Licra sirena bota ancha suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / licra mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Licra sirena bota ancha suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/licra_sirena_bota_ancha_suplex/licra_sirena_bota_ancha_suplex_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/licra_sirena_bota_ancha_suplex/licra_sirena_bota_ancha_suplex_1.webp",
@@ -1272,13 +1410,15 @@ export const products = [
   },
   {
     "id": "S03",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / licra mujer",
+    "subcategory": "",
     "name": "Licra sirena unicolor",
     "brand": "LIHEN.CO",
     "price": "$37.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Licra sirena unicolor de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / licra mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Licra sirena unicolor de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/licra_sirena_unicolor/licra_sirena_unicolor_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/licra_sirena_unicolor/licra_sirena_unicolor_1.webp",
@@ -1295,13 +1435,15 @@ export const products = [
   },
   {
     "id": "S13",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / pantaloneta mujer",
+    "subcategory": "",
     "name": "Pantaloneta dama antifluido con licra interna",
     "brand": "LIHEN.CO",
     "price": "$42.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Pantaloneta dama antifluido con licra interna de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / pantaloneta mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Pantaloneta dama antifluido con licra interna de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/pantaloneta_dama_antifluido_con_licra_interna/pantaloneta_dama_antifluido_con_licra_interna_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/pantaloneta_dama_antifluido_con_licra_interna/pantaloneta_dama_antifluido_con_licra_interna_1.webp",
@@ -1320,13 +1462,15 @@ export const products = [
   },
   {
     "id": "S12",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Short malla push up suplex + top",
     "brand": "LIHEN.CO",
     "price": "$45.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Short malla push up suplex + top de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Short malla push up suplex + top de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/short_malla_push_up_suplex_top/short_malla_push_up_suplex_top_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/short_malla_push_up_suplex_top/short_malla_push_up_suplex_top_1.webp",
@@ -1345,13 +1489,15 @@ export const products = [
   },
   {
     "id": "S10",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / conjunto mujer",
+    "subcategory": "",
     "name": "Short nylon unicolor + top",
     "brand": "LIHEN.CO",
     "price": "$33.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Short nylon unicolor + top de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / conjunto mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Short nylon unicolor + top de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/short_nylon_unicolor_top/short_nylon_unicolor_top_0.webp",
       "./assets/productos/STYLE/ropa_deportiva/short_nylon_unicolor_top/short_nylon_unicolor_top_1.webp",
@@ -1366,13 +1512,15 @@ export const products = [
   },
   {
     "id": "S51",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / sudadera mujer",
+    "subcategory": "",
     "name": "Sudadera bota recta burda + chaqueta",
     "brand": "LIHEN.CO",
     "price": "$82.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Sudadera bota recta burda + chaqueta de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / sudadera mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Sudadera bota recta burda + chaqueta de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva/sudadera_bota_recta_burda_chaqueta/sudadera_bota_recta_burda_chaqueta_0.webp"
     ],
@@ -1383,13 +1531,15 @@ export const products = [
   },
   {
     "id": "S55",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / camiseta manga larga",
+    "subcategory": "",
     "name": "Calentador hombre unicolor nacional",
     "brand": "LIHEN.CO",
     "price": "$37.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Calentador hombre unicolor nacional de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / camiseta manga larga. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Calentador hombre unicolor nacional de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/calentador_hombre_unicolor_nacional/calentador_hombre_unicolor_nacional_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/calentador_hombre_unicolor_nacional/calentador_hombre_unicolor_nacional_1.webp",
@@ -1405,13 +1555,15 @@ export const products = [
   },
   {
     "id": "S56",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / camiseta sin mangas",
+    "subcategory": "",
     "name": "Camiseta hombre esqueleto nacional",
     "brand": "LIHEN.CO",
     "price": "$30.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Camiseta hombre esqueleto nacional de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / camiseta sin mangas. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Camiseta hombre esqueleto nacional de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_hombre_esqueleto_nacional/camiseta_hombre_esqueleto_nacional_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_hombre_esqueleto_nacional/camiseta_hombre_esqueleto_nacional_1.webp",
@@ -1426,13 +1578,15 @@ export const products = [
   },
   {
     "id": "S53",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / camiseta",
+    "subcategory": "",
     "name": "Camiseta hombre unicolor nacional",
     "brand": "LIHEN.CO",
     "price": "$30.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Camiseta hombre unicolor nacional de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / camiseta. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Camiseta hombre unicolor nacional de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_hombre_unicolor_nacional/camiseta_hombre_unicolor_nacional_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_hombre_unicolor_nacional/camiseta_hombre_unicolor_nacional_1.webp",
@@ -1448,13 +1602,15 @@ export const products = [
   },
   {
     "id": "S62",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / camiseta",
+    "subcategory": "",
     "name": "Camiseta importada hombre",
     "brand": "LIHEN.CO",
     "price": "$52.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Camiseta importada hombre de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / camiseta. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Camiseta importada hombre de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_importada_hombre/camiseta_importada_hombre_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_importada_hombre/camiseta_importada_hombre_1.webp",
@@ -1469,13 +1625,15 @@ export const products = [
   },
   {
     "id": "S54",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / camiseta",
+    "subcategory": "",
     "name": "Camiseta oversize hombre",
     "brand": "LIHEN.CO",
     "price": "$52.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Camiseta oversize hombre de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / camiseta. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Camiseta oversize hombre de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_oversize_hombre/camiseta_oversize_hombre_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/camiseta_oversize_hombre/camiseta_oversize_hombre_1.webp",
@@ -1493,13 +1651,15 @@ export const products = [
   },
   {
     "id": "S61",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / chaqueta",
+    "subcategory": "",
     "name": "Chaqueta hombre antifluido con capucha",
     "brand": "LIHEN.CO",
     "price": "$67.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Chaqueta hombre antifluido con capucha de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / chaqueta. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Chaqueta hombre antifluido con capucha de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/chaqueta_hombre_antifluido_con_capucha/chaqueta_hombre_antifluido_con_capucha_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/chaqueta_hombre_antifluido_con_capucha/chaqueta_hombre_antifluido_con_capucha_2.webp",
@@ -1514,13 +1674,15 @@ export const products = [
   },
   {
     "id": "S57",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / licra corta",
+    "subcategory": "",
     "name": "Licra corta hombre nacional",
     "brand": "LIHEN.CO",
     "price": "$40.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Licra corta hombre nacional de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / licra corta. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Licra corta hombre nacional de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/licra_corta_hombre_nacional/licra_corta_hombre_nacional_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/licra_corta_hombre_nacional/licra_corta_hombre_nacional_1.webp"
@@ -1532,13 +1694,15 @@ export const products = [
   },
   {
     "id": "S64",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / pantaloneta",
+    "subcategory": "",
     "name": "Pantaloneta importada hombre con licra interna",
     "brand": "LIHEN.CO",
     "price": "$48.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Pantaloneta importada hombre con licra interna de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / pantaloneta. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Pantaloneta importada hombre con licra interna de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/pantaloneta_importada_hombre_con_licra_interna/pantaloneta_importada_hombre_con_licra_interna_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/pantaloneta_importada_hombre_con_licra_interna/pantaloneta_importada_hombre_con_licra_interna_1.webp",
@@ -1552,13 +1716,15 @@ export const products = [
   },
   {
     "id": "S63",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / pantaloneta",
+    "subcategory": "",
     "name": "Pantaloneta importada hombre sin licra interna",
     "brand": "LIHEN.CO",
     "price": "$52.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Pantaloneta importada hombre sin licra interna de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / pantaloneta. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Pantaloneta importada hombre sin licra interna de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/pantaloneta_importada_hombre_sin_licra_interna/pantaloneta_importada_hombre_sin_licra_interna_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/pantaloneta_importada_hombre_sin_licra_interna/pantaloneta_importada_hombre_sin_licra_interna_1.webp",
@@ -1572,13 +1738,15 @@ export const products = [
   },
   {
     "id": "S58",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva hombre / sudadera",
+    "subcategory": "",
     "name": "Sudadera nacional hombre antifluido",
     "brand": "LIHEN.CO",
     "price": "$52.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Sudadera nacional hombre antifluido de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva hombre / sudadera. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Sudadera nacional hombre antifluido de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_hombre/sudadera_nacional_hombre_antifluido/sudadera_nacional_hombre_antifluido_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_hombre/sudadera_nacional_hombre_antifluido/sudadera_nacional_hombre_antifluido_1.webp",
@@ -1593,13 +1761,15 @@ export const products = [
   },
   {
     "id": "S65",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva niño / camiseta manga larga",
+    "subcategory": "",
     "name": "Calentador niño",
     "brand": "LIHEN.CO",
     "price": "$22.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Calentador niño de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva niño / camiseta manga larga. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Calentador niño de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/ropa_deportiva_nino/calentador_nino/calentador_nino_0.webp",
       "./assets/productos/STYLE/ropa_deportiva_nino/calentador_nino/calentador_nino_1.webp",
@@ -1613,13 +1783,15 @@ export const products = [
   },
   {
     "id": "S19",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / vestido mujer",
+    "subcategory": "",
     "name": "Vestido Karla suplex",
     "brand": "LIHEN.CO",
     "price": "$72.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Vestido Karla suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / vestido mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Vestido Karla suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/vestidos/vestido_karla_suplex/vestido_karla_suplex_0.webp",
       "./assets/productos/STYLE/vestidos/vestido_karla_suplex/vestido_karla_suplex_1.webp",
@@ -1634,13 +1806,15 @@ export const products = [
   },
   {
     "id": "S18",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / vestido mujer",
+    "subcategory": "",
     "name": "Vestido Lola suplex",
     "brand": "LIHEN.CO",
     "price": "$72.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Vestido Lola suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / vestido mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Vestido Lola suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/vestidos/vestido_lola_suplex/vestido_lola_suplex_0.webp",
       "./assets/productos/STYLE/vestidos/vestido_lola_suplex/vestido_lola_suplex_1.webp",
@@ -1654,13 +1828,15 @@ export const products = [
   },
   {
     "id": "S20",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / vestido mujer",
+    "subcategory": "",
     "name": "Vestido manga corta prenses suplex",
     "brand": "LIHEN.CO",
     "price": "$75.000",
     "availability": "Disponible / por confirmar",
-    "desc": "Vestido manga corta prenses suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / vestido mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Vestido manga corta prenses suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/vestidos/vestido_manga_corta_prenses_suplex/vestido_manga_corta_prenses_suplex_0.webp",
       "./assets/productos/STYLE/vestidos/vestido_manga_corta_prenses_suplex/vestido_manga_corta_prenses_suplex_1.webp",
@@ -1673,13 +1849,15 @@ export const products = [
   },
   {
     "id": "S21",
+    "sku": "",
     "line": "Style",
     "category": "Ropa deportiva / vestido mujer",
+    "subcategory": "",
     "name": "Vestido manga larga prenses suplex",
     "brand": "LIHEN.CO",
     "price": "$79.500",
     "availability": "Disponible / por confirmar",
-    "desc": "Vestido manga larga prenses suplex de LIHEN.CO. Producto confirmado para el catálogo de LIHEN.CO en la categoría Ropa deportiva / vestido mujer. Consulta por WhatsApp para confirmar disponibilidad, talla, color o referencia antes de realizar el pedido.",
+    "desc": "Vestido manga larga prenses suplex de LIHEN.CO, una prenda pensada para sumar versatilidad al guardarropa y adaptarse a diferentes combinaciones. La ficha conserva únicamente características confirmadas del catálogo; revisa las fotografías y confirma con LIHEN.CO talla, color y disponibilidad para elegir la referencia adecuada.",
     "images": [
       "./assets/productos/STYLE/vestidos/vestido_manga_larga_prenses_suplex/vestido_manga_larga_prenses_suplex_0.webp",
       "./assets/productos/STYLE/vestidos/vestido_manga_larga_prenses_suplex/vestido_manga_larga_prenses_suplex_1.webp",
@@ -1694,100 +1872,31 @@ export const products = [
     "searchText": "vestido manga larga prenses suplex lihen.co ropa deportiva / vestido mujer style"
   },
   {
-    "id": "B86",
-    "line": "Beauty Care",
-    "category": "Cuidado facial / kit de skincare",
-    "name": "Kit Girly Aloe Vera",
-    "brand": "Girly",
-    "price": "$140.000",
+    "id": "S67",
+    "sku": "",
+    "line": "Style",
+    "category": "Ropa deportiva / licra",
+    "subcategory": "",
+    "name": "Licra deportiva corta Nike",
+    "brand": "Nike",
+    "price": "$35.000",
     "availability": "Disponible",
-    "desc": "Kit Girly Aloe Vera con una rutina completa para limpiar, hidratar y cuidar la piel diariamente. Incluye limpiador facial, tónico facial, sérum facial, contorno de ojos y gel hidratante. Su fórmula con aloe vera ayuda a mantener el rostro fresco, suave y con una apariencia saludable. Ideal para una rutina de skincare práctica y completa.",
+    "desc": "Licra deportiva corta Nike elaborada en tela power, diseñada para brindar comodidad, soporte y libertad de movimiento durante el entrenamiento. Cuenta con ajuste cómodo y firme, diseño deportivo y un toque suave que favorece la silueta. Ideal para rutinas fitness y uso deportivo.",
     "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_facial/kit_girly_aloe_vera/kit_girly_aloe_vera_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_facial/kit_girly_aloe_vera/kit_girly_aloe_vera_1.webp"
+      "./assets/productos/STYLE/ropa_deportiva/licra_deportiva_corta_nike/licra_deportiva_corta_nike_0.webp",
+      "./assets/productos/STYLE/ropa_deportiva/licra_deportiva_corta_nike/licra_deportiva_corta_nike_1.webp"
     ],
-    "size": "Kit de 5 productos",
-    "color": "No aplica",
+    "size": "Por confirmar",
+    "color": "Negro",
     "tag": "Nuevo ingreso",
-    "searchText": "kit girly aloe vera girly cuidado facial / kit de skincare beauty care"
-  },
-  {
-    "id": "B87",
-    "line": "Beauty Care",
-    "category": "Cuidado corporal / hidratación",
-    "name": "Gel Oil Vaseline Cocoa Radiant",
-    "brand": "Vaseline",
-    "price": "$66.000",
-    "availability": "Disponible",
-    "desc": "Gel Oil Vaseline Cocoa Radiant formulado con manteca de cacao para complementar la rutina diaria de cuidado corporal. Ayuda a suavizar la piel, aportar luminosidad y dejar una sensación ligera con un acabado radiante.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/gel_oil_vaseline_cocoa_radiant/gel_oil_vaseline_cocoa_radiant_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/gel_oil_vaseline_cocoa_radiant/gel_oil_vaseline_cocoa_radiant_1.webp"
-    ],
-    "size": "200 ml",
-    "color": "No aplica",
-    "tag": "Nuevo ingreso",
-    "searchText": "gel oil vaseline cocoa radiant vaseline cuidado corporal / hidratación beauty care"
-  },
-  {
-    "id": "B88",
-    "line": "Beauty Care",
-    "category": "Cuidado corporal / mantequilla corporal",
-    "name": "Mini Mantequilla Corporal Púrpure",
-    "brand": "Púrpure by Angie Bedoya",
-    "price": "$12.000",
-    "availability": "Disponible",
-    "desc": "Mini mantequilla corporal Púrpure con textura cremosa, ideal para complementar la rutina diaria de cuidado corporal. Ayuda a mantener la piel suave, hidratada y delicadamente perfumada. Su presentación práctica permite llevarla fácilmente en el bolso o la mochila. Disponible en diferentes aromas.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/mini_mantequilla_corporal_purpure/mini_mantequilla_corporal_purpure_0.webp",
-      "./assets/productos/BEAUTY_CARE/cuidado_corporal/mini_mantequilla_corporal_purpure/mini_mantequilla_corporal_purpure_1.webp"
-    ],
-    "size": "Presentación mini, contenido por confirmar",
-    "color": "Fresa, sandía, caramelo, chocolate, maracuyá y chicle",
-    "tag": "Nuevo ingreso",
-    "searchText": "mini mantequilla corporal púrpure púrpure by angie bedoya cuidado corporal / mantequilla corporal beauty care"
-  },
-  {
-    "id": "B89",
-    "line": "Beauty Care",
-    "category": "Maquillaje / labios",
-    "name": "Lip Gloss Destiny",
-    "brand": "Destiny by La Segura",
-    "price": "$29.000",
-    "availability": "Disponible",
-    "desc": "Lip Gloss Destiny by La Segura con brillo intenso y acabado luminoso. Su textura ligera ayuda a mantener los labios con una sensación cómoda e hidratante, sin acabado pesado. Puede usarse solo o sobre el labial favorito y está disponible en seis tonos.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_1.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/lip_gloss_destiny/lip_gloss_destiny_2.webp"
-    ],
-    "size": "Unidad",
-    "color": "Berry Fondue, Tropical Lust, Sangria Kiss, Velvet Cherry, Litchi Honey y Fairy Dust",
-    "tag": "Nuevo ingreso",
-    "searchText": "lip gloss destiny destiny by la segura maquillaje / labios beauty care"
-  },
-  {
-    "id": "B90",
-    "line": "Beauty Care",
-    "category": "Maquillaje / labios",
-    "name": "Dúo Lip Liner & Gloss Destiny",
-    "brand": "Destiny by La Segura",
-    "price": "$44.900",
-    "availability": "Disponible",
-    "desc": "Dúo Lip Liner & Gloss Destiny by La Segura, ideal para lograr un acabado definido y luminoso. Incluye lip gloss de textura ligera con brillo sutil y un delineador de aplicación precisa que ayuda a perfilar y complementar el maquillaje de labios. Disponible en seis tonos.",
-    "images": [
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/duo_lip_liner_gloss_destiny/duo_lip_liner_gloss_destiny_0.webp",
-      "./assets/productos/BEAUTY_CARE/maquillaje_de_labios/duo_lip_liner_gloss_destiny/duo_lip_liner_gloss_destiny_1.webp"
-    ],
-    "size": "Dúo",
-    "color": "Fairy Dust, Berry Fondue, Litchi Honey, Sangria Kiss, Tropical Lust y Velvet Cherry",
-    "tag": "Nuevo ingreso",
-    "searchText": "dúo lip liner & gloss destiny destiny by la segura maquillaje / labios beauty care"
+    "searchText": "licra deportiva corta nike nike ropa deportiva / licra style"
   },
   {
     "id": "S66",
+    "sku": "",
     "line": "Style",
     "category": "Ropa casual hombre / camiseta",
+    "subcategory": "",
     "name": "Camiseta clásica Polo en tela fría",
     "brand": "Polo",
     "price": "$40.000",
@@ -1807,22 +1916,84 @@ export const products = [
     "searchText": "camiseta clásica polo en tela fría polo ropa casual hombre / camiseta style"
   },
   {
-    "id": "S67",
-    "line": "Style",
-    "category": "Ropa deportiva / licra",
-    "name": "Licra deportiva corta Nike",
-    "brand": "Nike",
-    "price": "$35.000",
+    "id": "B88",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Cuidado corporal / mantequilla corporal",
+    "subcategory": "",
+    "name": "Mini Mantequilla Corporal Púrpure",
+    "brand": "Púrpure by Angie Bedoya",
+    "price": "$12.000",
     "availability": "Disponible",
-    "desc": "Licra deportiva corta Nike elaborada en tela power, diseñada para brindar comodidad, soporte y libertad de movimiento durante el entrenamiento. Cuenta con ajuste cómodo y firme, diseño deportivo y un toque suave que favorece la silueta. Ideal para rutinas fitness y uso deportivo.",
+    "desc": "Mini mantequilla corporal Púrpure con textura cremosa, ideal para complementar la rutina diaria de cuidado corporal. Ayuda a mantener la piel suave, hidratada y delicadamente perfumada. Su presentación práctica permite llevarla fácilmente en el bolso o la mochila. Disponible en diferentes aromas.",
     "images": [
-      "./assets/productos/STYLE/ropa_deportiva/licra_deportiva_corta_nike/licra_deportiva_corta_nike_0.webp",
-      "./assets/productos/STYLE/ropa_deportiva/licra_deportiva_corta_nike/licra_deportiva_corta_nike_1.webp"
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/mini_mantequilla_corporal_purpure/mini_mantequilla_corporal_purpure_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/mini_mantequilla_corporal_purpure/mini_mantequilla_corporal_purpure_1.webp"
+    ],
+    "size": "Presentación mini, contenido por confirmar",
+    "color": "Fresa, sandía, caramelo, chocolate, maracuyá y chicle",
+    "tag": "Nuevo ingreso",
+    "searchText": "mini mantequilla corporal púrpure púrpure by angie bedoya cuidado corporal / mantequilla corporal beauty care"
+  },
+  {
+    "id": "B87",
+    "sku": "BC-029",
+    "line": "Beauty Care",
+    "category": "Cuidado / corporal",
+    "subcategory": "Gel",
+    "name": "Gel oil cocoa",
+    "brand": "Vaseline",
+    "price": "$66.000",
+    "availability": "Disponible",
+    "desc": "Gel Oil Vaseline Cocoa Radiant formulado con manteca de cacao para complementar la rutina diaria de cuidado corporal. Ayuda a suavizar la piel, aportar luminosidad y dejar una sensación ligera con un acabado radiante.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/gel_oil_vaseline_cocoa_radiant/gel_oil_vaseline_cocoa_radiant_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/gel_oil_vaseline_cocoa_radiant/gel_oil_vaseline_cocoa_radiant_1.webp"
+    ],
+    "size": "200 ml",
+    "color": "No aplica",
+    "tag": "Nuevo ingreso",
+    "searchText": "bc-029 gel oil cocoa vaseline cuidado / corporal gel beauty care"
+  },
+  {
+    "id": "B68",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Cuidado corporal / brillo corporal",
+    "subcategory": "",
+    "name": "Chispita de Luna",
+    "brand": "Vive Beauty",
+    "price": "$25.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Chispita de Luna de Vive Beauty, referencia disponible en el catálogo de LIHEN.CO dentro de Cuidado corporal / brillo corporal. La información pública se mantiene deliberadamente prudente cuando no existe una ficha oficial suficientemente específica. Revisa las fotografías disponibles y confirma presentación, variante y disponibilidad antes de realizar tu pedido.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_chispita_de_luna/vive_beauty_chispita_de_luna_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_chispita_de_luna/vive_beauty_chispita_de_luna_1.webp"
     ],
     "size": "Por confirmar",
-    "color": "Negro",
-    "tag": "Nuevo ingreso",
-    "searchText": "licra deportiva corta nike nike ropa deportiva / licra style"
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "chispita de luna vive beauty cuidado corporal / brillo corporal beauty care"
+  },
+  {
+    "id": "B67",
+    "sku": "",
+    "line": "Beauty Care",
+    "category": "Cuidado corporal / gel de ducha",
+    "subcategory": "",
+    "name": "Gel de Ducha",
+    "brand": "Vive Beauty",
+    "price": "$28.000",
+    "availability": "Disponible / por confirmar",
+    "desc": "Gel de Ducha de Vive Beauty, producto de cuidado personal pensado para integrarse de forma práctica a la rutina según su categoría y presentación. La experiencia y función específica dependen de la fórmula de esta referencia, por lo que conviene revisar el envase y seguir las indicaciones del fabricante. Confirma disponibilidad con LIHEN.CO.",
+    "images": [
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_gel_de_ducha/vive_beauty_gel_de_ducha_0.webp",
+      "./assets/productos/BEAUTY_CARE/cuidado_corporal/vive_beauty_gel_de_ducha/vive_beauty_gel_de_ducha_1.webp"
+    ],
+    "size": "Por confirmar",
+    "color": "Por confirmar",
+    "tag": "Producto confirmado",
+    "searchText": "gel de ducha vive beauty cuidado corporal / gel de ducha beauty care"
   }
 ];
 

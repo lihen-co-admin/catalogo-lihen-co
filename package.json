@@ -8,6 +8,11 @@
     "check:js": "find js -type f -name \"*.js\" -print0 | xargs -0 -n1 node --check",
     "products:export": "node scripts/exportar-catalogo.mjs",
     "products:check": "node scripts/validar-catalogo.mjs",
-    "products:sync": "node scripts/sincronizar-catalogo.mjs"
-  }
+    "products:sync": "node scripts/sincronizar-catalogo.mjs",
+    "products:check:internal": "node scripts/validar-catalogo-interno.mjs",
+    "products:prepare": "node scripts/preparar-catalogo-publico.mjs",
+    "products:update": "npm run products:brands && npm run products:check:internal && npm run products:prepare && npm run products:sync",
+    "products:brands": "node scripts/normalizar-marcas.mjs"
+  },
+  "type": "module"
 }

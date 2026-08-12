@@ -56,7 +56,7 @@ export function filterCatalogProducts(products, state, lineName) {
     if (!normalizedQuery) return true;
 
     const searchableText = normalizeText(
-      [product.name, product.brand, product.category, product.line, product.color].join(" "),
+      [product.sku, product.name, product.brand, product.category, product.subcategory, product.line, product.color].filter(Boolean).join(" "),
     );
     return searchableText.includes(normalizedQuery);
   });

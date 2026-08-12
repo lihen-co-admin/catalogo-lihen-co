@@ -1,14 +1,88 @@
 # Guía del catálogo maestro LIHEN.CO
 
-## Qué cambió
+## Arquitectura actual
 
-La página continúa leyendo `js/data/products.js` exactamente como antes. No se modificaron HTML, CSS ni los módulos visuales. Ahora ese archivo se puede generar desde `data/catalogo/catalogo_maestro.csv`.
+Desde la actualización del 7 de agosto de 2026 el catálogo se divide en dos capas para preparar la interoperabilidad con **LIHEN_ADMIN_PRO** sin exponer información administrativa en la tienda pública.
 
-La plantilla de Excel es una forma cómoda de editar la misma información. Antes de sincronizar, guárdala como CSV UTF-8 con el nombre `catalogo_maestro.csv` dentro de `data/catalogo/`.
+### 1. Catálogo interno
 
-## Comandos
+Ruta:
+
+```text
+data-private/catalogo_maestro_interno.csv
+```
+
+Puede contener:
+
+- ID web
+- SKU
+- ID interno
+- Estado
+- Línea
+- Categoría
+- Subcategoría
+- Nombre
+- Marca
+- Proveedor
+- Costo real unitario
+- Precio
+- Disponibilidad
+- Descripción
+- Talla
+- Color
+- Etiqueta
+- Carpetas técnicas
+- Imágenes
+
+`data-private/` está ignorado por Git. No debe subirse al repositorio público.
+
+### 2. Catálogo público
+
+Ruta:
+
+```text
+data/catalogo/catalogo_maestro.csv
+```
+
+Se genera automáticamente desde la matriz interna y excluye:
+
+- ID interno
+- Proveedor
+- Costo real unitario
+
+Sí conserva `SKU`, porque es la llave recomendada para el cruce futuro con LIHEN_ADMIN_PRO.
+
+### 3. Datos consumidos por la tienda
+
+Ruta:
+
+```text
+js/data/products.js
+```
+
+Se genera desde el catálogo público y contiene únicamente información comercial autorizada.
+
+## Flujo recomendado
+
+Después de reemplazar o actualizar `data-private/catalogo_maestro_interno.csv`:
 
 ```bash
+npm run products:update
+npm run check
+node scripts/validate-release.mjs
+```
+
+`products:update` ejecuta en orden:
+
+1. `products:check:internal`
+2. `products:prepare`
+3. `products:sync`
+
+## Comandos individuales
+
+```bash
+npm run products:check:internal
+npm run products:prepare
 npm run products:check
 npm run products:sync
 npm run check
@@ -16,82 +90,143 @@ npm run check:js
 npm run dev
 ```
 
-- `products:check`: revisa datos, IDs, precios, carpetas e imágenes sin modificar la web.
-- `products:sync`: crea respaldos y genera `js/data/products.js` desde la matriz.
-- `products:export`: exporta el catálogo actual. No reemplaza la matriz si ya existe. Para reemplazarla conscientemente: `npm run products:export -- --force`.
+- **products:check:internal:** valida IDs, SKU, UUID, proveedor, costo y precio sin publicar datos privados.
+- **products:prepare:** genera la matriz pública segura.
+- **products:check:** valida el catálogo que sí puede quedar en GitHub Pages.
+- **products:sync:** genera `js/data/products.js` y crea respaldos.
+- **products:export:** exporta el catálogo público actual desde `products.js`.
 
-## Columnas
+## Identificadores
 
-- **ID:** no cambiar en productos existentes. Déjalo vacío en productos nuevos; el sistema asignará el siguiente `B...` o `S...`.
-- **Estado:** `Activo` aparece en la web. `Inactivo` queda en la matriz pero no aparece.
-- **Línea:** únicamente `Beauty Care` o `Style`.
-- **Categoría:** texto visible usado por filtros y búsqueda.
-- **Nombre:** nombre comercial visible.
-- **Marca:** fabricante o `LIHEN.CO`.
-- **Precio:** solo número, por ejemplo `45000`.
-- **Disponibilidad:** texto visible, por ejemplo `Disponible`, `Agotado` o `Disponible / por confirmar`.
-- **Descripción:** descripción completa del producto.
-- **Talla:** tallas o `Por confirmar`.
-- **Color:** colores o `Por confirmar`.
-- **Etiqueta:** texto corto de la tarjeta, por ejemplo `Nuevo ingreso`.
-- **Carpeta categoría:** carpeta técnica dentro de `STYLE` o `BEAUTY_CARE`.
-- **Carpeta producto:** carpeta técnica del producto.
-- **Imágenes:** rutas separadas por `|`. Para productos nuevos puede quedar vacía si las carpetas están bien creadas; el sistema localizará las imágenes y guardará las rutas.
+### ID web
 
-## Imágenes de productos nuevos
+Ejemplos: `B50`, `S66`.
 
-Ejemplo Style:
+- No cambiar en productos existentes.
+- Se conserva por compatibilidad con selección, enlaces, historial y lógica de la tienda.
+
+### SKU
+
+Ejemplos: `BC-029`, `ST-001`.
+
+- Debe ser único cuando exista.
+- Es la llave principal recomendada para relacionar WEB ↔ ADMIN.
+- Puede aparecer en la tienda, búsqueda y mensajes de WhatsApp.
+
+### ID interno
+
+- Se mantiene solo en el catálogo interno.
+- Actualmente puede ser UUID de Supabase.
+- No se necesita en el navegador público.
+
+## Columnas públicas
+
+- **ID**
+- **SKU**
+- **Estado**
+- **Línea**
+- **Categoría**
+- **Subcategoría**
+- **Nombre**
+- **Marca**
+- **Precio**
+- **Disponibilidad**
+- **Descripción**
+- **Talla**
+- **Color**
+- **Etiqueta**
+- **Carpeta categoría**
+- **Carpeta producto**
+- **Imágenes**
+
+## Reglas de precio
+
+- `Precio` es el valor comercial para el cliente.
+- `Costo real unitario` es interno y nunca se exporta a `products.js`.
+- Si el precio público es `0`, el sistema conserva el dato fuente pero muestra **Precio por confirmar** en la tienda para evitar publicar `$0`.
+
+## Imágenes
+
+Para productos con imágenes:
 
 ```text
-assets/productos/STYLE/ropa_deportiva/licra_deportiva_corta_nike/
+assets/productos/STYLE/<categoria>/<producto>/
+assets/productos/BEAUTY_CARE/<categoria>/<producto>/
 ```
 
-Ejemplo Beauty Care:
+Las rutas pueden indicarse explícitamente en la columna `Imágenes` separadas por `|`.
+
+Si un producto activo aún no tiene imágenes propias:
+
+- no se inventa una imagen,
+- el validador genera una advertencia,
+- la tienda usa temporalmente el fallback oficial de LIHEN.CO.
+
+Cuando se agreguen fotos reales, actualiza `Imágenes` o las carpetas técnicas y vuelve a ejecutar `npm run products:update`.
+
+## Talla, color y etiqueta faltantes
+
+La matriz interna conserva exactamente la información recibida. Para mantener una experiencia pública estable, durante la preparación pública:
+
+- Talla vacía → `Por confirmar`
+- Color vacío → `Por confirmar`
+- Etiqueta vacía → `Consulta disponibilidad`
+
+No se inventa una variante concreta.
+
+## Agregar o actualizar productos
+
+### Producto existente
+
+1. Mantén el `ID` web.
+2. Si ya tiene SKU, no lo cambies salvo corrección documentada.
+3. Actualiza los demás campos.
+4. Ejecuta `npm run products:update`.
+
+### Producto nuevo
+
+1. Asigna o registra un ID web siguiendo la convención existente.
+2. Agrega SKU cuando exista en LIHEN_ADMIN_PRO.
+3. Mantén proveedor/costo solo en el catálogo interno.
+4. Agrega imágenes reales cuando estén disponibles.
+5. Ejecuta las validaciones.
+
+## Retirar un producto
+
+Cambia `Estado` a `Inactivo` en la matriz interna. No elimines la fila si necesitas conservar trazabilidad.
+
+## Archivos de cruce
+
+### Interno
 
 ```text
-assets/productos/BEAUTY_CARE/maquillaje_de_labios/bloom_lip_gloss/
+data-private/catalogo_cruce_admin_web.csv
 ```
 
-Nombres recomendados:
+Contiene información técnica para relacionar ID web, SKU e ID interno.
+
+### Público
 
 ```text
-licra_deportiva_corta_nike_0.webp
-licra_deportiva_corta_nike_1.webp
-licra_deportiva_corta_nike_2.webp
+data/catalogo/catalogo_cruce_sku_publico.csv
 ```
 
-No uses espacios, tildes, `ñ` ni símbolos en nombres de carpetas o archivos. La imagen `_0` debe ser la portada.
+Contiene únicamente campos no sensibles para referencia técnica.
 
-## Agregar, actualizar o retirar
+## Futuro con Supabase
 
-- **Agregar:** nueva fila, ID vacío, Estado Activo, imágenes en su carpeta.
-- **Actualizar:** busca el ID y cambia precio, texto, disponibilidad o rutas; no cambies el ID.
-- **Cambiar fotos:** reemplaza los archivos y ajusta `Imágenes`, o deja esa celda vacía para que el script vuelva a leer la carpeta.
-- **Retirar:** cambia Estado a `Inactivo`. No borres la fila.
-- **Reactivar:** vuelve a cambiar Estado a `Activo`.
+La dirección recomendada es:
 
-## Flujo recomendado con Git
-
-```bash
-git switch main
-git pull origin main
-git switch -c feature/actualizacion-catalogo
-npm run products:check
-npm run products:sync
-npm run check
-npm run check:js
-npm run dev
+```text
+LIHEN_ADMIN_PRO → Supabase → vista catalog_public → LIHEN_WEB_RENACER
 ```
 
-Después de probar visualmente:
+La tienda debe consultar solo columnas públicas. Stock, costos y proveedores deben permanecer protegidos por permisos/RLS.
 
-```bash
-git add data/catalogo/catalogo_maestro.csv
-git add assets/productos
-git add js/data/products.js
-git add scripts package.json .gitignore GUIA_CATALOGO_MAESTRO_LIHEN.md
-git commit -m "feat: actualizar catálogo de productos"
-git push -u origin feature/actualizacion-catalogo
+Consulta:
+
+```text
+docs/INTEGRACION_ADMIN_WEB_CATALOGO.md
 ```
 
-Crea el Pull Request hacia `main` solo después de revisar filtros, buscador, modal, imágenes, precios y WhatsApp.
+para el diseño completo de transición.

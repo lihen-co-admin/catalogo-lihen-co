@@ -9,9 +9,8 @@ dist/
 coverage/
 *.log
 
-# Configuración local del navegador
-js/config/env.js
-!js/config/env.example.js
+# Configuración pública de despliegue: js/config/env.js SÍ se versiona.
+# Nunca agregar secretos; solo Project URL + Publishable Key.
 
 # Datos privados de invitados: nunca publicar en GitHub
 data-private/

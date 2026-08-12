@@ -64,14 +64,34 @@ notes.push(`${migrations.length} migraciones SQL encontradas en secuencia.`);
 
 const envPath = path.join(root, 'js', 'config', 'env.js');
 const envText = await readFile(envPath, 'utf8');
-if (/service_role/i.test(envText)) errors.push('env.js contiene una referencia a service_role. Esa clave no debe estar en el frontend.');
-if (/SUPABASE_(?:URL|ANON_KEY):\s*["'][^"']{20,}["']/.test(envText)) {
-  errors.push('env.js parece contener credenciales reales. Deben retirarse antes de compartir el ZIP.');
+if (/sb_secret_|service_role\s*[:=]|password\s*[:=]/i.test(envText)) {
+  errors.push('env.js contiene una referencia potencialmente privada.');
+}
+if (!/SUPABASE_URL:\s*["']https:\/\/[a-z0-9]+\.supabase\.co["']/i.test(envText)) {
+  errors.push('env.js no contiene una SUPABASE_URL válida para producción.');
+}
+if (!/SUPABASE_PUBLISHABLE_KEY:\s*["']sb_publishable_[A-Za-z0-9_-]+["']/.test(envText)) {
+  errors.push('env.js no contiene una Publishable Key válida.');
+}
+
+
+const publicCatalogPath = path.join(root, 'data', 'catalogo', 'catalogo_maestro.csv');
+if (await exists(publicCatalogPath)) {
+  const publicCatalogText = await readFile(publicCatalogPath, 'utf8');
+  const header = publicCatalogText.replace(/^\uFEFF/, '').split(/\r?\n/, 1)[0] || '';
+  for (const forbidden of ['ID interno', 'Proveedor', 'Costo real unitario']) {
+    if (header.split(';').includes(forbidden)) errors.push(`El catálogo público expone la columna privada: ${forbidden}.`);
+  }
+  if (!header.split(';').includes('SKU')) errors.push('El catálogo público no contiene SKU para interoperabilidad futura.');
+  notes.push('Separación de campos públicos/privados del catálogo revisada.');
 }
 
 const productDataPath = path.join(root, 'js', 'data', 'products.js');
 if (await exists(productDataPath)) {
   const productText = await readFile(productDataPath, 'utf8');
+  for (const forbidden of ['Costo real unitario', 'current_cost', 'supplier_name', '"Proveedor"', '"ID interno"']) {
+    if (productText.includes(forbidden)) errors.push(`products.js contiene un campo administrativo no autorizado: ${forbidden}.`);
+  }
   const imageRefs = [...productText.matchAll(/[\"'](\.\/assets\/productos\/[^\"']+)[\"']/g)].map((m) => m[1]);
   for (const ref of new Set(imageRefs)) {
     const target = path.resolve(root, ref.replace(/^\.\//, ''));
