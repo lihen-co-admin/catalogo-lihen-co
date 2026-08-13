@@ -61,10 +61,9 @@ function availabilityFromRow(row) {
         : 'available';
 
   const text = rawText || (status === 'out_of_stock' ? 'Agotado' : status === 'coming_soon' ? 'Próximamente' : 'Disponible');
-  const quantityRaw = row?.public_stock_quantity;
-  const quantity = quantityRaw === null || quantityRaw === undefined ? null : numberValue(quantityRaw, null);
-
-  return { status, text, quantity };
+  // La WEB consume solo un estado derivado. Incluso si el backend añadiera
+  // accidentalmente una cantidad pública, este Adapter no propaga stock exacto.
+  return { status, text, quantity: null };
 }
 
 export function adaptCatalogRow(row, { legacyProduct = null } = {}) {
